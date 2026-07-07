@@ -39,8 +39,9 @@ export function generateNet(
     const tl = group(board, t.x, t.y).liberties.length;
     if (tl < 2 || tl > 3) continue; // confined but not already atari
     if (board.stones().some((s) => s.c === "b" && group(board, s.x, s.y).liberties.length <= 1)) continue;
-    // the base must be ALIVE — else any elsewhere move "nets" a stone that's already dead
-    if (capturedUnderBestPlay(board, t, "w", depth)) continue;
+    // the base must be ALIVE at the bank's verification depth (8), not just the rung's search
+    // depth — else a rung-1 net (searched at depth 4) could ship a base that's dead by depth 8.
+    if (capturedUnderBestPlay(board, t, "w", 8)) continue;
 
     // find every nearby black move that nets
     const nets: Point[] = [];
