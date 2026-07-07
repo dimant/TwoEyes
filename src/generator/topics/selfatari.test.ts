@@ -28,3 +28,25 @@ describe("generateSelfAtari", () => {
     expect(generateSelfAtari(makeRng(7), opts)).toEqual(generateSelfAtari(makeRng(7), opts));
   });
 });
+
+// Pin the self-atari DEFINITION with hand-built boards, so the truth used by both
+// the generator and the bank suite is independently anchored (not self-referential).
+describe("isSelfAtari (definition)", () => {
+  it("3 white neighbours + 1 empty -> self-atari (lands on 1 liberty)", () => {
+    const b = Board.from(5, [{ x: 1, y: 2, c: "w" }, { x: 3, y: 2, c: "w" }, { x: 2, y: 1, c: "w" }]);
+    expect(isSelfAtari(b, { x: 2, y: 2 })).toBe(true);
+  });
+
+  it("2 white neighbours -> safe (lands on 2 liberties)", () => {
+    const b = Board.from(5, [{ x: 1, y: 2, c: "w" }, { x: 3, y: 2, c: "w" }]);
+    expect(isSelfAtari(b, { x: 2, y: 2 })).toBe(false);
+  });
+
+  it("a move that captures is not self-atari", () => {
+    // white at 2,2 is in atari; Black playing its last liberty (2,3) captures it
+    const b = Board.from(5, [
+      { x: 2, y: 2, c: "w" }, { x: 1, y: 2, c: "b" }, { x: 3, y: 2, c: "b" }, { x: 2, y: 1, c: "b" },
+    ]);
+    expect(isSelfAtari(b, { x: 2, y: 3 })).toBe(false);
+  });
+});

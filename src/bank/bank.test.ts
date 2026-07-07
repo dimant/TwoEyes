@@ -155,3 +155,22 @@ describe("bank.json — self-atari verdicts are correct (topic 5)", () => {
     expect(p.solution.id).toBe(truth);
   });
 });
+
+describe("bank.json — self-atari rungs are balanced with real tension (topic 5)", () => {
+  for (const rung of [1, 2]) {
+    it(`t5-r${rung}: 10 self-atari + 10 safe, and every safe candidate lands on exactly 2 liberties`, () => {
+      const g = bank.puzzles.filter((p) => p.topic === 5 && p.rung === rung);
+      const id = (p: Puzzle) => (p.solution.kind === "choice" ? p.solution.id : "");
+      expect(g.filter((p) => id(p) === "self-atari")).toHaveLength(10);
+      const safe = g.filter((p) => id(p) === "safe");
+      expect(safe).toHaveLength(10);
+      for (const p of safe) {
+        const cand = p.marks![0]!;
+        const r = play(Board.from(p.size, p.stones), cand.x, cand.y, "b");
+        expect(r.ok).toBe(true);
+        // one step from self-atari: exactly two liberties (not merely >= 2)
+        expect(group(r.board, cand.x, cand.y).liberties.length).toBe(2);
+      }
+    });
+  }
+});
