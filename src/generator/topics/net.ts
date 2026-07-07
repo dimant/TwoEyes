@@ -39,6 +39,8 @@ export function generateNet(
     const tl = group(board, t.x, t.y).liberties.length;
     if (tl < 2 || tl > 3) continue; // confined but not already atari
     if (board.stones().some((s) => s.c === "b" && group(board, s.x, s.y).liberties.length <= 1)) continue;
+    // the base must be ALIVE — else any elsewhere move "nets" a stone that's already dead
+    if (capturedUnderBestPlay(board, t, "w", depth)) continue;
 
     // find every nearby black move that nets
     const nets: Point[] = [];
