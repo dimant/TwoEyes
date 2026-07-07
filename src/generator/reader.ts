@@ -4,19 +4,19 @@ import { group } from "../engine/liberties";
 
 const ESCAPE_LIBS = 3;
 
-// Empty points where WHITE, by playing, captures a Black stone adjacent to the target
-// (a black chaser in atari) — an escape route for the defender.
+// Empty points where WHITE, by playing, captures a Black stone touching the target
+// (a black chaser in atari) — a defensive escape resource.
 function defenderCaptureMoves(board: Board, targetStones: Point[]): Point[] {
   const out: Point[] = [];
   const seen = new Set<string>();
   for (const s of targetStones) {
     for (const n of board.neighbors(s.x, s.y)) {
-      if (board.get(n.x, n.y) !== null) continue;
-      for (const nn of board.neighbors(n.x, n.y)) {
-        if (board.get(nn.x, nn.y) === "b" && group(board, nn.x, nn.y).liberties.length === 1) {
-          const k = `${n.x},${n.y}`;
-          if (!seen.has(k)) { seen.add(k); out.push(n); }
-        }
+      if (board.get(n.x, n.y) !== "b") continue; // a black chaser touching the target
+      const bg = group(board, n.x, n.y);
+      if (bg.liberties.length === 1) {
+        const cap = bg.liberties[0]!; // white plays here to capture the chaser
+        const k = `${cap.x},${cap.y}`;
+        if (!seen.has(k)) { seen.add(k); out.push(cap); }
       }
     }
   }
