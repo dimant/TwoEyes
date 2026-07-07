@@ -37,7 +37,9 @@ export class PlayerViewModel extends Observable<PlayerState> {
 
   submit(input: Input): void {
     const s = this.snapshot;
-    if (!s.puzzle || s.phase === "correct") return;
+    // No input once the puzzle is resolved (solved) or the answer has been revealed —
+    // you can't earn mastery after being shown the answer.
+    if (!s.puzzle || s.phase === "correct" || s.phase === "revealed") return;
     if (checkAnswer(s.puzzle, input)) {
       this.progress.record(this.topic, this.rung, true);
       this.set({ ...s, phase: "correct", mastery: this.progress.masteryCount(this.topic, this.rung) });

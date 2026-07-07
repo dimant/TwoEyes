@@ -58,4 +58,14 @@ describe("PlayerViewModel", () => {
     expect(v.snapshot.done).toBe(true);
     expect(v.snapshot.puzzle).toBeNull();
   });
+
+  it("submitting after the answer is revealed is a no-op (no mastery after reveal)", () => {
+    const v = vm();
+    v.submit({ kind: "move", point: { x: 0, y: 0 } });
+    v.submit({ kind: "move", point: { x: 0, y: 0 } });
+    expect(v.snapshot.phase).toBe("revealed");
+    v.submit({ kind: "move", point: { x: 1, y: 1 } }); // the correct move, but too late
+    expect(v.snapshot.phase).toBe("revealed");
+    expect(v.snapshot.mastery).toBe(0);
+  });
 });
