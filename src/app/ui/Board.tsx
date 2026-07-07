@@ -34,13 +34,13 @@ export function Board({ puzzle, reveal, onTapPoint }: BoardProps) {
         if (occupied(x, y)) continue;
         taps.push(
           <circle key={`t${x}-${y}`} className="tap" data-tap="" cx={px(x)} cy={px(y)} r={CELL * 0.46}
-            onClick={() => onTapPoint({ x, y })} />,
+            fill="transparent" onClick={() => onTapPoint({ x, y })} />,
         );
       }
   }
 
   return (
-    <svg className="board" viewBox={`0 0 ${W} ${W}`} role="img" aria-label={puzzle.prompt}>
+    <svg className="board" viewBox={`0 0 ${W} ${W}`} role="img" aria-label={puzzle.prompt || "Go board"}>
       <rect x={6} y={6} width={W - 12} height={W - 12} rx={10} fill="var(--board)" stroke="var(--board-edge)" strokeWidth={2} />
       {lines}
       {size % 2 === 1 && <circle cx={px((size - 1) / 2)} cy={px((size - 1) / 2)} r={3.2} fill="var(--star)" />}
