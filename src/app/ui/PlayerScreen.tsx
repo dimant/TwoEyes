@@ -27,7 +27,7 @@ export function PlayerScreen({ player, onExit }: { player: PlayerViewModel; onEx
   return (
     <div className="screen player">
       <div className="prompt">
-        <div className="who">● Black to play</div>
+        <div className="who">{p.toPlay === "b" ? "● Black to play" : "○ White to play"}</div>
         <div className="q">{p.prompt}</div>
       </div>
       <div className="board-hold">
@@ -43,7 +43,6 @@ export function PlayerScreen({ player, onExit }: { player: PlayerViewModel; onEx
       {s.phase !== "idle" && (
         <Feedback
           phase={s.phase}
-          prompt=""
           onNext={() => player.next()}
           onRetry={() => player.retry()}
         />

@@ -20,7 +20,7 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
             <button
               className={`tcard ${r.cleared ? "done" : r.unlocked ? "cur" : "lock"}`}
               disabled={!r.unlocked}
-              onClick={() => onOpen(r.topic, Math.min(r.rungsCleared + 1, r.rungsTotal))}
+              onClick={() => onOpen(r.topic, r.openRung)}
             >
               <span className="idx">{r.cleared ? "✓" : r.topic}</span>
               <span className="tmeta">

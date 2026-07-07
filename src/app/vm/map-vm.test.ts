@@ -38,4 +38,17 @@ describe("MapViewModel", () => {
     expect(rows[0]!.rungsCleared).toBe(2);
     expect(rows[1]!.unlocked).toBe(true);
   });
+
+  it("openRung is the first uncleared rung (else the last, for replay)", () => {
+    const pb = new PuzzleBank(bank);
+    const progress = new ProgressStore(memStore(), pb.rungRefs());
+    const mv = new MapViewModel(pb, progress);
+    expect(mv.snapshot.rows[0]!.openRung).toBe(1); // nothing cleared
+    for (let i = 0; i < MASTERY; i++) progress.record(1, 1, true);
+    mv.refresh();
+    expect(mv.snapshot.rows[0]!.openRung).toBe(2); // rung 1 cleared -> open rung 2
+    for (let i = 0; i < MASTERY; i++) progress.record(1, 2, true);
+    mv.refresh();
+    expect(mv.snapshot.rows[0]!.openRung).toBe(2); // all cleared -> replay last
+  });
 });
