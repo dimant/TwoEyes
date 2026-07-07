@@ -5,3 +5,6 @@ dist/
 
 # nested upstream reference repo, tracked separately
 tsumego/
+
+# subagent-driven-development scratch (briefs, reports, ledger)
+.superpowers/
