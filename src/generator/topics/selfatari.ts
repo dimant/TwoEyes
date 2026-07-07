@@ -1,7 +1,7 @@
 import { Board, Point } from "../../engine/board";
 import { play } from "../../engine/rules";
 import { group } from "../../engine/liberties";
-import { Rng, randint, shuffle } from "../../engine/rng";
+import { Rng, shuffle } from "../../engine/rng";
 import { Region, startCell } from "../geometry";
 import { Puzzle } from "../types";
 
@@ -17,8 +17,11 @@ function build(rng: Rng, size: number, region: Region, wantSelfAtari: boolean): 
   const board = new Board(size);
   const nbrs = shuffle(rng, board.neighbors(cand.x, cand.y));
   const deg = nbrs.length;
-  if (deg < 2) return null;
-  const whiteCount = wantSelfAtari ? deg - 1 : randint(rng, 0, deg - 2);
+  if (deg < 3) return null; // skip corners: a "safe" corner case has no tension to judge
+  // self-atari: fill all-but-one neighbour (candidate ends on 1 liberty).
+  // safe: fill all-but-two (candidate ends on exactly 2 liberties) — one step from self-atari,
+  // so every puzzle is a real "1 vs 2 liberties" judgment rather than a context-free point.
+  const whiteCount = wantSelfAtari ? deg - 1 : deg - 2;
   for (let i = 0; i < whiteCount; i++) board.set(nbrs[i]!.x, nbrs[i]!.y, "w");
   return { board, cand };
 }
