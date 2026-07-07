@@ -65,7 +65,7 @@
       "stones": [
         {
           "x": 2,
-          "y": 1,
+          "y": 0,
           "c": "b"
         }
       ],
@@ -73,12 +73,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 3
       },
       "marks": [
         {
           "x": 2,
-          "y": 1,
+          "y": 0,
           "kind": "mark"
         }
       ]
@@ -91,7 +91,7 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
+          "x": 4,
           "y": 2,
           "c": "b"
         }
@@ -100,11 +100,11 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 3
       },
       "marks": [
         {
-          "x": 3,
+          "x": 4,
           "y": 2,
           "kind": "mark"
         }
@@ -119,33 +119,6 @@
       "stones": [
         {
           "x": 3,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r1-5",
-      "topic": 1,
-      "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
           "y": 1,
           "c": "b"
         }
@@ -158,7 +131,34 @@
       },
       "marks": [
         {
-          "x": 1,
+          "x": 3,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r1-5",
+      "topic": 1,
+      "rung": 1,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 3
+      },
+      "marks": [
+        {
+          "x": 0,
           "y": 1,
           "kind": "mark"
         }
@@ -172,7 +172,7 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
+          "x": 4,
           "y": 3,
           "c": "b"
         }
@@ -181,11 +181,11 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 3
       },
       "marks": [
         {
-          "x": 3,
+          "x": 4,
           "y": 3,
           "kind": "mark"
         }
@@ -199,8 +199,8 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 1,
+          "x": 0,
+          "y": 0,
           "c": "b"
         }
       ],
@@ -208,12 +208,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 2
       },
       "marks": [
         {
-          "x": 1,
-          "y": 1,
+          "x": 0,
+          "y": 0,
           "kind": "mark"
         }
       ]
@@ -253,8 +253,8 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 3,
+          "x": 0,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -262,12 +262,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 2
       },
       "marks": [
         {
-          "x": 1,
-          "y": 3,
+          "x": 0,
+          "y": 4,
           "kind": "mark"
         }
       ]
@@ -280,7 +280,7 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
+          "x": 4,
           "y": 1,
           "c": "b"
         }
@@ -289,11 +289,11 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 3
       },
       "marks": [
         {
-          "x": 3,
+          "x": 4,
           "y": 1,
           "kind": "mark"
         }
@@ -308,7 +308,7 @@
       "stones": [
         {
           "x": 3,
-          "y": 2,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -316,12 +316,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 3
       },
       "marks": [
         {
           "x": 3,
-          "y": 2,
+          "y": 4,
           "kind": "mark"
         }
       ]
@@ -335,7 +335,7 @@
       "stones": [
         {
           "x": 1,
-          "y": 3,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -343,12 +343,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 3
       },
       "marks": [
         {
           "x": 1,
-          "y": 3,
+          "y": 4,
           "kind": "mark"
         }
       ]
@@ -361,7 +361,7 @@
       "size": 5,
       "stones": [
         {
-          "x": 2,
+          "x": 3,
           "y": 3,
           "c": "b"
         }
@@ -374,7 +374,7 @@
       },
       "marks": [
         {
-          "x": 2,
+          "x": 3,
           "y": 3,
           "kind": "mark"
         }
@@ -384,411 +384,6 @@
       "id": "t1-r1-14",
       "topic": 1,
       "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r1-15",
-      "topic": 1,
-      "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r1-16",
-      "topic": 1,
-      "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r1-17",
-      "topic": 1,
-      "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r1-18",
-      "topic": 1,
-      "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r1-19",
-      "topic": 1,
-      "rung": 1,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-0",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 1,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-1",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-2",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-3",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 4,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 3
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-4",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 3
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 4,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-5",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 4
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-6",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 3
-      },
-      "marks": [
-        {
-          "x": 0,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-7",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 3
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-8",
-      "topic": 1,
-      "rung": 2,
-      "mode": "Q-count",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 0,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "How many liberties does the marked stone have?",
-      "solution": {
-        "kind": "value",
-        "value": 3
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t1-r2-9",
-      "topic": 1,
-      "rung": 2,
       "mode": "Q-count",
       "size": 5,
       "stones": [
@@ -813,9 +408,90 @@
       ]
     },
     {
-      "id": "t1-r2-10",
+      "id": "t1-r1-15",
       "topic": 1,
-      "rung": 2,
+      "rung": 1,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 4
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r1-16",
+      "topic": 1,
+      "rung": 1,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 3
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r1-17",
+      "topic": 1,
+      "rung": 1,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 0,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 3
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r1-18",
+      "topic": 1,
+      "rung": 1,
       "mode": "Q-count",
       "size": 5,
       "stones": [
@@ -835,6 +511,440 @@
         {
           "x": 1,
           "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r1-19",
+      "topic": 1,
+      "rung": 1,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 3
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-0",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 2
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-1",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-2",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 3
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-3",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-4",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-5",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 3
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-6",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-7",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-8",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-9",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t1-r2-10",
+      "topic": 1,
+      "rung": 2,
+      "mode": "Q-count",
+      "size": 5,
+      "stones": [
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "How many liberties does the marked stone have?",
+      "solution": {
+        "kind": "value",
+        "value": 1
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 4,
           "kind": "mark"
         }
       ]
@@ -848,7 +958,12 @@
       "stones": [
         {
           "x": 3,
-          "y": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -861,7 +976,7 @@
       "marks": [
         {
           "x": 3,
-          "y": 0,
+          "y": 2,
           "kind": "mark"
         }
       ]
@@ -874,20 +989,30 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
           "y": 1,
           "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
         }
       ],
       "toPlay": "b",
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 1
       },
       "marks": [
         {
-          "x": 1,
+          "x": 4,
           "y": 1,
           "kind": "mark"
         }
@@ -901,9 +1026,14 @@
       "size": 5,
       "stones": [
         {
-          "x": 4,
-          "y": 3,
+          "x": 1,
+          "y": 2,
           "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
         }
       ],
       "toPlay": "b",
@@ -914,8 +1044,8 @@
       },
       "marks": [
         {
-          "x": 4,
-          "y": 3,
+          "x": 1,
+          "y": 2,
           "kind": "mark"
         }
       ]
@@ -928,21 +1058,36 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
-          "y": 1,
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 3,
           "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
         }
       ],
       "toPlay": "b",
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 1
       },
       "marks": [
         {
-          "x": 3,
-          "y": 1,
+          "x": 1,
+          "y": 3,
           "kind": "mark"
         }
       ]
@@ -956,7 +1101,12 @@
       "stones": [
         {
           "x": 2,
-          "y": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 0,
           "c": "b"
         }
       ],
@@ -964,12 +1114,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 4
+        "value": 2
       },
       "marks": [
         {
-          "x": 2,
-          "y": 2,
+          "x": 3,
+          "y": 0,
           "kind": "mark"
         }
       ]
@@ -982,8 +1132,13 @@
       "size": 5,
       "stones": [
         {
-          "x": 0,
-          "y": 3,
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
           "c": "b"
         }
       ],
@@ -995,8 +1150,8 @@
       },
       "marks": [
         {
-          "x": 0,
-          "y": 3,
+          "x": 2,
+          "y": 1,
           "kind": "mark"
         }
       ]
@@ -1009,21 +1164,31 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
-          "y": 4,
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
           "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
         }
       ],
       "toPlay": "b",
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 3
+        "value": 2
       },
       "marks": [
         {
-          "x": 3,
-          "y": 4,
+          "x": 2,
+          "y": 3,
           "kind": "mark"
         }
       ]
@@ -1036,8 +1201,13 @@
       "size": 5,
       "stones": [
         {
-          "x": 4,
-          "y": 3,
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -1045,12 +1215,12 @@
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 3
+        "value": 2
       },
       "marks": [
         {
-          "x": 4,
-          "y": 3,
+          "x": 1,
+          "y": 4,
           "kind": "mark"
         }
       ]
@@ -1064,20 +1234,35 @@
       "stones": [
         {
           "x": 2,
-          "y": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
           "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
         }
       ],
       "toPlay": "b",
       "prompt": "How many liberties does the marked stone have?",
       "solution": {
         "kind": "value",
-        "value": 3
+        "value": 1
       },
       "marks": [
         {
           "x": 2,
-          "y": 0,
+          "y": 3,
           "kind": "mark"
         }
       ]
@@ -1090,23 +1275,23 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
+          "x": 0,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
+          "x": 1,
+          "y": 1,
           "c": "w"
         },
         {
-          "x": 3,
-          "y": 3,
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -1116,15 +1301,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 4,
-            "y": 2
+            "x": 1,
+            "y": 0
           }
         ]
       },
       "captured": [
         {
-          "x": 3,
-          "y": 2
+          "x": 1,
+          "y": 1
         }
       ]
     },
@@ -1136,23 +1321,23 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 2,
+          "x": 1,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 3,
-          "y": 1,
+          "x": 1,
+          "y": 2,
           "c": "w"
         },
         {
-          "x": 4,
-          "y": 1,
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -1162,15 +1347,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
+            "x": 0,
             "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 3,
-          "y": 1
+          "x": 1,
+          "y": 2
         }
       ]
     },
@@ -1183,22 +1368,22 @@
       "stones": [
         {
           "x": 3,
-          "y": 1,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 2,
-          "y": 2,
+          "y": 3,
           "c": "b"
         },
         {
           "x": 3,
-          "y": 2,
+          "y": 3,
           "c": "w"
         },
         {
           "x": 4,
-          "y": 2,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -1209,14 +1394,14 @@
         "points": [
           {
             "x": 3,
-            "y": 3
+            "y": 4
           }
         ]
       },
       "captured": [
         {
           "x": 3,
-          "y": 2
+          "y": 3
         }
       ]
     },
@@ -1228,23 +1413,23 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
+          "x": 2,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 1,
-          "y": 1,
+          "x": 2,
+          "y": 2,
           "c": "w"
         },
         {
-          "x": 1,
+          "x": 3,
           "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -1254,15 +1439,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
-            "y": 1
+            "x": 1,
+            "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 1
+          "x": 2,
+          "y": 2
         }
       ]
     },
@@ -1279,6 +1464,11 @@
           "c": "b"
         },
         {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
           "x": 1,
           "y": 1,
           "c": "w"
@@ -1286,11 +1476,6 @@
         {
           "x": 2,
           "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
           "c": "b"
         }
       ],
@@ -1300,8 +1485,8 @@
         "kind": "move",
         "points": [
           {
-            "x": 0,
-            "y": 1
+            "x": 1,
+            "y": 2
           }
         ]
       },
@@ -1321,21 +1506,21 @@
       "stones": [
         {
           "x": 1,
-          "y": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 3,
           "c": "b"
         },
         {
           "x": 1,
-          "y": 2,
+          "y": 3,
           "c": "w"
         },
         {
           "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
           "y": 3,
           "c": "b"
         }
@@ -1346,15 +1531,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 0,
-            "y": 2
+            "x": 1,
+            "y": 4
           }
         ]
       },
       "captured": [
         {
           "x": 1,
-          "y": 2
+          "y": 3
         }
       ]
     },
@@ -1366,23 +1551,23 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 1,
+          "x": 2,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 3,
           "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -1392,7 +1577,7 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
+            "x": 3,
             "y": 1
           }
         ]
@@ -1400,7 +1585,7 @@
       "captured": [
         {
           "x": 3,
-          "y": 1
+          "y": 2
         }
       ]
     },
@@ -1412,23 +1597,23 @@
       "size": 5,
       "stones": [
         {
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
           "x": 1,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
+          "x": 2,
+          "y": 1,
           "c": "w"
         },
         {
-          "x": 1,
-          "y": 3,
+          "x": 2,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -1438,15 +1623,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
-            "y": 2
+            "x": 3,
+            "y": 1
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 2
+          "x": 2,
+          "y": 1
         }
       ]
     },
@@ -1505,22 +1690,22 @@
       "stones": [
         {
           "x": 1,
-          "y": 1,
+          "y": 2,
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 1,
+          "x": 0,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
           "c": "w"
         },
         {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
+          "x": 1,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -1531,14 +1716,14 @@
         "points": [
           {
             "x": 2,
-            "y": 0
+            "y": 3
           }
         ]
       },
       "captured": [
         {
-          "x": 2,
-          "y": 1
+          "x": 1,
+          "y": 3
         }
       ]
     },
@@ -1550,11 +1735,6 @@
       "size": 5,
       "stones": [
         {
-          "x": 3,
-          "y": 0,
-          "c": "b"
-        },
-        {
           "x": 2,
           "y": 1,
           "c": "b"
@@ -1563,6 +1743,11 @@
           "x": 3,
           "y": 1,
           "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
         },
         {
           "x": 3,
@@ -1576,8 +1761,8 @@
         "kind": "move",
         "points": [
           {
-            "x": 4,
-            "y": 1
+            "x": 3,
+            "y": 0
           }
         ]
       },
@@ -1596,23 +1781,23 @@
       "size": 5,
       "stones": [
         {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        },
+        {
           "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
+          "y": 3,
           "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 2,
-          "c": "b"
         },
         {
           "x": 3,
           "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -1622,15 +1807,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
-            "y": 1
+            "x": 2,
+            "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 3,
-          "y": 2
+          "x": 2,
+          "y": 3
         }
       ]
     },
@@ -1642,6 +1827,154 @@
       "size": 5,
       "stones": [
         {
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ]
+    },
+    {
+      "id": "t2-r1-13",
+      "topic": 2,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "t2-r1-14",
+      "topic": 2,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "t2-r1-15",
+      "topic": 2,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
           "x": 3,
           "y": 2,
           "c": "b"
@@ -1649,6 +1982,83 @@
         {
           "x": 2,
           "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "t2-r1-16",
+      "topic": 2,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "id": "t2-r1-17",
+      "topic": 2,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 3,
+          "y": 2,
           "c": "b"
         },
         {
@@ -1660,6 +2070,11 @@
           "x": 4,
           "y": 3,
           "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
         }
       ],
       "toPlay": "b",
@@ -1668,8 +2083,8 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
-            "y": 4
+            "x": 2,
+            "y": 3
           }
         ]
       },
@@ -1681,7 +2096,53 @@
       ]
     },
     {
-      "id": "t2-r1-13",
+      "id": "t2-r1-18",
+      "topic": 2,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ]
+    },
+    {
+      "id": "t2-r1-19",
       "topic": 2,
       "rung": 1,
       "mode": "M",
@@ -1727,30 +2188,66 @@
       ]
     },
     {
-      "id": "t2-r1-14",
+      "id": "t2-r2-0",
       "topic": 2,
-      "rung": 1,
+      "rung": 2,
       "mode": "M",
       "size": 5,
       "stones": [
         {
-          "x": 2,
+          "x": 4,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 3,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 2,
+          "x": 4,
+          "y": 1,
           "c": "w"
-        },
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 4,
+          "y": 1
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-1",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
         {
           "x": 3,
-          "y": 2,
+          "y": 3,
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 3,
+          "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -1760,22 +2257,22 @@
         "kind": "move",
         "points": [
           {
-            "x": 1,
-            "y": 2
+            "x": 2,
+            "y": 4
           }
         ]
       },
       "captured": [
         {
-          "x": 2,
-          "y": 2
+          "x": 3,
+          "y": 4
         }
       ]
     },
     {
-      "id": "t2-r1-15",
+      "id": "t2-r2-2",
       "topic": 2,
-      "rung": 1,
+      "rung": 2,
       "mode": "M",
       "size": 5,
       "stones": [
@@ -1785,18 +2282,13 @@
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
+          "x": 2,
+          "y": 0,
           "c": "w"
         },
         {
-          "x": 1,
-          "y": 2,
+          "x": 3,
+          "y": 0,
           "c": "b"
         }
       ],
@@ -1813,221 +2305,27 @@
       },
       "captured": [
         {
-          "x": 1,
-          "y": 1
+          "x": 2,
+          "y": 0
         }
       ]
     },
     {
-      "id": "t2-r1-16",
-      "topic": 2,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 1
-        }
-      ]
-    },
-    {
-      "id": "t2-r1-17",
-      "topic": 2,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 1
-        }
-      ]
-    },
-    {
-      "id": "t2-r1-18",
-      "topic": 2,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t2-r1-19",
-      "topic": 2,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 3
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-0",
+      "id": "t2-r2-3",
       "topic": 2,
       "rung": 2,
       "mode": "M",
       "size": 5,
       "stones": [
         {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
           "x": 4,
           "y": 3,
           "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
         }
       ],
       "toPlay": "b",
@@ -2043,146 +2341,8 @@
       },
       "captured": [
         {
-          "x": 3,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-1",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "w"
-        },
-        {
           "x": 4,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-2",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-3",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 0
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 1
+          "y": 4
         }
       ]
     },
@@ -2194,23 +2354,13 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
+          "x": 0,
+          "y": 0,
           "c": "w"
         },
         {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
           "x": 1,
-          "y": 3,
+          "y": 0,
           "c": "b"
         }
       ],
@@ -2221,14 +2371,14 @@
         "points": [
           {
             "x": 0,
-            "y": 2
+            "y": 1
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 2
+          "x": 0,
+          "y": 0
         }
       ]
     },
@@ -2240,23 +2390,18 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
+          "x": 2,
+          "y": 0,
           "c": "w"
         },
         {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
           "x": 2,
-          "y": 2,
+          "y": 1,
           "c": "b"
         }
       ],
@@ -2267,14 +2412,14 @@
         "points": [
           {
             "x": 1,
-            "y": 3
+            "y": 0
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 2
+          "x": 2,
+          "y": 0
         }
       ]
     },
@@ -2291,19 +2436,9 @@
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        },
-        {
           "x": 4,
-          "y": 1,
-          "c": "b"
+          "y": 0,
+          "c": "w"
         }
       ],
       "toPlay": "b",
@@ -2312,15 +2447,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
-            "y": 2
+            "x": 4,
+            "y": 1
           }
         ]
       },
       "captured": [
         {
-          "x": 3,
-          "y": 1
+          "x": 4,
+          "y": 0
         }
       ]
     },
@@ -2332,23 +2467,18 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 1,
+          "x": 3,
+          "y": 3,
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 1,
+          "x": 4,
+          "y": 3,
           "c": "w"
         },
         {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
+          "x": 4,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -2358,15 +2488,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
-            "y": 0
+            "x": 4,
+            "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 2,
-          "y": 1
+          "x": 4,
+          "y": 3
         }
       ]
     },
@@ -2378,23 +2508,18 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
+          "x": 0,
           "y": 0,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
           "x": 1,
-          "y": 1,
+          "y": 0,
           "c": "w"
         },
         {
-          "x": 1,
-          "y": 2,
+          "x": 2,
+          "y": 0,
           "c": "b"
         }
       ],
@@ -2404,7 +2529,7 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
+            "x": 1,
             "y": 1
           }
         ]
@@ -2412,7 +2537,7 @@
       "captured": [
         {
           "x": 1,
-          "y": 1
+          "y": 0
         }
       ]
     },
@@ -2424,24 +2549,19 @@
       "size": 5,
       "stones": [
         {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
+          "x": 1,
           "y": 3,
           "c": "b"
         },
         {
-          "x": 2,
+          "x": 0,
           "y": 4,
           "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
         }
       ],
       "toPlay": "b",
@@ -2450,15 +2570,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 1,
-            "y": 3
+            "x": 2,
+            "y": 4
           }
         ]
       },
       "captured": [
         {
-          "x": 2,
-          "y": 3
+          "x": 1,
+          "y": 4
         }
       ]
     },
@@ -2470,23 +2590,18 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
+          "x": 0,
           "y": 0,
           "c": "b"
         },
         {
           "x": 0,
           "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
           "c": "w"
         },
         {
           "x": 1,
-          "y": 2,
+          "y": 1,
           "c": "b"
         }
       ],
@@ -2496,14 +2611,14 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
-            "y": 1
+            "x": 0,
+            "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
+          "x": 0,
           "y": 1
         }
       ]
@@ -2516,346 +2631,19 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-12",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 3
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-13",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 1
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-14",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 1
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-15",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 3
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-16",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
           "x": 4,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-17",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 2,
+          "y": 1,
           "c": "b"
         },
         {
           "x": 3,
           "y": 2,
-          "c": "w"
+          "c": "b"
         },
         {
           "x": 4,
           "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the stone.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t2-r2-18",
-      "topic": 2,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
           "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "b"
         }
       ],
       "toPlay": "b",
@@ -2871,8 +2659,270 @@
       },
       "captured": [
         {
+          "x": 4,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-12",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
           "x": 3,
-          "y": 3
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 4,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-13",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 4
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-14",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-15",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-16",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-17",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t2-r2-18",
+      "topic": 2,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the stone.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 4,
+          "y": 0
         }
       ]
     },
@@ -2884,23 +2934,18 @@
       "size": 5,
       "stones": [
         {
-          "x": 2,
-          "y": 0,
+          "x": 1,
+          "y": 4,
           "c": "b"
         },
         {
           "x": 2,
-          "y": 1,
+          "y": 4,
           "c": "w"
         },
         {
           "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -2910,15 +2955,15 @@
         "kind": "move",
         "points": [
           {
-            "x": 1,
-            "y": 1
+            "x": 2,
+            "y": 3
           }
         ]
       },
       "captured": [
         {
           "x": 2,
-          "y": 1
+          "y": 4
         }
       ]
     },
@@ -2935,14 +2980,14 @@
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
           "x": 3,
           "y": 3,
           "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "b"
         },
         {
           "x": 2,
@@ -2966,7 +3011,7 @@
         "kind": "move",
         "points": [
           {
-            "x": 4,
+            "x": 2,
             "y": 3
           }
         ]
@@ -2991,43 +3036,38 @@
       "stones": [
         {
           "x": 2,
-          "y": 2,
+          "y": 1,
           "c": "b"
         },
         {
           "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
+          "y": 1,
           "c": "b"
         },
         {
           "x": 2,
-          "y": 3,
+          "y": 2,
           "c": "w"
         },
         {
           "x": 3,
-          "y": 3,
+          "y": 2,
           "c": "w"
         },
         {
           "x": 4,
-          "y": 3,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 2,
-          "y": 4,
+          "y": 3,
           "c": "b"
         },
         {
           "x": 3,
-          "y": 4,
-          "c": "w"
+          "y": 3,
+          "c": "b"
         }
       ],
       "toPlay": "b",
@@ -3036,23 +3076,19 @@
         "kind": "move",
         "points": [
           {
-            "x": 4,
-            "y": 4
+            "x": 1,
+            "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 3,
-          "y": 4
-        },
-        {
-          "x": 3,
-          "y": 3
-        },
-        {
           "x": 2,
-          "y": 3
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
         }
       ]
     },
@@ -3064,95 +3100,6 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 1,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 1
-        },
-        {
-          "x": 3,
-          "y": 0
-        },
-        {
-          "x": 2,
-          "y": 0
-        }
-      ]
-    },
-    {
-      "id": "t3-r1-3",
-      "topic": 3,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
           "x": 4,
           "y": 3,
           "c": "b"
@@ -3170,76 +3117,7 @@
         {
           "x": 4,
           "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 3
-        },
-        {
-          "x": 3,
-          "y": 3
-        },
-        {
-          "x": 3,
-          "y": 4
-        }
-      ]
-    },
-    {
-      "id": "t3-r1-4",
-      "topic": 3,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
           "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
         }
       ],
       "toPlay": "b",
@@ -3255,12 +3133,122 @@
       },
       "captured": [
         {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t3-r1-3",
+      "topic": 3,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
           "x": 2,
-          "y": 3
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
         },
         {
           "x": 2,
-          "y": 2
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "id": "t3-r1-4",
+      "topic": 3,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
         }
       ]
     },
@@ -3273,47 +3261,37 @@
       "stones": [
         {
           "x": 1,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 0,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
           "x": 1,
-          "y": 2,
+          "y": 1,
           "c": "w"
         },
         {
           "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
           "y": 2,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
           "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -3324,22 +3302,18 @@
         "points": [
           {
             "x": 3,
-            "y": 3
+            "y": 1
           }
         ]
       },
       "captured": [
         {
           "x": 2,
-          "y": 3
+          "y": 1
         },
         {
           "x": 1,
-          "y": 3
-        },
-        {
-          "x": 1,
-          "y": 2
+          "y": 1
         }
       ]
     },
@@ -3352,28 +3326,83 @@
       "stones": [
         {
           "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 1,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 0,
-          "y": 2,
+          "y": 3,
           "c": "b"
         },
         {
           "x": 1,
-          "y": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
           "c": "w"
         },
         {
           "x": 2,
-          "y": 2,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t3-r1-7",
+      "topic": 3,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
           "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
         },
         {
           "x": 3,
@@ -3386,217 +3415,8 @@
           "c": "b"
         },
         {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
           "x": 3,
           "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 2
-        },
-        {
-          "x": 2,
-          "y": 2
-        },
-        {
-          "x": 1,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t3-r1-7",
-      "topic": 3,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 2
-        },
-        {
-          "x": 1,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t3-r1-8",
-      "topic": 3,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 4
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 3
-        },
-        {
-          "x": 2,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t3-r1-9",
-      "topic": 3,
-      "rung": 1,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
           "c": "b"
         }
       ],
@@ -3613,12 +3433,122 @@
       },
       "captured": [
         {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ]
+    },
+    {
+      "id": "t3-r1-8",
+      "topic": 3,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
           "x": 2,
-          "y": 3
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t3-r1-9",
+      "topic": 3,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "w"
         },
         {
           "x": 1,
-          "y": 3
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
         }
       ]
     },
@@ -3630,38 +3560,28 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
+          "x": 3,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 0,
+          "x": 4,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
           "y": 2,
           "c": "b"
         },
         {
-          "x": 1,
+          "x": 4,
           "y": 2,
           "c": "w"
         },
         {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
+          "x": 4,
           "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 4,
           "c": "b"
         }
       ],
@@ -3671,18 +3591,18 @@
         "kind": "move",
         "points": [
           {
-            "x": 0,
-            "y": 3
+            "x": 4,
+            "y": 0
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 3
+          "x": 4,
+          "y": 1
         },
         {
-          "x": 1,
+          "x": 4,
           "y": 2
         }
       ]
@@ -3695,48 +3615,33 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 2,
+          "x": 3,
           "y": 0,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 1,
+          "x": 4,
+          "y": 0,
           "c": "b"
         },
         {
-          "x": 1,
+          "x": 3,
           "y": 1,
           "c": "w"
         },
         {
-          "x": 2,
+          "x": 4,
           "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
           "c": "w"
         },
         {
-          "x": 2,
+          "x": 3,
           "y": 2,
           "c": "b"
         },
         {
-          "x": 1,
-          "y": 3,
+          "x": 4,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -3746,23 +3651,19 @@
         "kind": "move",
         "points": [
           {
-            "x": 0,
-            "y": 0
+            "x": 2,
+            "y": 1
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 0
-        },
-        {
-          "x": 1,
+          "x": 3,
           "y": 1
         },
         {
-          "x": 1,
-          "y": 2
+          "x": 4,
+          "y": 1
         }
       ]
     },
@@ -3775,37 +3676,37 @@
       "stones": [
         {
           "x": 2,
-          "y": 2,
+          "y": 0,
           "c": "b"
         },
         {
           "x": 3,
-          "y": 2,
-          "c": "w"
+          "y": 0,
+          "c": "b"
         },
         {
-          "x": 4,
-          "y": 2,
+          "x": 1,
+          "y": 1,
           "c": "b"
         },
         {
           "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
+          "y": 1,
           "c": "w"
         },
         {
-          "x": 4,
-          "y": 3,
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 3,
-          "y": 4,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -3815,7 +3716,7 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
+            "x": 4,
             "y": 1
           }
         ]
@@ -3823,11 +3724,11 @@
       "captured": [
         {
           "x": 3,
-          "y": 2
+          "y": 1
         },
         {
-          "x": 3,
-          "y": 3
+          "x": 2,
+          "y": 1
         }
       ]
     },
@@ -3844,33 +3745,28 @@
           "c": "b"
         },
         {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
           "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
           "y": 2,
           "c": "w"
         },
         {
           "x": 0,
           "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 4,
           "c": "b"
         },
         {
           "x": 1,
-          "y": 4,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -3880,23 +3776,19 @@
         "kind": "move",
         "points": [
           {
-            "x": 1,
+            "x": 2,
             "y": 2
           }
         ]
       },
       "captured": [
         {
-          "x": 0,
+          "x": 1,
           "y": 2
         },
         {
           "x": 0,
-          "y": 3
-        },
-        {
-          "x": 1,
-          "y": 3
+          "y": 2
         }
       ]
     },
@@ -3908,43 +3800,33 @@
       "size": 5,
       "stones": [
         {
-          "x": 0,
-          "y": 0,
-          "c": "b"
-        },
-        {
           "x": 1,
-          "y": 0,
-          "c": "w"
+          "y": 3,
+          "c": "b"
         },
         {
           "x": 2,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
+          "y": 3,
           "c": "w"
         },
         {
           "x": 3,
-          "y": 1,
+          "y": 3,
           "c": "b"
         },
         {
           "x": 1,
-          "y": 2,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
           "c": "b"
         }
       ],
@@ -3962,15 +3844,11 @@
       "captured": [
         {
           "x": 2,
-          "y": 1
+          "y": 3
         },
         {
-          "x": 1,
-          "y": 1
-        },
-        {
-          "x": 1,
-          "y": 0
+          "x": 2,
+          "y": 4
         }
       ]
     },
@@ -3983,28 +3861,13 @@
       "stones": [
         {
           "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
           "y": 1,
           "c": "b"
         },
         {
           "x": 0,
           "y": 2,
-          "c": "b"
+          "c": "w"
         },
         {
           "x": 1,
@@ -4014,6 +3877,16 @@
         {
           "x": 2,
           "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -4023,19 +3896,19 @@
         "kind": "move",
         "points": [
           {
-            "x": 1,
-            "y": 3
+            "x": 0,
+            "y": 1
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
+          "x": 0,
           "y": 2
         },
         {
           "x": 1,
-          "y": 1
+          "y": 2
         }
       ]
     },
@@ -4047,21 +3920,6 @@
       "size": 5,
       "stones": [
         {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
           "x": 3,
           "y": 3,
           "c": "b"
@@ -4069,7 +3927,7 @@
         {
           "x": 1,
           "y": 4,
-          "c": "w"
+          "c": "b"
         },
         {
           "x": 2,
@@ -4078,6 +3936,11 @@
         },
         {
           "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
           "y": 4,
           "c": "b"
         }
@@ -4088,23 +3951,19 @@
         "kind": "move",
         "points": [
           {
-            "x": 0,
-            "y": 4
+            "x": 2,
+            "y": 3
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 4
-        },
-        {
           "x": 2,
           "y": 4
         },
         {
-          "x": 2,
-          "y": 3
+          "x": 3,
+          "y": 4
         }
       ]
     },
@@ -4116,10 +3975,70 @@
       "size": 5,
       "stones": [
         {
-          "x": 4,
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
           "y": 2,
           "c": "b"
         },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "t3-r1-18",
+      "topic": 3,
+      "rung": 1,
+      "mode": "M",
+      "size": 5,
+      "stones": [
         {
           "x": 2,
           "y": 3,
@@ -4133,12 +4052,17 @@
         {
           "x": 4,
           "y": 3,
-          "c": "w"
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "b"
         },
         {
           "x": 3,
           "y": 4,
-          "c": "b"
+          "c": "w"
         },
         {
           "x": 4,
@@ -4163,51 +4087,101 @@
           "y": 3
         },
         {
-          "x": 4,
-          "y": 3
+          "x": 3,
+          "y": 4
         }
       ]
     },
     {
-      "id": "t3-r1-18",
+      "id": "t3-r1-19",
       "topic": 3,
       "rung": 1,
       "mode": "M",
       "size": 5,
       "stones": [
         {
-          "x": 3,
+          "x": 0,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
           "y": 1,
           "c": "b"
         },
         {
           "x": 1,
-          "y": 2,
+          "y": 1,
           "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-0",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
         },
         {
           "x": 2,
-          "y": 2,
+          "y": 0,
           "c": "w"
         },
         {
           "x": 3,
-          "y": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 1,
           "c": "w"
         },
         {
-          "x": 4,
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
           "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
           "c": "b"
         }
       ],
@@ -4225,54 +4199,72 @@
       "captured": [
         {
           "x": 2,
-          "y": 2
+          "y": 0
         },
         {
-          "x": 3,
-          "y": 2
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
         }
       ]
     },
     {
-      "id": "t3-r1-19",
+      "id": "t3-r2-1",
       "topic": 3,
-      "rung": 1,
+      "rung": 2,
       "mode": "M",
       "size": 5,
       "stones": [
         {
-          "x": 1,
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
           "y": 2,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 3,
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
           "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
         },
         {
           "x": 3,
           "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
           "c": "b"
         }
       ],
@@ -4282,48 +4274,56 @@
         "kind": "move",
         "points": [
           {
-            "x": 2,
-            "y": 2
+            "x": 4,
+            "y": 0
           }
         ]
       },
       "captured": [
         {
-          "x": 2,
-          "y": 3
+          "x": 3,
+          "y": 0
         },
         {
-          "x": 1,
-          "y": 3
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 1
         }
       ]
     },
     {
-      "id": "t3-r2-0",
+      "id": "t3-r2-2",
       "topic": 3,
       "rung": 2,
       "mode": "M",
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
           "x": 2,
           "y": 1,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 2,
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
           "c": "b"
         },
         {
           "x": 1,
           "y": 2,
-          "c": "w"
+          "c": "b"
         },
         {
           "x": 2,
@@ -4333,21 +4333,21 @@
         {
           "x": 3,
           "y": 2,
-          "c": "b"
+          "c": "w"
         },
         {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
+          "x": 4,
+          "y": 2,
           "c": "w"
         },
         {
           "x": 2,
-          "y": 4,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 3,
           "c": "b"
         }
       ],
@@ -4364,136 +4364,16 @@
       },
       "captured": [
         {
-          "x": 2,
-          "y": 3
-        },
-        {
-          "x": 2,
-          "y": 2
-        },
-        {
-          "x": 1,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-1",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 0,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 1
-        },
-        {
-          "x": 1,
-          "y": 0
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-2",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "w"
-        },
-        {
           "x": 3,
-          "y": 1,
-          "c": "b"
+          "y": 2
         },
         {
           "x": 2,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 0
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 0
+          "y": 2
         },
         {
-          "x": 2,
-          "y": 1
+          "x": 4,
+          "y": 2
         }
       ]
     },
@@ -4569,14 +4449,9 @@
       "size": 5,
       "stones": [
         {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
           "x": 1,
           "y": 2,
-          "c": "w"
+          "c": "b"
         },
         {
           "x": 2,
@@ -4584,6 +4459,11 @@
           "c": "b"
         },
         {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        },
+        {
           "x": 0,
           "y": 3,
           "c": "b"
@@ -4596,7 +4476,320 @@
         {
           "x": 2,
           "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
           "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-5",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-6",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-7",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-8",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
         },
         {
           "x": 1,
@@ -4611,14 +4804,91 @@
         "points": [
           {
             "x": 1,
-            "y": 1
+            "y": 3
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
           "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-9",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
         },
         {
           "x": 1,
@@ -4627,7 +4897,7 @@
       ]
     },
     {
-      "id": "t3-r2-5",
+      "id": "t3-r2-10",
       "topic": 3,
       "rung": 2,
       "mode": "M",
@@ -4635,6 +4905,31 @@
       "stones": [
         {
           "x": 1,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
           "y": 1,
           "c": "b"
         },
@@ -4649,22 +4944,319 @@
           "c": "w"
         },
         {
-          "x": 0,
-          "y": 3,
+          "x": 2,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 1,
           "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-11",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 1,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 0,
           "c": "w"
         },
         {
           "x": 2,
-          "y": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 2
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-12",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-13",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
           "c": "b"
         },
         {
           "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-14",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 4,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
           "y": 4,
           "c": "b"
         }
@@ -4682,68 +5274,16 @@
       },
       "captured": [
         {
-          "x": 1,
+          "x": 3,
           "y": 2
         },
         {
-          "x": 1,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-6",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
+          "x": 4,
+          "y": 2
         },
         {
           "x": 4,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 4
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 3
+          "y": 1
         },
         {
           "x": 4,
@@ -4752,26 +5292,26 @@
       ]
     },
     {
-      "id": "t3-r2-7",
+      "id": "t3-r2-15",
       "topic": 3,
       "rung": 2,
       "mode": "M",
       "size": 5,
       "stones": [
         {
-          "x": 1,
+          "x": 3,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
           "y": 0,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
           "x": 1,
           "y": 1,
-          "c": "w"
+          "c": "b"
         },
         {
           "x": 2,
@@ -4781,15 +5321,20 @@
         {
           "x": 3,
           "y": 1,
-          "c": "b"
+          "c": "w"
         },
         {
-          "x": 1,
-          "y": 2,
+          "x": 4,
+          "y": 1,
           "c": "b"
         },
         {
           "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
           "y": 2,
           "c": "b"
         }
@@ -4807,600 +5352,15 @@
       },
       "captured": [
         {
-          "x": 2,
-          "y": 1
-        },
-        {
-          "x": 1,
-          "y": 1
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-8",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 0,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "w"
-        },
-        {
           "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 1
-        },
-        {
-          "x": 1,
-          "y": 1
-        },
-        {
-          "x": 1,
           "y": 0
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-9",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 4,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
         },
         {
           "x": 3,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 2
-        },
-        {
-          "x": 4,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-10",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 3
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 2
-        },
-        {
-          "x": 1,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-11",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 3
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 3
-        },
-        {
-          "x": 2,
-          "y": 3
-        },
-        {
-          "x": 1,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-12",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 2
-        },
-        {
-          "x": 3,
-          "y": 3
-        },
-        {
-          "x": 2,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-13",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 3
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 2,
-          "y": 3
-        },
-        {
-          "x": 3,
-          "y": 3
-        },
-        {
-          "x": 3,
-          "y": 4
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-14",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 2
-        },
-        {
-          "x": 1,
-          "y": 3
-        },
-        {
-          "x": 2,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-15",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 0,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 2
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 1,
-          "y": 2
-        },
-        {
-          "x": 1,
           "y": 1
         },
         {
-          "x": 0,
+          "x": 2,
           "y": 1
         }
       ]
@@ -5413,38 +5373,33 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 2,
-          "c": "b"
-        },
-        {
           "x": 2,
-          "y": 2,
+          "y": 0,
           "c": "b"
         },
         {
-          "x": 0,
-          "y": 3,
-          "c": "b"
+          "x": 3,
+          "y": 0,
+          "c": "w"
         },
         {
-          "x": 1,
-          "y": 3,
+          "x": 4,
+          "y": 0,
           "c": "w"
         },
         {
           "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 4,
+          "y": 1,
           "c": "b"
         },
         {
-          "x": 2,
-          "y": 4,
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
           "c": "b"
         }
       ],
@@ -5454,19 +5409,23 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
-            "y": 3
+            "x": 4,
+            "y": 1
           }
         ]
       },
       "captured": [
         {
-          "x": 2,
-          "y": 3
+          "x": 3,
+          "y": 1
         },
         {
-          "x": 1,
-          "y": 3
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
         }
       ]
     },
@@ -5478,39 +5437,128 @@
       "size": 5,
       "stones": [
         {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        },
+        {
           "x": 4,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — capture the group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ]
+      },
+      "captured": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "id": "t3-r2-18",
+      "topic": 3,
+      "rung": 2,
+      "mode": "M",
+      "size": 5,
+      "stones": [
+        {
+          "x": 2,
           "y": 1,
           "c": "b"
         },
         {
           "x": 2,
           "y": 2,
-          "c": "b"
+          "c": "w"
         },
         {
           "x": 3,
           "y": 2,
-          "c": "w"
+          "c": "b"
         },
         {
-          "x": 4,
-          "y": 2,
+          "x": 0,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
           "c": "w"
         },
         {
           "x": 2,
           "y": 3,
-          "c": "b"
+          "c": "w"
         },
         {
           "x": 3,
           "y": 3,
-          "c": "w"
+          "c": "b"
         },
         {
-          "x": 4,
-          "y": 3,
+          "x": 1,
+          "y": 4,
           "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
         },
         {
           "x": 3,
@@ -5524,86 +5572,7 @@
         "kind": "move",
         "points": [
           {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "captured": [
-        {
-          "x": 3,
-          "y": 2
-        },
-        {
-          "x": 3,
-          "y": 3
-        },
-        {
-          "x": 4,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "t3-r2-18",
-      "topic": 3,
-      "rung": 2,
-      "mode": "M",
-      "size": 5,
-      "stones": [
-        {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — capture the group.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
+            "x": 1,
             "y": 2
           }
         ]
@@ -5614,12 +5583,16 @@
           "y": 2
         },
         {
-          "x": 1,
-          "y": 2
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
         },
         {
           "x": 1,
-          "y": 1
+          "y": 3
         }
       ]
     },
@@ -5631,49 +5604,39 @@
       "size": 5,
       "stones": [
         {
-          "x": 1,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
           "x": 3,
           "y": 2,
           "c": "b"
         },
         {
-          "x": 1,
-          "y": 3,
+          "x": 4,
+          "y": 2,
           "c": "b"
         },
         {
           "x": 2,
           "y": 3,
           "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
         }
       ],
       "toPlay": "b",
@@ -5682,23 +5645,27 @@
         "kind": "move",
         "points": [
           {
-            "x": 0,
-            "y": 1
+            "x": 2,
+            "y": 4
           }
         ]
       },
       "captured": [
         {
-          "x": 1,
-          "y": 1
+          "x": 3,
+          "y": 4
         },
         {
-          "x": 1,
-          "y": 2
+          "x": 3,
+          "y": 3
         },
         {
-          "x": 2,
-          "y": 2
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
         }
       ]
     }

@@ -13,17 +13,17 @@ export function buildBank(seed: number): Bank {
   const rng = makeRng(seed);
   const groups: Puzzle[][] = [];
 
-  // Topic 1 — liberties (Q): rung 1 centre, rung 2 edge/corner
-  for (const rung of [1, 2])
-    groups.push(generateLiberties(rng, { rung, size: 5, count: PER_RUNG }));
+  // Topic 1 — liberties (Q): rung 1 open board, rung 2 under attack
+  groups.push(generateLiberties(rng, { rung: 1, size: 5, count: PER_RUNG }));
+  groups.push(generateLiberties(rng, { rung: 2, size: 5, count: PER_RUNG }));
 
-  // Topic 2 — atari & capture (M): single stone
-  for (const rung of [1, 2])
-    groups.push(generateCapture(rng, { topic: 2, rung, minCaptured: 1, size: 5, count: PER_RUNG }));
+  // Topic 2 — capture a single stone: rung 1 interior, rung 2 on the edge
+  groups.push(generateCapture(rng, { topic: 2, rung: 1, size: 5, count: PER_RUNG, groupSize: { min: 1, max: 1 }, region: "interior" }));
+  groups.push(generateCapture(rng, { topic: 2, rung: 2, size: 5, count: PER_RUNG, groupSize: { min: 1, max: 1 }, region: "edge" }));
 
-  // Topic 3 — capturing multiple (M): ≥2 stones
-  for (const rung of [1, 2])
-    groups.push(generateCapture(rng, { topic: 3, rung, minCaptured: 2, size: 5, count: PER_RUNG }));
+  // Topic 3 — capture a group: rung 1 two stones, rung 2 three-four stones
+  groups.push(generateCapture(rng, { topic: 3, rung: 1, size: 5, count: PER_RUNG, groupSize: { min: 2, max: 2 }, region: "any" }));
+  groups.push(generateCapture(rng, { topic: 3, rung: 2, size: 5, count: PER_RUNG, groupSize: { min: 3, max: 4 }, region: "any" }));
 
   return assembleBank(seed, groups);
 }

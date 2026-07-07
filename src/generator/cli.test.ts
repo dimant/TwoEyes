@@ -21,4 +21,20 @@ describe("buildBank", () => {
   it("is deterministic", () => {
     expect(buildBank(20260706)).toEqual(buildBank(20260706));
   });
+
+  it("every rung is fully distinct and topic 1 rung 2 includes an atari (answer 1)", () => {
+    const bank = buildBank(20260706);
+    const groups = new Map<string, typeof bank.puzzles>();
+    for (const p of bank.puzzles) {
+      const k = `t${p.topic}-r${p.rung}`;
+      (groups.get(k) ?? groups.set(k, []).get(k)!).push(p);
+    }
+    for (const [k, g] of groups) {
+      const sigs = new Set(g.map((p) => JSON.stringify({ s: p.stones, sol: p.solution })));
+      expect(sigs.size, `${k} should be fully distinct`).toBe(g.length);
+    }
+    const t1r2 = bank.puzzles.filter((p) => p.topic === 1 && p.rung === 2);
+    const hasAtari = t1r2.some((p) => p.solution.kind === "value" && p.solution.value === 1);
+    expect(hasAtari).toBe(true);
+  });
 });

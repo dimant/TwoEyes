@@ -7,9 +7,26 @@ import { Puzzle } from "../types";
 
 const capturesAtLeast = (k: number): GoalFn => (_b, _m, _c, res) => res.captured.length >= k;
 
-// Grow a connected white blob of `n` stones starting near the centre.
-function growBlob(rng: Rng, size: number, n: number): Point[] | null {
-  const start = { x: randint(rng, 1, size - 2), y: randint(rng, 1, size - 2) };
+type Region = "interior" | "edge" | "any";
+
+function startCell(rng: Rng, size: number, region: Region): Point {
+  if (region === "interior") {
+    return { x: randint(rng, 1, size - 2), y: randint(rng, 1, size - 2) };
+  }
+  if (region === "edge") {
+    const along = randint(rng, 0, size - 1);
+    const side = randint(rng, 0, 3);
+    if (side === 0) return { x: along, y: 0 };
+    if (side === 1) return { x: along, y: size - 1 };
+    if (side === 2) return { x: 0, y: along };
+    return { x: size - 1, y: along };
+  }
+  return { x: randint(rng, 0, size - 1), y: randint(rng, 0, size - 1) };
+}
+
+// Grow a connected white blob of `n` stones from a region-seeded start.
+function growBlob(rng: Rng, size: number, n: number, region: Region): Point[] | null {
+  const start = startCell(rng, size, region);
   const blob: Point[] = [start];
   const inBlob = (p: Point) => blob.some((q) => q.x === p.x && q.y === p.y);
   while (blob.length < n) {
@@ -27,30 +44,36 @@ function growBlob(rng: Rng, size: number, n: number): Point[] | null {
 
 export function generateCapture(
   rng: Rng,
-  opts: { topic: number; rung: number; minCaptured: number; size: number; count: number },
+  opts: {
+    topic: number;
+    rung: number;
+    size: number;
+    count: number;
+    groupSize: { min: number; max: number };
+    region: Region;
+  },
 ): Puzzle[] {
-  const { topic, rung, minCaptured, size, count } = opts;
+  const { topic, rung, size, count, groupSize, region } = opts;
+  const minCaptured = groupSize.min;
   const out: Puzzle[] = [];
+  const seen = new Set<string>();
   let guard = 0;
 
-  while (out.length < count && guard++ < count * 500) {
-    const n = minCaptured === 1 ? 1 : randint(rng, minCaptured, minCaptured + 1);
-    const blob = growBlob(rng, size, n);
+  while (out.length < count && guard++ < count * 800) {
+    const n = randint(rng, groupSize.min, groupSize.max);
+    const blob = growBlob(rng, size, n, region);
     if (!blob) continue;
 
     const board = new Board(size);
     for (const s of blob) board.set(s.x, s.y, "w");
 
-    // outside liberties of the blob
     const libs: Point[] = group(board, blob[0]!.x, blob[0]!.y).liberties;
-    if (libs.length < 2) continue; // need one to leave open
+    if (libs.length < 2) continue; // need one liberty to leave open
 
     const shuffled = shuffle(rng, libs);
-    const leaveOpen = shuffled[0] as Point;
-    const fill = shuffled.slice(1);
+    const fill = shuffled.slice(1); // leave shuffled[0] open
     for (const p of fill) board.set(p.x, p.y, "b");
 
-    // black surrounding stones must not themselves be pre-captured / in atari-that-breaks-uniqueness
     const v = validateM(board, "b", capturesAtLeast(minCaptured), "unique");
     if (!v.valid) continue;
 
@@ -58,17 +81,28 @@ export function generateCapture(
     const res = play(board, sol.x, sol.y, "b");
     if (!res.ok || res.captured.length < minCaptured) continue;
 
-    out.push({
-      id: "tmp", topic, rung, mode: "M", size,
-      stones: board.stones(), toPlay: "b",
+    const puzzle: Puzzle = {
+      id: "tmp",
+      topic,
+      rung,
+      mode: "M",
+      size,
+      stones: board.stones(),
+      toPlay: "b",
       prompt: minCaptured >= 2 ? "Black to play — capture the group." : "Black to play — capture the stone.",
       solution: { kind: "move", points: [sol] },
       captured: res.captured,
-    });
+    };
+
+    const sig = JSON.stringify({ s: puzzle.stones, sol });
+    if (seen.has(sig)) continue;
+    seen.add(sig);
+    out.push(puzzle);
   }
+
   if (out.length < count) {
     throw new Error(
-      `generateCapture: produced ${out.length}/${count} puzzles (topic ${topic}, rung ${rung}, minCaptured ${minCaptured}, size ${size})`,
+      `generateCapture: produced ${out.length}/${count} puzzles (topic ${topic}, rung ${rung}, region ${region}, groupSize ${groupSize.min}-${groupSize.max}, size ${size})`,
     );
   }
   return out;
