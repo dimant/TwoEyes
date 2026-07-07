@@ -9,10 +9,12 @@ describe("buildBank", () => {
       const k = `t${p.topic}-r${p.rung}`;
       byRung.set(k, (byRung.get(k) ?? 0) + 1);
     }
-    // topics 1,2,3 each have rungs 1 and 2
-    for (const t of [1, 2, 3])
+    // topics 1-6 each have rungs 1 and 2
+    for (const t of [1, 2, 3, 4, 5, 6])
       for (const r of [1, 2])
         expect(byRung.get(`t${t}-r${r}`)).toBe(20);
+
+    expect(bank.puzzles).toHaveLength(240);
 
     const ids = bank.puzzles.map((p) => p.id);
     expect(new Set(ids).size).toBe(ids.length); // all unique
@@ -30,7 +32,7 @@ describe("buildBank", () => {
       (groups.get(k) ?? groups.set(k, []).get(k)!).push(p);
     }
     for (const [k, g] of groups) {
-      const sigs = new Set(g.map((p) => JSON.stringify({ s: p.stones, sol: p.solution })));
+      const sigs = new Set(g.map((p) => JSON.stringify({ s: p.stones, sol: p.solution, m: p.marks })));
       expect(sigs.size, `${k} should be fully distinct`).toBe(g.length);
     }
     const t1r2 = bank.puzzles.filter((p) => p.topic === 1 && p.rung === 2);
