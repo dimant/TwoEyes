@@ -8,3 +8,6 @@ tsumego/
 
 # subagent-driven-development scratch (briefs, reports, ledger)
 .superpowers/
+
+# vite-plugin-pwa dev output
+dev-dist/
