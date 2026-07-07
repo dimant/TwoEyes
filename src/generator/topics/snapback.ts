@@ -20,6 +20,21 @@ export function snapbackWorks(board: Board, p: Point): { ok: boolean; recaptured
   return { ok: true, recaptured: r3.captured.length };
 }
 
+// A snapback throw-in is always played next to the white group — scan only those points.
+function whiteAdjacentEmpties(board: Board): Point[] {
+  const out: Point[] = [];
+  const seen = new Set<string>();
+  for (const s of board.stones()) {
+    if (s.c !== "w") continue;
+    for (const n of board.neighbors(s.x, s.y)) {
+      if (board.get(n.x, n.y) !== null) continue;
+      const k = `${n.x},${n.y}`;
+      if (!seen.has(k)) { seen.add(k); out.push(n); }
+    }
+  }
+  return out;
+}
+
 export function generateSnapback(
   rng: Rng,
   opts: { rung: number; size: number; count: number; minRecapture: number },
@@ -29,7 +44,7 @@ export function generateSnapback(
   const seen = new Set<string>();
   let guard = 0;
 
-  while (out.length < count && guard++ < count * 8000) {
+  while (out.length < count && guard++ < count * 20000) {
     const board = new Board(size);
     // a white blob of 2–4 stones
     const c: Point = { x: randint(rng, 1, size - 2), y: randint(rng, 1, size - 2) };
@@ -49,13 +64,11 @@ export function generateSnapback(
     // clean: black not in atari
     if (board.stones().some((s) => s.c === "b" && group(board, s.x, s.y).liberties.length <= 1)) continue;
 
-    // search every empty point for a working throw-in
+    // search white-adjacent empties for a working throw-in
     let throwin: Point | null = null;
-    for (let y = 0; y < size && !throwin; y++)
-      for (let x = 0; x < size; x++) {
-        if (board.get(x, y) !== null) continue;
-        if (snapbackWorks(board, { x, y }).recaptured >= minRecapture) { throwin = { x, y }; break; }
-      }
+    for (const P of whiteAdjacentEmpties(board)) {
+      if (snapbackWorks(board, P).recaptured >= minRecapture) { throwin = P; break; }
+    }
     if (!throwin) continue;
 
     const puzzle: Puzzle = {
