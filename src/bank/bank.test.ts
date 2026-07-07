@@ -5,6 +5,8 @@ import { play } from "../engine/rules";
 import { group, libertyCount } from "../engine/liberties";
 import { goalMoves } from "../generator/validate";
 import { isSelfAtari } from "../generator/topics/selfatari";
+import { capturedUnderBestPlay } from "../generator/reader";
+import { snapbackWorks } from "../generator/topics/snapback";
 import type { Bank, Puzzle } from "../generator/types";
 
 // Solvability suite for the committed bank: every shipped puzzle is replayed
@@ -18,15 +20,15 @@ const norm = (pts: Point[]): string =>
   pts.map((p) => `${p.x},${p.y}`).sort().join(" ");
 
 describe("bank.json — shape", () => {
-  it("has 240 puzzles, 20 per topic-rung, unique ids", () => {
-    expect(bank.puzzles).toHaveLength(240);
-    expect(new Set(bank.puzzles.map((p) => p.id)).size).toBe(240);
+  it("has 360 puzzles, 20 per topic-rung, unique ids", () => {
+    expect(bank.puzzles).toHaveLength(360);
+    expect(new Set(bank.puzzles.map((p) => p.id)).size).toBe(360);
     const by = new Map<string, number>();
     for (const p of bank.puzzles) {
       const k = `t${p.topic}-r${p.rung}`;
       by.set(k, (by.get(k) ?? 0) + 1);
     }
-    for (const t of [1, 2, 3, 4, 5, 6]) for (const r of [1, 2]) expect(by.get(`t${t}-r${r}`)).toBe(20);
+    for (const t of [1, 2, 3, 4, 5, 6, 7, 10, 11]) for (const r of [1, 2]) expect(by.get(`t${t}-r${r}`)).toBe(20);
   });
 });
 
@@ -173,4 +175,56 @@ describe("bank.json — self-atari rungs are balanced with real tension (topic 5
       }
     });
   }
+});
+
+const connectPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 7 && p.rung === 1).map((p) => [p.id, p]);
+const cutterPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 7 && p.rung === 2).map((p) => [p.id, p]);
+const netPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 10).map((p) => [p.id, p]);
+const snapPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 11).map((p) => [p.id, p]);
+
+function oneBlackGroupAfter(p: Puzzle, mv: { x: number; y: number }): boolean {
+  const r = play(Board.from(p.size, p.stones), mv.x, mv.y, "b");
+  if (!r.ok) return false;
+  const keys = new Set(r.board.stones().filter((s) => s.c === "b").map((s) => group(r.board, s.x, s.y).stones.map((q) => `${q.x},${q.y}`).sort().join(";")));
+  return keys.size === 1;
+}
+
+describe("bank.json — connect puzzles merge Black (topic 7 r1)", () => {
+  it.each(connectPuzzles)("%s: the move joins Black into one group", (_id, p) => {
+    expect(p.solution.kind).toBe("move");
+    if (p.solution.kind !== "move") return;
+    expect(oneBlackGroupAfter(p, p.solution.points[0]!)).toBe(true);
+  });
+});
+
+describe("bank.json — cutter puzzles capture the white stone (topic 7 r2)", () => {
+  it.each(cutterPuzzles)("%s: the move captures ≥1", (_id, p) => {
+    expect(p.solution.kind).toBe("move");
+    if (p.solution.kind !== "move") return;
+    const r = play(Board.from(p.size, p.stones), p.solution.points[0]!.x, p.solution.points[0]!.y, "b");
+    expect(r.captured.length).toBeGreaterThanOrEqual(1);
+  });
+});
+
+describe("bank.json — net puzzles trap the target (topic 10)", () => {
+  it.each(netPuzzles)("%s: every listed move nets the marked stone", (_id, p) => {
+    expect(p.marks).toHaveLength(1);
+    const t = p.marks![0]!;
+    if (p.solution.kind !== "move") return;
+    expect(capturedUnderBestPlay(Board.from(p.size, p.stones), t, "w", 8)).toBe(false);
+    for (const mv of p.solution.points) {
+      const r = play(Board.from(p.size, p.stones), mv.x, mv.y, "b");
+      expect(r.ok).toBe(true);
+      expect(r.captured).toHaveLength(0);
+      expect(group(r.board, t.x, t.y).liberties.length).toBe(2);
+      expect(capturedUnderBestPlay(r.board, t, "w", 8)).toBe(true);
+    }
+  });
+});
+
+describe("bank.json — snapback puzzles recapture (topic 11)", () => {
+  it.each(snapPuzzles)("%s: the throw-in snaps back ≥2", (_id, p) => {
+    if (p.solution.kind !== "move") return;
+    expect(snapbackWorks(Board.from(p.size, p.stones), p.solution.points[0]!).recaptured).toBeGreaterThanOrEqual(2);
+  });
 });
