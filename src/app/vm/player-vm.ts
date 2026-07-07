@@ -1,6 +1,6 @@
 import { Observable } from "./observable";
 import type { PuzzleBank } from "../model/bank";
-import type { ProgressStore } from "../model/progress";
+import { MASTERY, type ProgressStore } from "../model/progress";
 import { checkAnswer, type Input } from "../model/answer";
 import type { Puzzle } from "../model/types";
 
@@ -61,13 +61,9 @@ export class PlayerViewModel extends Observable<PlayerState> {
 
   next(): void {
     this.index += 1;
-    const puzzle = this.queue[this.index] ?? null;
-    this.set({
-      puzzle,
-      phase: "idle",
-      misses: 0,
-      mastery: this.progress.masteryCount(this.topic, this.rung),
-      done: puzzle === null,
-    });
+    const mastery = this.progress.masteryCount(this.topic, this.rung);
+    // The rung is finished once it's mastered — don't march through all 20 puzzles.
+    const puzzle = mastery >= MASTERY ? null : (this.queue[this.index] ?? null);
+    this.set({ puzzle, phase: "idle", misses: 0, mastery, done: puzzle === null });
   }
 }

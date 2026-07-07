@@ -92,6 +92,18 @@ body {
 
 /* player */
 .player { gap: 4px; }
+.player-head { display: flex; align-items: center; justify-content: space-between; margin: -4px 0 8px; }
+.back {
+  appearance: none; border: 1px solid var(--hair); background: var(--panel); color: var(--ink);
+  font: inherit; font-weight: 600; font-size: 13px; padding: 7px 12px; border-radius: 99px; cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.back:hover { border-color: var(--accent); color: var(--accent); }
+.back:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+.pips { display: flex; gap: 6px; align-items: center; }
+.pip { width: 10px; height: 10px; border-radius: 99px; background: var(--hair); transition: background .2s, transform .2s; }
+.pip.on { background: var(--accent); transform: scale(1.05); }
+.done-note .sub { color: var(--muted); font-size: 14px; margin: -2px 0 8px; }
 .prompt { padding: 2px 2px 10px; }
 .prompt .who { font-size: 12px; color: var(--muted); font-weight: 600; }
 .prompt .q {

@@ -68,4 +68,18 @@ describe("PlayerViewModel", () => {
     expect(v.snapshot.phase).toBe("revealed");
     expect(v.snapshot.mastery).toBe(0);
   });
+
+  it("the rung ends at mastery (4 correct), not after the whole queue", () => {
+    const big: Bank = { seed: 0, stage: "A", puzzles: ["a", "b", "c", "d", "e", "f"].map(mkMove) };
+    const pb = new PuzzleBank(big);
+    const v = new PlayerViewModel(pb, new ProgressStore(memStore(), pb.rungRefs()), 2, 1);
+    for (let i = 0; i < 4; i++) {
+      v.submit({ kind: "move", point: { x: 1, y: 1 } });
+      expect(v.snapshot.phase).toBe("correct");
+      v.next();
+    }
+    expect(v.snapshot.mastery).toBe(4);
+    expect(v.snapshot.done).toBe(true); // done after 4, with puzzles still left in the queue
+    expect(v.snapshot.puzzle).toBeNull();
+  });
 });
