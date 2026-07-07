@@ -27,5 +27,11 @@ describe("PlayerScreen", () => {
     expect(tapFor23).toBeDefined();
     fireEvent.click(tapFor23!);
     expect(screen.getByText(/Correct/)).toBeDefined();
+
+    // Next advances the queue; with one puzzle in the rung, that reaches the done state
+    fireEvent.click(screen.getByRole("button", { name: /Next/ }));
+    expect(screen.getByText(/Rung complete/)).toBeDefined();
+    fireEvent.click(screen.getByRole("button", { name: /Back to map/ }));
+    expect(onExit).toHaveBeenCalledTimes(1);
   });
 });
