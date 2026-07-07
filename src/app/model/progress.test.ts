@@ -47,4 +47,12 @@ describe("ProgressStore", () => {
     const b = new ProgressStore(storage, refs);
     expect(b.rungCleared(1, 1)).toBe(true);
   });
+
+  it("survives corrupted storage without throwing (starts fresh)", () => {
+    const bad = { getItem: () => "}{ not json", setItem: () => {} };
+    const ps = new ProgressStore(bad, refs);
+    expect(ps.masteryCount(1, 1)).toBe(0);
+    ps.record(1, 1, true);
+    expect(ps.masteryCount(1, 1)).toBe(1); // still usable
+  });
 });

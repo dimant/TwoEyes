@@ -1,7 +1,9 @@
 export type Color = "b" | "w";
 export interface Pt { x: number; y: number; }
 export interface Stone extends Pt { c: Color; }
-export type Mode = "M" | "Q-count" | "Q-binary";
+// Mirrors src/generator/types.ts. "Q-choice" isn't used by the current bank but is
+// kept in the union so the two hand-maintained copies don't silently diverge.
+export type Mode = "M" | "Q-count" | "Q-binary" | "Q-choice";
 export interface Mark { x: number; y: number; kind: "mark" | "target" | "atari"; }
 export type Solution =
   | { kind: "move"; points: Pt[] }

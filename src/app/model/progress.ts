@@ -12,8 +12,23 @@ export class ProgressStore {
   private counts: Record<string, number>;
 
   constructor(private readonly storage: KeyValue, private readonly refs: RungRef[]) {
-    const raw = storage.getItem(KEY);
-    this.counts = raw ? (JSON.parse(raw) as Record<string, number>) : {};
+    this.counts = ProgressStore.parse(storage.getItem(KEY));
+  }
+
+  // Tolerate corrupted/absent storage: keep only finite-number entries, else start fresh.
+  private static parse(raw: string | null): Record<string, number> {
+    if (!raw) return {};
+    try {
+      const obj = JSON.parse(raw) as unknown;
+      if (!obj || typeof obj !== "object") return {};
+      const out: Record<string, number> = {};
+      for (const [k, v] of Object.entries(obj as Record<string, unknown>)) {
+        if (typeof v === "number" && Number.isFinite(v)) out[k] = v;
+      }
+      return out;
+    } catch {
+      return {};
+    }
   }
 
   private key(topic: number, rung: number): string { return `${topic}-${rung}`; }
