@@ -1,6 +1,6 @@
 import { Board, Point } from "../../engine/board";
 import { libertyCount } from "../../engine/liberties";
-import { Rng, randint, pick, shuffle } from "../../engine/rng";
+import { Rng, randint, shuffle } from "../../engine/rng";
 import { Puzzle } from "../types";
 
 export function generateLiberties(
@@ -36,6 +36,11 @@ export function generateLiberties(
       solution: { kind: "value", value },
       marks: [{ x: mark.x, y: mark.y, kind: "mark" }],
     });
+  }
+  if (out.length < count) {
+    throw new Error(
+      `generateLiberties: produced ${out.length}/${count} puzzles (rung ${rung}, size ${size})`,
+    );
   }
   return out;
 }
