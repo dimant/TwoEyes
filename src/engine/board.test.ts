@@ -36,4 +36,17 @@ describe("Board", () => {
     const b = Board.from(5, [{ x: 0, y: 0, c: "b" }, { x: 4, y: 4, c: "w" }]);
     expect(b.stones()).toEqual([{ x: 0, y: 0, c: "b" }, { x: 4, y: 4, c: "w" }]);
   });
+
+  it("get returns null for out-of-bounds coordinates (no aliasing)", () => {
+    const b = new Board(5);
+    b.set(0, 1, "b");
+    expect(b.get(5, 0)).toBeNull(); // must NOT alias to (0,1)
+    expect(b.get(-1, 0)).toBeNull();
+  });
+
+  it("set throws for out-of-bounds coordinates", () => {
+    const b = new Board(5);
+    expect(() => b.set(5, 0, "b")).toThrow();
+    expect(() => b.set(0, -1, "w")).toThrow();
+  });
 });

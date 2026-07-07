@@ -26,9 +26,15 @@ export class Board {
     return x >= 0 && y >= 0 && x < this.size && y < this.size;
   }
 
-  get(x: number, y: number): Cell { return this.grid[this.idx(x, y)] ?? null; }
+  get(x: number, y: number): Cell {
+    if (!this.inBounds(x, y)) return null;
+    return this.grid[this.idx(x, y)] ?? null;
+  }
 
-  set(x: number, y: number, c: Cell): void { this.grid[this.idx(x, y)] = c; }
+  set(x: number, y: number, c: Cell): void {
+    if (!this.inBounds(x, y)) throw new RangeError(`out of bounds: (${x}, ${y})`);
+    this.grid[this.idx(x, y)] = c;
+  }
 
   clone(): Board {
     const b = new Board(this.size);
