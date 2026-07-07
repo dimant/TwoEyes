@@ -190,10 +190,23 @@ function oneBlackGroupAfter(p: Puzzle, mv: { x: number; y: number }): boolean {
 }
 
 describe("bank.json — connect puzzles merge Black (topic 7 r1)", () => {
-  it.each(connectPuzzles)("%s: the move joins Black into one group", (_id, p) => {
+  it.each(connectPuzzles)("%s: starts as >=2 black groups; a unique move joins them into one", (_id, p) => {
     expect(p.solution.kind).toBe("move");
     if (p.solution.kind !== "move") return;
-    expect(oneBlackGroupAfter(p, p.solution.points[0]!)).toBe(true);
+    const before = Board.from(p.size, p.stones);
+    const groupsBefore = new Set(
+      before.stones().filter((s) => s.c === "b").map((s) => group(before, s.x, s.y).stones.map((q) => `${q.x},${q.y}`).sort().join(";")),
+    );
+    expect(groupsBefore.size).toBeGreaterThanOrEqual(2);
+    let mergers = 0;
+    let theMove: { x: number; y: number } | null = null;
+    for (let y = 0; y < p.size; y++)
+      for (let x = 0; x < p.size; x++) {
+        if (before.get(x, y) !== null) continue;
+        if (oneBlackGroupAfter(p, { x, y })) { mergers++; theMove = { x, y }; }
+      }
+    expect(mergers).toBe(1);
+    expect(theMove).toEqual(p.solution.points[0]);
   });
 });
 
@@ -223,8 +236,19 @@ describe("bank.json — net puzzles trap the target (topic 10)", () => {
 });
 
 describe("bank.json — snapback puzzles recapture (topic 11)", () => {
-  it.each(snapPuzzles)("%s: the throw-in snaps back ≥2", (_id, p) => {
+  it.each(snapPuzzles)("%s: every listed throw-in snaps back >= min, and the set is complete", (_id, p) => {
     if (p.solution.kind !== "move") return;
-    expect(snapbackWorks(Board.from(p.size, p.stones), p.solution.points[0]!).recaptured).toBeGreaterThanOrEqual(2);
+    const min = p.rung === 2 ? 3 : 2;
+    const board = Board.from(p.size, p.stones);
+    const listed = new Set(p.solution.points.map((pt) => `${pt.x},${pt.y}`));
+    for (const pt of p.solution.points) {
+      expect(snapbackWorks(board, pt).recaptured).toBeGreaterThanOrEqual(min);
+    }
+    // completeness: no other point that snaps back >= min is missing from the solution
+    for (let y = 0; y < p.size; y++)
+      for (let x = 0; x < p.size; x++) {
+        if (board.get(x, y) !== null) continue;
+        if (snapbackWorks(board, { x, y }).recaptured >= min) expect(listed.has(`${x},${y}`)).toBe(true);
+      }
   });
 });

@@ -64,19 +64,18 @@ export function generateSnapback(
     // clean: black not in atari
     if (board.stones().some((s) => s.c === "b" && group(board, s.x, s.y).liberties.length <= 1)) continue;
 
-    // search white-adjacent empties for a working throw-in
-    let throwin: Point | null = null;
-    for (const P of whiteAdjacentEmpties(board)) {
-      if (snapbackWorks(board, P).recaptured >= minRecapture) { throwin = P; break; }
-    }
-    if (!throwin) continue;
+    // collect EVERY working throw-in (any-valid) so the grader accepts all correct answers
+    const throwins = whiteAdjacentEmpties(board).filter(
+      (P) => snapbackWorks(board, P).recaptured >= minRecapture,
+    );
+    if (throwins.length === 0) continue;
 
     const puzzle: Puzzle = {
       id: "tmp", topic: 11, rung, mode: "M", size, stones: board.stones(), toPlay: "b",
       prompt: "Black to play — set up a snapback.",
-      solution: { kind: "move", points: [throwin] },
+      solution: { kind: "move", points: throwins },
     };
-    const sig = JSON.stringify({ s: puzzle.stones, sol: throwin });
+    const sig = JSON.stringify({ s: puzzle.stones });
     if (seen.has(sig)) continue;
     seen.add(sig);
     out.push(puzzle);
