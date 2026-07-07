@@ -1,4 +1,4 @@
-import { Board, Stone, Point } from "../../engine/board";
+import { Board, Point } from "../../engine/board";
 import { play } from "../../engine/rules";
 import { group } from "../../engine/liberties";
 import { validateM, GoalFn } from "../validate";
@@ -65,6 +65,11 @@ export function generateCapture(
       solution: { kind: "move", points: [sol] },
       captured: res.captured,
     });
+  }
+  if (out.length < count) {
+    throw new Error(
+      `generateCapture: produced ${out.length}/${count} puzzles (topic ${topic}, rung ${rung}, minCaptured ${minCaptured}, size ${size})`,
+    );
   }
   return out;
 }

@@ -28,7 +28,16 @@ describe("generateCapture", () => {
   it("captures ≥2 stones for topic 3", () => {
     const puzzles = generateCapture(makeRng(2), { topic: 3, rung: 1, minCaptured: 2, size: 5, count: 5 });
     for (const p of puzzles) {
-      expect(p.captured!.length).toBeGreaterThanOrEqual(2);
+      expect(p.solution.kind).toBe("move");
+      if (p.solution.kind === "move") {
+        expect(p.solution.points).toHaveLength(1);
+        const b = Board.from(p.size, p.stones);
+        const pt = p.solution.points[0]!;
+        const r = play(b, pt.x, pt.y, "b");
+        expect(r.ok).toBe(true);
+        expect(r.captured.length).toBeGreaterThanOrEqual(2);
+        expect(p.captured).toEqual(r.captured);
+      }
     }
   });
 
