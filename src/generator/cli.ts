@@ -6,6 +6,9 @@ import { generateCapture } from "./topics/atari";
 import { generateEscape } from "./topics/escape";
 import { generateSelfAtari } from "./topics/selfatari";
 import { generateDoubleAtari } from "./topics/doubleatari";
+import { generateConnect, generateCaptureCutter } from "./topics/connectcut";
+import { generateNet } from "./topics/net";
+import { generateSnapback } from "./topics/snapback";
 import { assembleBank, writeBank } from "./bank";
 import { Bank, Puzzle } from "./types";
 
@@ -66,6 +69,18 @@ export function buildBank(seed: number): Bank {
   // Topic 6 — double atari: two rungs
   groups.push(curateRung(generateDoubleAtari(rng, { rung: 1, size: 7, count: PER_RUNG })));
   groups.push(curateRung(generateDoubleAtari(rng, { rung: 2, size: 7, count: PER_RUNG })));
+
+  // Topic 7 — connect & cut: rung 1 connect, rung 2 capture the cutting stone
+  groups.push(curateRung(generateConnect(rng, { size: 5, count: PER_RUNG })));
+  groups.push(curateRung(generateCaptureCutter(rng, { size: 5, count: PER_RUNG })));
+
+  // Topic 10 — net (geta): rung 1 shallow reads, rung 2 deeper
+  groups.push(curateRung(generateNet(rng, { rung: 1, size: 7, count: PER_RUNG, depth: 4 })));
+  groups.push(curateRung(generateNet(rng, { rung: 2, size: 7, count: PER_RUNG, depth: 8 })));
+
+  // Topic 11 — snapback: rung 1 recapture ≥2, rung 2 recapture ≥3
+  groups.push(curateRung(generateSnapback(rng, { rung: 1, size: 7, count: PER_RUNG, minRecapture: 2 })));
+  groups.push(curateRung(generateSnapback(rng, { rung: 2, size: 7, count: PER_RUNG, minRecapture: 3 })));
 
   return assembleBank(seed, groups);
 }

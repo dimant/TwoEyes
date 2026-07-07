@@ -4,6 +4,7 @@ import type { MapViewModel } from "../vm/map-vm";
 export const TOPIC_TITLES: Record<number, string> = {
   1: "Liberties", 2: "Capture a stone", 3: "Capture a group",
   4: "Escape atari", 5: "Don't self-atari", 6: "Double atari",
+  7: "Connect & cut", 10: "Net", 11: "Snapback",
 };
 
 export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: number, rung: number) => void }) {
