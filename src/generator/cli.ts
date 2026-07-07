@@ -17,13 +17,13 @@ export function buildBank(seed: number): Bank {
   groups.push(generateLiberties(rng, { rung: 1, size: 5, count: PER_RUNG }));
   groups.push(generateLiberties(rng, { rung: 2, size: 5, count: PER_RUNG }));
 
-  // Topic 2 — capture a single stone: rung 1 interior, rung 2 on the edge
-  groups.push(generateCapture(rng, { topic: 2, rung: 1, size: 5, count: PER_RUNG, groupSize: { min: 1, max: 1 }, region: "interior" }));
-  groups.push(generateCapture(rng, { topic: 2, rung: 2, size: 5, count: PER_RUNG, groupSize: { min: 1, max: 1 }, region: "edge" }));
+  // Topic 2 — capture a single stone: rung 1 interior, rung 2 on the edge (roomy 7x7 frame)
+  groups.push(generateCapture(rng, { topic: 2, rung: 1, size: 7, count: PER_RUNG, groupSize: { min: 1, max: 1 }, region: "interior" }));
+  groups.push(generateCapture(rng, { topic: 2, rung: 2, size: 7, count: PER_RUNG, groupSize: { min: 1, max: 1 }, region: "edge" }));
 
-  // Topic 3 — capture a group: rung 1 two stones, rung 2 three-four stones
-  groups.push(generateCapture(rng, { topic: 3, rung: 1, size: 5, count: PER_RUNG, groupSize: { min: 2, max: 2 }, region: "any" }));
-  groups.push(generateCapture(rng, { topic: 3, rung: 2, size: 5, count: PER_RUNG, groupSize: { min: 3, max: 4 }, region: "any" }));
+  // Topic 3 — capture a group: rung 1 two stones, rung 2 three-four stones (roomy 7x7 frame)
+  groups.push(generateCapture(rng, { topic: 3, rung: 1, size: 7, count: PER_RUNG, groupSize: { min: 2, max: 2 }, region: "any" }));
+  groups.push(generateCapture(rng, { topic: 3, rung: 2, size: 7, count: PER_RUNG, groupSize: { min: 3, max: 4 }, region: "any" }));
 
   return assembleBank(seed, groups);
 }

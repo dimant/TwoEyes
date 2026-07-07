@@ -81,6 +81,14 @@ export function generateCapture(
     const res = play(board, sol.x, sol.y, "b");
     if (!res.ok || res.captured.length < minCaptured) continue;
 
+    // Clean shape: reject if any surrounding black stone is itself in atari in the
+    // problem position — a beginner shouldn't see their own helper stone one move
+    // from capture next to the target.
+    const blackInAtari = board
+      .stones()
+      .some((st) => st.c === "b" && group(board, st.x, st.y).liberties.length <= 1);
+    if (blackInAtari) continue;
+
     const puzzle: Puzzle = {
       id: "tmp",
       topic,
