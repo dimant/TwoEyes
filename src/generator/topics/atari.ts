@@ -3,44 +3,10 @@ import { play } from "../../engine/rules";
 import { group } from "../../engine/liberties";
 import { validateM, GoalFn } from "../validate";
 import { Rng, randint, shuffle } from "../../engine/rng";
+import { Region, growBlob } from "../geometry";
 import { Puzzle } from "../types";
 
 const capturesAtLeast = (k: number): GoalFn => (_b, _m, _c, res) => res.captured.length >= k;
-
-type Region = "interior" | "edge" | "any";
-
-function startCell(rng: Rng, size: number, region: Region): Point {
-  if (region === "interior") {
-    return { x: randint(rng, 1, size - 2), y: randint(rng, 1, size - 2) };
-  }
-  if (region === "edge") {
-    const along = randint(rng, 0, size - 1);
-    const side = randint(rng, 0, 3);
-    if (side === 0) return { x: along, y: 0 };
-    if (side === 1) return { x: along, y: size - 1 };
-    if (side === 2) return { x: 0, y: along };
-    return { x: size - 1, y: along };
-  }
-  return { x: randint(rng, 0, size - 1), y: randint(rng, 0, size - 1) };
-}
-
-// Grow a connected white blob of `n` stones from a region-seeded start.
-function growBlob(rng: Rng, size: number, n: number, region: Region): Point[] | null {
-  const start = startCell(rng, size, region);
-  const blob: Point[] = [start];
-  const inBlob = (p: Point) => blob.some((q) => q.x === p.x && q.y === p.y);
-  while (blob.length < n) {
-    const frontier: Point[] = [];
-    for (const s of blob)
-      for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
-        const p = { x: s.x + dx, y: s.y + dy };
-        if (p.x >= 0 && p.y >= 0 && p.x < size && p.y < size && !inBlob(p)) frontier.push(p);
-      }
-    if (frontier.length === 0) return null;
-    blob.push(shuffle(rng, frontier)[0] as Point);
-  }
-  return blob;
-}
 
 export function generateCapture(
   rng: Rng,
