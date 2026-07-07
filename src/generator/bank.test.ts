@@ -14,4 +14,9 @@ describe("assembleBank", () => {
     expect(bank.seed).toBe(1);
     expect(bank.puzzles.map((p) => p.id)).toEqual(["t1-r1-0", "t1-r1-1", "t2-r1-0"]);
   });
+
+  it("keeps ids unique when the same topic+rung spans two groups", () => {
+    const bank = assembleBank(1, [[mk(1, 1)], [mk(1, 1), mk(1, 1)]]);
+    expect(bank.puzzles.map((p) => p.id)).toEqual(["t1-r1-0", "t1-r1-1", "t1-r1-2"]);
+  });
 });

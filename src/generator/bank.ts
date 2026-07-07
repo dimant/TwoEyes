@@ -3,8 +3,8 @@ import { Bank, Puzzle } from "./types";
 
 export function assembleBank(seed: number, groups: Puzzle[][]): Bank {
   const puzzles: Puzzle[] = [];
+  const counters = new Map<string, number>();
   for (const group of groups) {
-    const counters = new Map<string, number>();
     for (const p of group) {
       const key = `t${p.topic}-r${p.rung}`;
       const n = counters.get(key) ?? 0;
