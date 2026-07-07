@@ -31,3 +31,18 @@ describe("MapScreen rung selection", () => {
     expect(onOpen).toHaveBeenLastCalledWith(1, 2);
   });
 });
+
+describe("MapScreen skip-ahead", () => {
+  const bank2: Bank = { seed: 0, stage: "A", puzzles: [mk(1, 1, "a"), mk(1, 2, "b"), mk(2, 1, "c"), mk(2, 2, "d")] };
+  it("a locked topic ignores a single tap but jumps in on a triple-tap", () => {
+    const pb = new PuzzleBank(bank2);
+    const map = new MapViewModel(pb, new ProgressStore(mem(), pb.rungRefs()));
+    const onOpen = vi.fn();
+    render(<MapScreen map={map} onOpen={onOpen} />);
+    const locked = screen.getByRole("button", { name: /Capture a stone/ }); // topic 2, locked
+    fireEvent.click(locked, { detail: 1 });
+    expect(onOpen).not.toHaveBeenCalled();
+    fireEvent.click(locked, { detail: 3 });
+    expect(onOpen).toHaveBeenCalledWith(2, 1);
+  });
+});

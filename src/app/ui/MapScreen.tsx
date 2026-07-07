@@ -19,8 +19,12 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
           <li key={r.topic}>
             <button
               className={`tcard ${r.cleared ? "done" : r.unlocked ? "cur" : "lock"}`}
-              disabled={!r.unlocked}
-              onClick={() => onOpen(r.topic, r.openRung)}
+              // Unlocked topics open on a normal tap. Locked ones stay put on a single
+              // tap but jump straight in on a triple-tap (a skip-ahead shortcut).
+              onClick={(e) => {
+                if (r.unlocked || e.detail >= 3) onOpen(r.topic, r.openRung);
+              }}
+              title={r.unlocked ? undefined : "Locked — triple-tap to jump in"}
             >
               <span className="idx">{r.cleared ? "✓" : r.topic}</span>
               <span className="tmeta">
