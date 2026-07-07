@@ -2,6 +2,3 @@ node_modules/
 dist/
 *.log
 .DS_Store
-
-# nested upstream reference repo, tracked separately
-tsumego/
