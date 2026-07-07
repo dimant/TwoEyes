@@ -36,9 +36,11 @@ export function generateDoubleAtari(
     const board = new Board(size);
     const dirs = shuffle(rng, board.neighbors(p.x, p.y));
     if (dirs.length < 2) continue;
-    const whites = [dirs[0]!, dirs[1]!];
-    board.set(whites[0].x, whites[0].y, "w");
-    board.set(whites[1].x, whites[1].y, "w");
+    const w0 = dirs[0]!;
+    const w1 = dirs[1]!;
+    board.set(w0.x, w0.y, "w");
+    board.set(w1.x, w1.y, "w");
+    const whites = [w0, w1];
 
     // Give each white exactly two liberties: P plus one kept escape; fill the rest with black.
     let ok = true;
