@@ -96,7 +96,7 @@ describe("bank.json — escape puzzles are solvable (topic 4)", () => {
       expect(group(r.board, target.x, target.y).liberties.length).toBeGreaterThanOrEqual(2);
     }
     for (const s of p.stones)
-      if (s.c === "b" && !(s.x === target.x && s.y === target.y))
+      if (s.c === "w")
         expect(group(before, s.x, s.y).liberties.length).toBeGreaterThanOrEqual(2);
   });
 });
