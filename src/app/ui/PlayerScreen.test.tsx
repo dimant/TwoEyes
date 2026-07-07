@@ -1,0 +1,31 @@
+import { describe, it, expect, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { PlayerScreen } from "./PlayerScreen";
+import { PlayerViewModel } from "../vm/player-vm";
+import { PuzzleBank } from "../model/bank";
+import { ProgressStore } from "../model/progress";
+import type { Bank } from "../model/types";
+
+const bank: Bank = { seed: 0, stage: "A", puzzles: [{
+  id: "a", topic: 2, rung: 1, mode: "M", size: 5, toPlay: "b", prompt: "Capture.",
+  stones: [{ x: 2, y: 2, c: "w" }, { x: 1, y: 2, c: "b" }, { x: 3, y: 2, c: "b" }, { x: 2, y: 1, c: "b" }],
+  solution: { kind: "move", points: [{ x: 2, y: 3 }] }, captured: [{ x: 2, y: 2 }],
+}]};
+function mem() { const m = new Map<string, string>(); return { getItem: (k: string) => m.get(k) ?? null, setItem: (k: string, v: string) => void m.set(k, v) }; }
+
+describe("PlayerScreen", () => {
+  it("tapping the solution point shows Correct and advances on Next", () => {
+    const pb = new PuzzleBank(bank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 2, 1);
+    const onExit = vi.fn();
+    const { container } = render(<PlayerScreen player={vm} onExit={onExit} />);
+    expect(screen.getByText("Capture.")).toBeDefined();
+    // tap intersection (2,3): find its tap target and click
+    const taps = container.querySelectorAll("[data-tap]");
+    // the tap for (2,3) — find and click it
+    const tapFor23 = Array.from(taps).find((t) => t.getAttribute("cx") === "104" && t.getAttribute("cy") === "144");
+    expect(tapFor23).toBeDefined();
+    fireEvent.click(tapFor23!);
+    expect(screen.getByText(/Correct/)).toBeDefined();
+  });
+});
