@@ -43,17 +43,21 @@ This is a well-understood go tactical-reading routine; the plan pins the exact m
 
 All generated with the established **construct-and-verify** approach (build a canonical shape in varied positions/orientations → verify the mechanic with the engine/reader → dedupe → curate), 20 distinct puzzles per rung, fail-loud if a rung can't fill.
 
-### Topic 7 — Connect & cut (M, no reader needed)
-- **Rung 1 — Connect:** two friendly black groups one move from joining; the solution is the point that **merges them into a single group**. Goal (single engine step): after Black plays P, the stones that were two distinct black groups are one group. No capture.
+**Gentle ramp (design principle).** These are the first topics that require *reading ahead*, so the ramp is deliberate:
+- **Topic order = easy→hard, and unlock is linear in that order: Connect & cut → Net → Snapback.** Connect & cut is barely-reading; the net is one short read; the snapback (sacrifice to recapture) is the conceptual jump, so it comes last.
+- **Every topic's rung 1 is its purest textbook shape at the shallowest reading depth; rung 2 introduces variation** (edges, orientation, longer reads). A learner always meets a technique in its clearest form before any twist.
+
+### Topic 7 — Connect & cut (M, no reader needed) — *the bridge from Stage A*
+- **Rung 1 — Connect:** deliberately Stage-A-easy — two friendly black groups one move from joining; the solution is the point that **merges them into a single group** (single engine step: after Black plays P, two distinct black groups become one). No capture. This rung is the gentle on-ramp.
 - **Rung 2 — Capture the cutting stone:** a white stone cutting two black groups is capturable in one move; solution captures it. **Reuses the existing capture goal** (`captured ≥ 1`, unique). Has a `captured` field (animates like topics 2/3).
 
 ### Topic 10 — Net / geta (M, reader-verified)
 - The white target has 2 liberties; the black **net point** (a loose, knight's-move-style enclosure) is the solution. Verified: `play(P)` is legal and captures nothing immediately, and `capturedUnderBestPlay(afterP, target, White-to-move, depth)` is **true** (White can't escape any direction). Reject positions where a plain ladder or a direct atari would also work, so the taught technique is genuinely the net.
-- Rungs: r1 lone stone in open space; r2 near an edge / against a would-be ladder-breaker.
+- **Rung 1 = the shortest, clearest geta** — a lone stone in open space where the capture resolves in the fewest plies (cap the verified reading depth low, e.g. ≤ 4, so rung 1 is genuinely obvious). **Rung 2** — near an edge / against a would-be ladder-breaker / deeper reads.
 
-### Topic 11 — Snapback (M, sequence-verified)
+### Topic 11 — Snapback (M, sequence-verified) — *last, the conceptual jump*
 - Construct the canonical snapback shape (a black shape with a capturable cutting/eye point). The **throw-in point** is the solution. Verified by replaying the fixed 3-ply mechanic through the engine: Black P (throw-in) → White captures it → the capturing white group is now in atari → Black recaptures **≥ 2** white stones. Introduces *damezumari* (shortage of liberties) in the prompt copy.
-- Rungs: r1 the textbook 3-stone snapback; r2 a slightly larger recapture / edge variant.
+- **Rung 1 = the minimal textbook 3-stone snapback** (single canonical shape, recapture exactly 2, shortest sequence). **Rung 2** — a larger recapture / edge variant.
 
 ---
 
@@ -61,7 +65,7 @@ All generated with the established **construct-and-verify** approach (build a ca
 
 - `mode: "M"`, `solution: {kind:"move", points:[P]}`. Prompts explain the (delayed) payoff, e.g. *"Black to play — net the stone so it can't run,"* *"Black to play — set up a snapback."*
 - Topic 7 rung 2 (capture) carries `captured`; nets and snapbacks and connects do **not** capture on the played move, so no `captured`/animation — just "Correct!" + prompt. This is the accepted B.1 tradeoff.
-- **App: unchanged.** Board taps for M already work; `openRung`, mastery, pips, progression all apply. Topic titles/order extend the existing map (topics 7–11 appear after 1–6; still gated by linear unlock).
+- **App: unchanged.** Board taps for M already work; `openRung`, mastery, pips, progression all apply. New topic titles extend the map (7 Connect & cut, 10 Net, 11 Snapback appear after 1–6). Linear unlock runs over the topics that *exist* in the bank, so it naturally skips the not-yet-built 8/9 (topic 10 unlocks once 7 is cleared). The map will show a number gap (…7, 10, 11) until B.2 fills 8/9 — cosmetic, accepted for now.
 - Bank grows from 240 → **360** puzzles (3 topics × 2 rungs × 20 = 120 new; note topics 8/9 arrive with B.2, so Stage B isn't contiguous until then — the map shows what exists).
 
 ---
