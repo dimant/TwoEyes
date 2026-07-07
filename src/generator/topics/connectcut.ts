@@ -24,12 +24,12 @@ export function generateConnect(rng: Rng, opts: { size: number; count: number })
   const out: Puzzle[] = [];
   const seen = new Set<string>();
   let guard = 0;
-  const DIRS = [[1, 0], [0, 1]] as const;
+  const DIRS: [number, number][] = [[1, 0], [0, 1]];
 
   while (out.length < count && guard++ < count * 800) {
     const board = new Board(size);
     // two black stones two apart along a random axis, gap in the middle
-    const [dx, dy] = shuffle(rng, DIRS as unknown as number[][])[0]!;
+    const [dx, dy] = shuffle(rng, DIRS)[0]!;
     const a: Point = { x: randint(rng, 0, size - 1 - 2 * dx), y: randint(rng, 0, size - 1 - 2 * dy) };
     const b: Point = { x: a.x + 2 * dx, y: a.y + 2 * dy };
     const mid: Point = { x: a.x + dx, y: a.y + dy };
