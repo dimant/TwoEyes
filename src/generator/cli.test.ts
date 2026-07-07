@@ -37,4 +37,15 @@ describe("buildBank", () => {
     const hasAtari = t1r2.some((p) => p.solution.kind === "value" && p.solution.value === 1);
     expect(hasAtari).toBe(true);
   });
+
+  it("curation spreads difficulty: each topic-1 rung opens with three different answers", () => {
+    const bank = buildBank(20260706);
+    for (const rung of [1, 2]) {
+      const firstThree = bank.puzzles
+        .filter((p) => p.topic === 1 && p.rung === rung)
+        .slice(0, 3)
+        .map((p) => (p.solution.kind === "value" ? p.solution.value : -1));
+      expect(new Set(firstThree).size, `t1-r${rung} opening variety`).toBe(3);
+    }
+  });
 });
