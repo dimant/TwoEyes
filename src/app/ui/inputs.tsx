@@ -1,3 +1,5 @@
+export interface ChoiceOption { id: string; label: string; }
+
 export function NumberPad({ onPick }: { onPick: (n: number) => void }) {
   return (
     <div className="numpad">
@@ -8,11 +10,12 @@ export function NumberPad({ onPick }: { onPick: (n: number) => void }) {
   );
 }
 
-export function YesNo({ onPick }: { onPick: (id: "self-atari" | "safe") => void }) {
+export function YesNo({ options, onPick }: { options: [ChoiceOption, ChoiceOption]; onPick: (id: string) => void }) {
   return (
     <div className="yesno">
-      <button className="num" onClick={() => onPick("self-atari")}>Self-atari</button>
-      <button className="num" onClick={() => onPick("safe")}>Safe</button>
+      {options.map((o) => (
+        <button key={o.id} className="num" onClick={() => onPick(o.id)}>{o.label}</button>
+      ))}
     </div>
   );
 }

@@ -7,8 +7,13 @@ import type { Lesson } from "../content/lessons";
 import { Board } from "./Board";
 import { PayoffBoard } from "./PayoffBoard";
 import { LessonScreen } from "./LessonScreen";
-import { NumberPad, YesNo } from "./inputs";
+import { NumberPad, YesNo, type ChoiceOption } from "./inputs";
 import { Feedback } from "./Feedback";
+
+const Q_CHOICES: Record<number, [ChoiceOption, ChoiceOption]> = {
+  5: [{ id: "self-atari", label: "Self-atari" }, { id: "safe", label: "Safe" }],
+  9: [{ id: "caught", label: "Caught" }, { id: "escapes", label: "Escapes" }],
+};
 
 function PlayerHead({ mastery, onExit, onLearn }: { mastery: number; onExit: () => void; onLearn?: () => void }) {
   return (
@@ -84,7 +89,9 @@ export function PlayerScreen({
         )}
       </div>
       {!resolved && p.mode === "Q-count" && <NumberPad onPick={(n) => submit({ kind: "value", value: n })} />}
-      {!resolved && p.mode === "Q-binary" && <YesNo onPick={(id) => submit({ kind: "choice", id })} />}
+      {!resolved && p.mode === "Q-binary" && (
+        <YesNo options={Q_CHOICES[p.topic]!} onPick={(id) => submit({ kind: "choice", id })} />
+      )}
       {!resolved && p.mode === "M" && <p className="hint">Tap a point to play.</p>}
       {s.phase !== "idle" && (
         <Feedback

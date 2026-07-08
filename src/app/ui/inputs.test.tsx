@@ -10,12 +10,12 @@ describe("inputs", () => {
     expect(onPick).toHaveBeenCalledWith(3);
   });
 
-  it("YesNo maps buttons to solution ids", () => {
+  it("YesNo renders the supplied options and reports the tapped id", () => {
     const onPick = vi.fn();
-    render(<YesNo onPick={onPick} />);
-    fireEvent.click(screen.getByRole("button", { name: /self-atari/i }));
-    expect(onPick).toHaveBeenCalledWith("self-atari");
-    fireEvent.click(screen.getByRole("button", { name: /safe/i }));
-    expect(onPick).toHaveBeenCalledWith("safe");
+    render(<YesNo options={[{ id: "caught", label: "Caught" }, { id: "escapes", label: "Escapes" }]} onPick={onPick} />);
+    fireEvent.click(screen.getByRole("button", { name: /caught/i }));
+    expect(onPick).toHaveBeenCalledWith("caught");
+    fireEvent.click(screen.getByRole("button", { name: /escapes/i }));
+    expect(onPick).toHaveBeenCalledWith("escapes");
   });
 });
