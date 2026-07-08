@@ -58,9 +58,9 @@ attempts. Name: *two eyes* = a group with two eyes lives.
 Phases are ordered by value. Each is a self-contained chunk producing working, testable
 software. Detailed specs/plans live under `docs/superpowers/`.
 
-### Phase 5 — Stage B.2: sequence engine + ladders  🔜 *next*
+### Phase 5 — Stage B.2: sequence engine + ladders  ✅ *shipped*
 
-> **5a shipped** — nets/snapbacks reveal their capture move-by-move. **5b.1 shipped** — ladder (8) generator + animated payoff. **5b.2** (ladder-breaker) is the next slice.
+> **5a shipped** — nets/snapbacks reveal their capture move-by-move. **5b.1 shipped** — ladder (8) generator + animated payoff. **5b.2 shipped** — ladder-breaker (9), Q-binary recognition + breaker highlight. **Stage B complete** (topics 1–11 all ship). The interactive "you play → engine responds" player mode was consciously dropped in the 5b.1 pivot (ladders branch, so pick-the-start beat hand-play-every-move).
 
 The spine of the roadmap: turn the app from "solve one move" into "read a sequence."
 - **Sequence engine** — solution *trees* + an interactive "you play → engine responds →
