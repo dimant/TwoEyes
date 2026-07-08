@@ -20,15 +20,15 @@ const norm = (pts: Point[]): string =>
   pts.map((p) => `${p.x},${p.y}`).sort().join(" ");
 
 describe("bank.json — shape", () => {
-  it("has 360 puzzles, 20 per topic-rung, unique ids", () => {
-    expect(bank.puzzles).toHaveLength(360);
-    expect(new Set(bank.puzzles.map((p) => p.id)).size).toBe(360);
+  it("has 400 puzzles, 20 per topic-rung, unique ids", () => {
+    expect(bank.puzzles).toHaveLength(400);
+    expect(new Set(bank.puzzles.map((p) => p.id)).size).toBe(400);
     const by = new Map<string, number>();
     for (const p of bank.puzzles) {
       const k = `t${p.topic}-r${p.rung}`;
       by.set(k, (by.get(k) ?? 0) + 1);
     }
-    for (const t of [1, 2, 3, 4, 5, 6, 7, 10, 11]) for (const r of [1, 2]) expect(by.get(`t${t}-r${r}`)).toBe(20);
+    for (const t of [1, 2, 3, 4, 5, 6, 7, 8, 10, 11]) for (const r of [1, 2]) expect(by.get(`t${t}-r${r}`)).toBe(20);
   });
 });
 
@@ -288,5 +288,50 @@ describe("bank.json — snapback payoff snaps the group off (topic 11)", () => {
       board = res.board;
     }
     expect(lastCap).toBeGreaterThanOrEqual(min);
+  });
+});
+
+const ladderPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 8).map((p) => [p.id, p]);
+
+describe("bank.json — ladder puzzles catch the stone (topic 8)", () => {
+  it.each(ladderPuzzles)("%s: unique opening atari; payoff replays to the target's capture", (_id, p) => {
+    expect(p.solution.kind).toBe("move");
+    if (p.solution.kind !== "move") return;
+    expect(p.solution.points).toHaveLength(1);
+    const sol = p.solution.points[0]!;
+    const t = p.marks![0]!;
+    // move 0 of the payoff is the opening atari (the solution)
+    expect(p.payoff && p.payoff.length).toBeGreaterThan(0);
+    expect(p.payoff![0]!.x).toBe(sol.x);
+    expect(p.payoff![0]!.y).toBe(sol.y);
+    expect(p.payoff!.filter((m) => m.c === "b").length).toBeGreaterThanOrEqual(2);
+    // replay the payoff -> target captured, each stored `captures` is engine-truth
+    let board = Board.from(p.size, p.stones);
+    for (const m of p.payoff!) {
+      const res = play(board, m.x, m.y, m.c);
+      expect(res.ok).toBe(true);
+      expect(norm(res.captured)).toBe(norm(m.captures ?? []));
+      board = res.board;
+    }
+    expect(board.get(t.x, t.y)).toBeNull();
+    // the opening atari is the UNIQUE winning opening among the target's liberties
+    const before = Board.from(p.size, p.stones);
+    const winners = group(before, t.x, t.y).liberties.filter((m) => {
+      const r = play(Board.from(p.size, p.stones), m.x, m.y, "b");
+      if (!r.ok) return false;
+      if (r.board.get(t.x, t.y) === null) return true;
+      if (group(r.board, t.x, t.y).liberties.length !== 1) return false;
+      return capturedUnderBestPlay(r.board, t, "w", 8);
+    });
+    expect(winners).toHaveLength(1);
+    // rung 2: the other atari is a legal atari that escapes (tempting wrong turn)
+    if (p.rung === 2) {
+      const other = group(before, t.x, t.y).liberties.find((l) => !(l.x === sol.x && l.y === sol.y));
+      expect(other).toBeDefined();
+      const r = play(before, other!.x, other!.y, "b");
+      expect(r.ok).toBe(true);
+      expect(group(r.board, t.x, t.y).liberties.length).toBe(1);
+      expect(capturedUnderBestPlay(r.board, t, "w", 8)).toBe(false);
+    }
   });
 });

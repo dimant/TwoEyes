@@ -11,7 +11,7 @@ describe("PuzzleBank", () => {
   const pb = new PuzzleBank(bank);
 
   it("lists the current topics in order (Stage A 1-6 + Stage B 7,10,11)", () => {
-    expect(pb.topics()).toEqual([1, 2, 3, 4, 5, 6, 7, 10, 11]);
+    expect(pb.topics()).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 10, 11]);
   });
 
   it("lists two rungs per topic", () => {
@@ -27,8 +27,8 @@ describe("PuzzleBank", () => {
 
   it("rungRefs enumerates every rung in topic-major order", () => {
     const refs = pb.rungRefs();
-    expect(refs).toHaveLength(18);
+    expect(refs).toHaveLength(20);
     expect(refs[0]).toEqual({ topic: 1, rung: 1 });
-    expect(refs[17]).toEqual({ topic: 11, rung: 2 });
+    expect(refs[19]).toEqual({ topic: 11, rung: 2 });
   });
 });
