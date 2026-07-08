@@ -25,8 +25,8 @@ const marked = (l: Lesson, kind: "mark" | "target") =>
   (l.diagram.marks ?? []).filter((m) => m.kind === kind);
 
 describe("lessons content", () => {
-  it("covers exactly the 9 current topics, each with title and body", () => {
-    expect(LESSONS.map((l) => l.topic)).toEqual([1, 2, 3, 4, 5, 6, 7, 10, 11]);
+  it("covers exactly the 10 current topics, each with title and body", () => {
+    expect(LESSONS.map((l) => l.topic)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 10, 11]);
     for (const l of LESSONS) {
       expect(l.title.length).toBeGreaterThan(0);
       expect(l.body.length).toBeGreaterThanOrEqual(2);
@@ -109,6 +109,21 @@ describe("lessons content", () => {
     expect(r.ok).toBe(true);
     if (!r.ok) return;
     expect(group(r.board, key(l).x, key(l).y).stones.length).toBe(3);
+  });
+
+  it("T8: the lesson ladder replays legally and captures the marked stone; move 0 is the key move", () => {
+    const l = lessonFor(8)!;
+    const t = marked(l, "mark")[0]!;
+    expect(l.diagram.payoff && l.diagram.payoff.length).toBeGreaterThan(0);
+    expect(l.diagram.payoff![0]).toMatchObject(key(l)); // opening atari == keyMove
+    let bd = boardOf(l.diagram.stones, l.diagram.size);
+    for (const m of l.diagram.payoff!) {
+      const r = play(bd, m.x, m.y, m.c);
+      expect(r.ok).toBe(true);
+      if (!r.ok) return;
+      bd = r.board;
+    }
+    expect(bd.get(t.x, t.y)).toBeNull();
   });
 
   it("T10: the marked stone is alive before, and the key move nets it (2 libs, captured under best play)", () => {
