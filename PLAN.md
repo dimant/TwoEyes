@@ -36,7 +36,7 @@ attempts. Name: *two eyes* = a group with two eyes lives.
 | 10 | Net (geta) | M |
 | 11 | Snapback | M |
 
-*(Topics 8/9 — ladders — are intentionally gapped; they need the sequence engine below.)*
+*(Topic 9 — ladder-breaker — is intentionally gapped; it needs the sequence engine below.)*
 
 ### App
 - **MVVM core** — `src/app/model/` (types, `PuzzleBank`, `checkAnswer`, `ProgressStore`) and
@@ -58,7 +58,7 @@ software. Detailed specs/plans live under `docs/superpowers/`.
 
 ### Phase 5 — Stage B.2: sequence engine + ladders  🔜 *next*
 
-> **5a shipped** — nets/snapbacks reveal their capture move-by-move. **5b** (interactive player + ladders) is the next slice.
+> **5a shipped** — nets/snapbacks reveal their capture move-by-move. **5b.1 shipped** — ladder (8) generator + animated payoff. **5b.2** (ladder-breaker) is the next slice.
 
 The spine of the roadmap: turn the app from "solve one move" into "read a sequence."
 - **Sequence engine** — solution *trees* + an interactive "you play → engine responds →
@@ -102,7 +102,8 @@ Status: ✅ done · 🔜 next · 📋 planned · 💡 backlog
 | 5a | Move-sequence primitive + `annotate` | ✅ | engine-verified `payoff` on Puzzle/Lesson |
 | 5a | Animated net/snapback payoff (reveals + lessons) | ✅ | auto-play once + Replay; reduced-motion snaps |
 | 5b | Interactive sequence player (you play → engine replies) | 🔜 | reuses the 5a `DemoMove` primitive |
-| 5b | Ladder (8) + Ladder-breaker (9) generators | 🔜 | reuse the capture-reader; bank → ~480 |
+| 5b.1 | Ladder (8) — pick-the-start + animated payoff | ✅ | reuses 5a payoff; bank → 400 |
+| 5b.2 | Ladder-breaker (9) generator | 🔜 | recognise a failing ladder; bank → ~420 |
 | 6 | Animate capture on reveal | 📋 | small, self-contained |
 | 6 | Lessons browser on the map | 📋 | replay any concept |
 | 6 | Light/dark toggle + keyboard board input | 📋 | accessibility/polish |
