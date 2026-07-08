@@ -5,12 +5,13 @@ export interface BoardProps {
   reveal?: boolean;
   onTapPoint?: (p: Pt) => void;
   stones?: Stone[];
+  breaker?: Pt;
 }
 
 const CELL = 40;
 const M = 24;
 
-export function Board({ puzzle, reveal, onTapPoint, stones: override }: BoardProps) {
+export function Board({ puzzle, reveal, onTapPoint, stones: override, breaker }: BoardProps) {
   const { size } = puzzle;
   const stones = override ?? puzzle.stones;
   const W = M * 2 + (size - 1) * CELL;
@@ -52,6 +53,9 @@ export function Board({ puzzle, reveal, onTapPoint, stones: override }: BoardPro
       {reveal && (puzzle.captured ?? []).map((c, i) => (
         <circle key={`c${i}`} cx={px(c.x)} cy={px(c.y)} r={r + 4} fill="none" stroke="var(--warn)" strokeWidth={2.5} strokeDasharray="4 4" />
       ))}
+      {reveal && breaker && (
+        <circle className="breaker" cx={px(breaker.x)} cy={px(breaker.y)} r={r + 5} fill="none" stroke="var(--warn)" strokeWidth={3} />
+      )}
       {stones.map((s, i) => (
         <g key={`s${i}`}>
           <circle className="stone" cx={px(s.x)} cy={px(s.y)} r={r}

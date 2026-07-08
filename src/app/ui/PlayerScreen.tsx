@@ -84,10 +84,12 @@ export function PlayerScreen({
           <Board
             puzzle={p}
             reveal={resolved}
+            breaker={resolved ? p.breaker : undefined}
             onTapPoint={p.mode === "M" && !resolved ? (pt) => submit({ kind: "move", point: pt }) : undefined}
           />
         )}
       </div>
+      {resolved && p.breaker && <p className="hint">This white stone breaks the ladder — it can't be caught.</p>}
       {!resolved && p.mode === "Q-count" && <NumberPad onPick={(n) => submit({ kind: "value", value: n })} />}
       {!resolved && p.mode === "Q-binary" && (
         <YesNo options={Q_CHOICES[p.topic]!} onPick={(id) => submit({ kind: "choice", id })} />
