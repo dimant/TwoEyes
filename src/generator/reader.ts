@@ -86,6 +86,10 @@ export function captureLine(board: Board, target: Point, toMove: Color, depth: n
     const line: PlayedMove[] = [{ x: m.x, y: m.y, c: "w" }, ...tail];
     if (longest === null || line.length > longest.length) longest = line;
   }
-  if (!anyMove) return []; // no legal defender move -> captured in place
+  // No legal defender move (every liberty/rescue is itself illegal, e.g. suicide) —
+  // the group is still on the board with a real liberty open, so play does NOT
+  // auto-remove it. White effectively has no say here; hand the turn straight
+  // back to Black to play the actual capturing move.
+  if (!anyMove) return captureLine(board, target, "b", depth - 1);
   return longest;
 }

@@ -57,4 +57,25 @@ describe("captureLine", () => {
     const b = Board.from(5, [{ x: 2, y: 2, c: "w" }, { x: 1, y: 2, c: "b" }, { x: 3, y: 2, c: "b" }]);
     expect(captureLine(b, { x: 2, y: 2 }, "b", 8)).toBeNull();
   });
+
+  it("finishes the capture even when the defender's only liberty is itself a suicide (no legal save)", () => {
+    // A net shape (from a real bank puzzle, t10-r1-4) where White's forced final
+    // extension would fill its own group's last liberty with no compensating
+    // capture -> illegal. The defender loop then has zero legal moves; the old
+    // code mistook that for "captured in place" and returned early, one ply
+    // short of actually removing the group from the board.
+    const b = Board.from(7, [
+      { x: 3, y: 4, c: "b" }, { x: 3, y: 5, c: "w" }, { x: 4, y: 5, c: "b" },
+      { x: 2, y: 6, c: "b" }, { x: 4, y: 6, c: "b" }, { x: 2, y: 4, c: "b" },
+    ]);
+    const line = captureLine(b, { x: 3, y: 5 }, "w", 8);
+    expect(line).not.toBeNull();
+    let board = b;
+    for (const m of line!) {
+      const r = play(board, m.x, m.y, m.c);
+      expect(r.ok).toBe(true);
+      board = r.board;
+    }
+    expect(board.get(3, 5)).toBeNull();
+  });
 });
