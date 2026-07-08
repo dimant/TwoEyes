@@ -61,4 +61,27 @@ describe("PlayerScreen", () => {
     fireEvent.click(screen.getByRole("button", { name: /Show the lesson/ }));
     expect(screen.getByText(/Start practicing/)).toBeDefined(); // lesson reopened
   });
+
+  it("a solved puzzle with a payoff shows the animated Replay, not the static reveal", () => {
+    vi.useFakeTimers();
+    try {
+      const netBank: Bank = { seed: 0, stage: "B", puzzles: [{
+        id: "n", topic: 10, rung: 1, mode: "M", size: 5, toPlay: "b", prompt: "Net it.",
+        stones: [{ x: 2, y: 2, c: "w" }, { x: 1, y: 2, c: "b" }, { x: 3, y: 2, c: "b" }, { x: 2, y: 1, c: "b" }],
+        solution: { kind: "move", points: [{ x: 2, y: 3 }] },
+        payoff: [{ x: 2, y: 3, c: "b", captures: [{ x: 2, y: 2 }] }],
+      }]};
+      const pb = new PuzzleBank(netBank);
+      const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 10, 1);
+      const { container } = render(<PlayerScreen player={vm} onExit={vi.fn()} />);
+      const tap = Array.from(container.querySelectorAll("[data-tap]")).find(
+        (t) => t.getAttribute("cx") === "104" && t.getAttribute("cy") === "144",
+      );
+      fireEvent.click(tap!);
+      expect(screen.getByText(/Correct/)).toBeDefined();
+      expect(screen.getByRole("button", { name: /Replay/ })).toBeDefined();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
 });
