@@ -65,6 +65,8 @@ export function generateLadder(
     const line = captureLine(board, t, "b", 8);
     if (!line) continue;
     if (line.filter((m) => m.c === "b").length < 2) continue; // a real multi-step ladder
+    // move 0 must be the unique opening atari we chose (structural, not inferred)
+    if (line[0]!.x !== opening.x || line[0]!.y !== opening.y) continue;
     const payoff = annotate(size, board.stones(), line);
 
     const puzzle: Puzzle = {
