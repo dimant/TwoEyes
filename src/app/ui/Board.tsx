@@ -6,12 +6,14 @@ export interface BoardProps {
   onTapPoint?: (p: Pt) => void;
   stones?: Stone[];
   breaker?: Pt;
+  /** The point the learner tapped — drawn as a placed stone with a ring ("your move"). */
+  pick?: Pt;
 }
 
 const CELL = 40;
 const M = 24;
 
-export function Board({ puzzle, reveal, onTapPoint, stones: override, breaker }: BoardProps) {
+export function Board({ puzzle, reveal, onTapPoint, stones: override, breaker, pick }: BoardProps) {
   const { size } = puzzle;
   const stones = override ?? puzzle.stones;
   const W = M * 2 + (size - 1) * CELL;
@@ -78,6 +80,20 @@ export function Board({ puzzle, reveal, onTapPoint, stones: override, breaker }:
           <circle cx={px(p.x)} cy={px(p.y)} r={r + 3} fill="none" stroke="var(--accent)" strokeWidth={2.6} />
         </g>
       ))}
+      {pick && (
+        <g className="pick">
+          {!occupied(pick.x, pick.y) && (
+            <>
+              <circle className="stone" cx={px(pick.x)} cy={px(pick.y)} r={r}
+                fill={puzzle.toPlay === "b" ? "var(--black)" : "var(--white)"}
+                stroke={puzzle.toPlay === "b" ? "var(--black-rim)" : "var(--white-rim)"} strokeWidth={1.2} />
+              <ellipse cx={px(pick.x) - r * 0.3} cy={px(pick.y) - r * 0.34} rx={r * 0.32} ry={r * 0.22}
+                fill={puzzle.toPlay === "b" ? "rgba(255,255,255,.18)" : "rgba(255,255,255,.7)"} />
+            </>
+          )}
+          <circle className="pick-ring" cx={px(pick.x)} cy={px(pick.y)} r={r + 4} fill="none" stroke="var(--accent)" strokeWidth={3.4} />
+        </g>
+      )}
       {taps}
     </svg>
   );

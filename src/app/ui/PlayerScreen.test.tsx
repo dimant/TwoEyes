@@ -62,6 +62,18 @@ describe("PlayerScreen", () => {
     expect(screen.getByText(/Start practicing/)).toBeDefined(); // lesson reopened
   });
 
+  it("shows the tapped point as a circled stone (your move)", () => {
+    const pb = new PuzzleBank(bank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 2, 1);
+    const { container } = render(<PlayerScreen player={vm} onExit={vi.fn()} />);
+    expect(container.querySelectorAll("circle.pick-ring").length).toBe(0); // nothing picked yet
+    const tap = Array.from(container.querySelectorAll("[data-tap]")).find(
+      (t) => t.getAttribute("cx") === "104" && t.getAttribute("cy") === "144",
+    );
+    fireEvent.click(tap!);
+    expect(container.querySelectorAll("circle.pick-ring").length).toBe(1);
+  });
+
   it("a solved puzzle with a payoff shows the stepped payoff (Next move), not the static reveal", () => {
     const netBank: Bank = { seed: 0, stage: "B", puzzles: [{
       id: "n", topic: 10, rung: 1, mode: "M", size: 5, toPlay: "b", prompt: "Net it.",

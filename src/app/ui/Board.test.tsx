@@ -49,4 +49,22 @@ describe("Board", () => {
     const { container: shown } = render(<Board puzzle={esc} reveal breaker={esc.breaker} />);
     expect(shown.querySelectorAll("circle.breaker").length).toBe(1);
   });
+
+  it("draws the pick as a placed stone with a ring on an empty point", () => {
+    const { container } = render(<Board puzzle={capture} pick={{ x: 0, y: 0 }} />);
+    expect(container.querySelectorAll("circle.pick-ring").length).toBe(1);
+    // the 4 puzzle stones + the one placed at the picked empty point
+    expect(container.querySelectorAll("circle.stone").length).toBe(5);
+  });
+
+  it("rings an already-occupied pick point without adding a second stone", () => {
+    const { container } = render(<Board puzzle={capture} pick={{ x: 2, y: 2 }} />);
+    expect(container.querySelectorAll("circle.pick-ring").length).toBe(1);
+    expect(container.querySelectorAll("circle.stone").length).toBe(4);
+  });
+
+  it("draws no pick marker when pick is unset", () => {
+    const { container } = render(<Board puzzle={capture} />);
+    expect(container.querySelectorAll("circle.pick-ring").length).toBe(0);
+  });
 });

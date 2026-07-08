@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useViewModel } from "../useViewModel";
 import type { PlayerViewModel } from "../vm/player-vm";
+import type { Pt } from "../model/types";
 import type { Input } from "../model/answer";
 import { MASTERY } from "../model/progress";
 import type { Lesson } from "../content/lessons";
@@ -43,6 +44,7 @@ export function PlayerScreen({
   onLessonSeen?: () => void;
 }) {
   const s = useViewModel(player);
+  const [pick, setPick] = useState<Pt | null>(null);
   // Auto-open the lesson the first time this topic is entered; the Learn button reopens it.
   const [showLesson, setShowLesson] = useState(!!lesson && !lessonSeen);
   const dismissLesson = () => { setShowLesson(false); onLessonSeen?.(); };
@@ -69,6 +71,8 @@ export function PlayerScreen({
   const p = s.puzzle;
   const resolved = s.phase === "correct" || s.phase === "revealed";
   const submit = (i: Input) => player.submit(i);
+  // Show the learner's tapped point as a placed, circled stone so their choice is obvious.
+  const playPoint = (point: Pt) => { setPick(point); submit({ kind: "move", point }); };
 
   return (
     <div className="screen player">
@@ -79,13 +83,14 @@ export function PlayerScreen({
       </div>
       <div className="board-hold">
         {resolved && p.payoff ? (
-          <PayoffBoard key={p.id} puzzle={p} payoff={p.payoff} />
+          <PayoffBoard key={p.id} puzzle={p} payoff={p.payoff} pick={pick ?? undefined} />
         ) : (
           <Board
             puzzle={p}
             reveal={resolved}
             breaker={resolved ? p.breaker : undefined}
-            onTapPoint={p.mode === "M" && !resolved ? (pt) => submit({ kind: "move", point: pt }) : undefined}
+            pick={pick ?? undefined}
+            onTapPoint={p.mode === "M" && !resolved ? playPoint : undefined}
           />
         )}
       </div>
@@ -101,8 +106,8 @@ export function PlayerScreen({
       {s.phase !== "idle" && (
         <Feedback
           phase={s.phase}
-          onNext={() => player.next()}
-          onRetry={() => player.retry()}
+          onNext={() => { setPick(null); player.next(); }}
+          onRetry={() => { setPick(null); player.retry(); }}
         />
       )}
     </div>
