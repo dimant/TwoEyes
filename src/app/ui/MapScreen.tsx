@@ -10,7 +10,7 @@ export const TOPIC_TITLES: Record<number, string> = {
 
 const TAP_WINDOW_MS = 700;
 
-export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: number, rung: number) => void }) {
+export function MapScreen({ map, onOpen, onLearn }: { map: MapViewModel; onOpen: (topic: number, rung: number) => void; onLearn: (topic: number) => void }) {
   const s = useViewModel(map);
   // Count taps ourselves rather than relying on MouseEvent.detail, which touch
   // devices don't increment (every tap reports detail:1). Three quick taps on the
@@ -39,7 +39,7 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
       </div>
       <ul className="topics">
         {s.rows.map((r) => (
-          <li key={r.topic}>
+          <li key={r.topic} className="topic-row">
             <button
               className={`tcard ${r.cleared ? "done" : r.unlocked ? "cur" : "lock"}`}
               onClick={() => handleTap(r.topic, r.openRung, r.unlocked)}
@@ -51,6 +51,14 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
                 <span>{r.rungsCleared}/{r.rungsTotal} rungs</span>
               </span>
               <span className="tstate">{r.cleared ? "✓" : r.unlocked ? "Start" : "🔒"}</span>
+            </button>
+            <button
+              className="learn"
+              data-testid={`learn-${r.topic}`}
+              aria-label="Show the lesson"
+              onClick={() => onLearn(r.topic)}
+            >
+              Learn
             </button>
           </li>
         ))}

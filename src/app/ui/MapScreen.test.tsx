@@ -19,14 +19,15 @@ describe("MapScreen rung selection", () => {
     const progress = new ProgressStore(mem(), pb.rungRefs());
     const map = new MapViewModel(pb, progress);
     const onOpen = vi.fn();
+    const onLearn = vi.fn();
 
-    const { rerender } = render(<MapScreen map={map} onOpen={onOpen} />);
+    const { rerender } = render(<MapScreen map={map} onOpen={onOpen} onLearn={onLearn} />);
     fireEvent.click(screen.getByRole("button", { name: /Liberties/ }));
     expect(onOpen).toHaveBeenLastCalledWith(1, 1);
 
     for (let i = 0; i < MASTERY; i++) progress.record(1, 1, true);
     map.refresh();
-    rerender(<MapScreen map={map} onOpen={onOpen} />);
+    rerender(<MapScreen map={map} onOpen={onOpen} onLearn={onLearn} />);
     fireEvent.click(screen.getByRole("button", { name: /Liberties/ }));
     expect(onOpen).toHaveBeenLastCalledWith(1, 2);
   });
@@ -40,8 +41,9 @@ describe("MapScreen skip-ahead", () => {
     const pb = new PuzzleBank(bank2);
     const map = new MapViewModel(pb, new ProgressStore(mem(), pb.rungRefs()));
     const onOpen = vi.fn();
-    render(<MapScreen map={map} onOpen={onOpen} />);
-    return { map, locked: screen.getByRole("button", { name: /Capture a stone/ }), onOpen }; // topic 2, locked
+    const onLearn = vi.fn();
+    render(<MapScreen map={map} onOpen={onOpen} onLearn={onLearn} />);
+    return { map, locked: screen.getByRole("button", { name: /Capture a stone/ }), onOpen, onLearn }; // topic 2, locked
   }
 
   const unlocked = (map: MapViewModel, topic: number) =>
@@ -77,5 +79,42 @@ describe("MapScreen skip-ahead", () => {
     fireEvent.click(t2);
     fireEvent.click(t3); // resets — only 1 tap on t3
     expect(onOpen).not.toHaveBeenCalled();
+  });
+});
+
+describe("MapScreen lessons browser", () => {
+  const bank3: Bank = { seed: 0, stage: "A", puzzles: [
+    mk(1, 1, "a"), mk(1, 2, "b"), mk(2, 1, "c"), mk(2, 2, "d"), mk(3, 1, "e"), mk(3, 2, "f"),
+  ] };
+  function setup() {
+    const pb = new PuzzleBank(bank3);
+    const map = new MapViewModel(pb, new ProgressStore(mem(), pb.rungRefs()));
+    const onOpen = vi.fn();
+    const onLearn = vi.fn();
+    render(<MapScreen map={map} onOpen={onOpen} onLearn={onLearn} />);
+    return { map, onOpen, onLearn };
+  }
+  const unlocked = (map: MapViewModel, topic: number) =>
+    map.snapshot.rows.find((r) => r.topic === topic)?.unlocked ?? false;
+
+  it("shows a Learn control on every card, including locked ones", () => {
+    setup();
+    expect(screen.getByTestId("learn-1")).toBeDefined(); // topic 1 unlocked
+    expect(screen.getByTestId("learn-2")).toBeDefined(); // topic 2 locked
+    expect(screen.getByTestId("learn-3")).toBeDefined(); // topic 3 locked
+  });
+
+  it("clicking Learn calls onLearn with the topic without opening or unlocking it", () => {
+    const { map, onOpen, onLearn } = setup();
+    fireEvent.click(screen.getByTestId("learn-2")); // locked topic
+    expect(onLearn).toHaveBeenCalledWith(2);
+    expect(onOpen).not.toHaveBeenCalled();
+    expect(unlocked(map, 2)).toBe(false);
+  });
+
+  it("the Learn control does not match title-based button queries", () => {
+    setup();
+    // exactly one button matches the title — the card's main control, not Learn
+    expect(screen.getAllByRole("button", { name: /Liberties/ })).toHaveLength(1);
   });
 });

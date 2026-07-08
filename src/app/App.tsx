@@ -22,7 +22,7 @@ export function App() {
     <div className="app">
       <header className="topbar"><span className="brand">Two Eyes</span></header>
       {nav.screen === "map" && (
-        <MapScreen map={map} onOpen={(topic, rung) => setNav({ screen: "play", topic, rung })} />
+        <MapScreen map={map} onOpen={(topic, rung) => setNav({ screen: "play", topic, rung })} onLearn={() => {}} />
       )}
       {nav.screen === "play" && player && (
         <PlayerScreen
