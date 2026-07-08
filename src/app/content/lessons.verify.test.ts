@@ -25,8 +25,8 @@ const marked = (l: Lesson, kind: "mark" | "target") =>
   (l.diagram.marks ?? []).filter((m) => m.kind === kind);
 
 describe("lessons content", () => {
-  it("covers exactly the 10 current topics, each with title and body", () => {
-    expect(LESSONS.map((l) => l.topic)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 10, 11]);
+  it("covers exactly the 11 current topics, each with title and body", () => {
+    expect(LESSONS.map((l) => l.topic)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
     for (const l of LESSONS) {
       expect(l.title.length).toBeGreaterThan(0);
       expect(l.body.length).toBeGreaterThanOrEqual(2);
@@ -124,6 +124,18 @@ describe("lessons content", () => {
       bd = r.board;
     }
     expect(bd.get(t.x, t.y)).toBeNull();
+  });
+
+  it("T9: the marked stone is NOT caught, and removing the breaker makes it caught", () => {
+    const l = lessonFor(9)!;
+    const t = marked(l, "mark")[0]!;
+    const br = l.diagram.breaker!;
+    expect(br).toBeDefined();
+    const bd = boardOf(l.diagram.stones, l.diagram.size);
+    expect(bd.get(br.x, br.y)).toBe("w");
+    expect(capturedUnderBestPlay(bd, { x: t.x, y: t.y }, "b", 12)).toBe(false);
+    const without = boardOf(l.diagram.stones.filter((s) => !(s.x === br.x && s.y === br.y)), l.diagram.size);
+    expect(capturedUnderBestPlay(without, { x: t.x, y: t.y }, "b", 12)).toBe(true);
   });
 
   it("T10: the marked stone is alive before, and the key move nets it (2 libs, captured under best play)", () => {

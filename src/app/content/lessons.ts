@@ -15,6 +15,8 @@ export interface LessonDiagram {
   keyMove?: Pt[];
   /** Pre-computed, engine-verified capture line played on reveal (net/snapback). */
   payoff?: DemoMove[];
+  /** A ladder-breaker stone to ring on reveal (topic 9). */
+  breaker?: Pt;
   caption: string;
 }
 
@@ -165,6 +167,22 @@ export const LESSONS: Lesson[] = [
         { x: 0, y: 0, c: "b", captures: [{ x: 1, y: 0 }, { x: 2, y: 0 }, { x: 2, y: 1 }, { x: 2, y: 2 }] },
       ],
       caption: "Keep it in atari and chase it to the corner.",
+    },
+  },
+  {
+    topic: 9,
+    title: "The ladder-breaker",
+    body: [
+      "A ladder only works if nothing is waiting in its path.",
+      "A friendly stone of the hunted colour, sitting further along the zig-zag, is a ladder-breaker: the running stone reaches it, connects, and gets free.",
+      "So before you start a ladder, look ahead. The marked white stone here can't be caught — the ringed white stone breaks the ladder.",
+    ],
+    diagram: {
+      size: 9,
+      stones: [b(4, 5), w(5, 5), b(6, 5), b(6, 6), w(3, 7)],
+      marks: [{ x: 5, y: 5, kind: "mark" }],
+      breaker: { x: 3, y: 7 },
+      caption: "The ringed stone breaks the ladder — the marked stone escapes.",
     },
   },
   {

@@ -33,7 +33,11 @@ export function LessonScreen({ lesson, onDismiss }: { lesson: Lesson; onDismiss:
           {lesson.diagram.payoff ? (
             <PayoffBoard key={lesson.topic} puzzle={diagramPuzzle(lesson)} payoff={lesson.diagram.payoff} />
           ) : (
-            <Board puzzle={diagramPuzzle(lesson)} reveal={showMove} />
+            <Board
+              puzzle={diagramPuzzle(lesson)}
+              reveal={showMove || Boolean(lesson.diagram.breaker)}
+              breaker={lesson.diagram.breaker}
+            />
           )}
         </div>
         <p className="lesson-caption">{lesson.diagram.caption}</p>
