@@ -57,6 +57,9 @@ Phases are ordered by value. Each is a self-contained chunk producing working, t
 software. Detailed specs/plans live under `docs/superpowers/`.
 
 ### Phase 5 — Stage B.2: sequence engine + ladders  🔜 *next*
+
+> **5a shipped** — nets/snapbacks reveal their capture move-by-move. **5b** (interactive player + ladders) is the next slice.
+
 The spine of the roadmap: turn the app from "solve one move" into "read a sequence."
 - **Sequence engine** — solution *trees* + an interactive "you play → engine responds →
   repeat (with refutation)" player mode.
@@ -96,10 +99,10 @@ Status: ✅ done · 🔜 next · 📋 planned · 💡 backlog
 | — | Skip-ahead: touch-reliable triple-tap | ✅ | counts taps, not `MouseEvent.detail` |
 | — | Skip-ahead: persistent unlock (topic + all prior) | ✅ | `two-eyes:unlocked` |
 | — | Concept lessons (9 topics, engine-verified diagrams) | ✅ | auto-open + Learn button |
-| 5 | Sequence engine (solution trees + interactive mode) | 🔜 | foundation for ladders + animation |
-| 5 | Ladder (8) generator | 🔜 | reuse capture-reader |
-| 5 | Ladder-breaker (9) generator | 🔜 | |
-| 5 | Animated Net/Snapback follow-up | 🔜 | lands with the sequence player |
+| 5a | Move-sequence primitive + `annotate` | ✅ | engine-verified `payoff` on Puzzle/Lesson |
+| 5a | Animated net/snapback payoff (reveals + lessons) | ✅ | auto-play once + Replay; reduced-motion snaps |
+| 5b | Interactive sequence player (you play → engine replies) | 🔜 | reuses the 5a `DemoMove` primitive |
+| 5b | Ladder (8) + Ladder-breaker (9) generators | 🔜 | reuse the capture-reader; bank → ~480 |
 | 6 | Animate capture on reveal | 📋 | small, self-contained |
 | 6 | Lessons browser on the map | 📋 | replay any concept |
 | 6 | Light/dark toggle + keyboard board input | 📋 | accessibility/polish |
