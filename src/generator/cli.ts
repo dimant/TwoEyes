@@ -10,6 +10,7 @@ import { generateConnect, generateCaptureCutter } from "./topics/connectcut";
 import { generateNet } from "./topics/net";
 import { generateSnapback } from "./topics/snapback";
 import { generateLadder } from "./topics/ladder";
+import { generateLadderBreaker } from "./topics/ladderbreaker";
 import { assembleBank, writeBank } from "./bank";
 import { Bank, Puzzle } from "./types";
 
@@ -87,6 +88,11 @@ export function buildBank(seed: number): Bank {
   // hence their committed puzzles) are unchanged; only 40 new puzzles are added.
   groups.push(curateRung(generateLadder(rng, { rung: 1, size: 7, count: PER_RUNG, requireFailingAlt: false })));
   groups.push(curateRung(generateLadder(rng, { rung: 2, size: 9, count: PER_RUNG, requireFailingAlt: true })));
+
+  // Topic 9 — ladder-breaker: appended LAST so every existing topic's RNG draws (and committed
+  // puzzles) are unchanged; only 40 new puzzles are added.
+  groups.push(curateRung(generateLadderBreaker(rng, { rung: 1, size: 9, count: PER_RUNG })));
+  groups.push(curateRung(generateLadderBreaker(rng, { rung: 2, size: 9, count: PER_RUNG })));
 
   return assembleBank(seed, groups);
 }
