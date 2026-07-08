@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { useViewModel } from "../useViewModel";
 import type { PlayerViewModel } from "../vm/player-vm";
 import type { Input } from "../model/answer";
 import { MASTERY } from "../model/progress";
+import type { Lesson } from "../content/lessons";
 import { Board } from "./Board";
+import { LessonScreen } from "./LessonScreen";
 import { NumberPad, YesNo } from "./inputs";
 import { Feedback } from "./Feedback";
 
-function PlayerHead({ mastery, onExit }: { mastery: number; onExit: () => void }) {
+function PlayerHead({ mastery, onExit, onLearn }: { mastery: number; onExit: () => void; onLearn?: () => void }) {
   return (
     <div className="player-head">
       <button className="back" onClick={onExit} aria-label="Back to the map">‹ Map</button>
@@ -15,17 +18,38 @@ function PlayerHead({ mastery, onExit }: { mastery: number; onExit: () => void }
           <span key={i} className={`pip${i < mastery ? " on" : ""}`} />
         ))}
       </div>
+      {onLearn && <button className="learn" onClick={onLearn} aria-label="Show the lesson">Learn</button>}
     </div>
   );
 }
 
-export function PlayerScreen({ player, onExit }: { player: PlayerViewModel; onExit: () => void }) {
+export function PlayerScreen({
+  player,
+  onExit,
+  lesson,
+  lessonSeen = true,
+  onLessonSeen,
+}: {
+  player: PlayerViewModel;
+  onExit: () => void;
+  lesson?: Lesson;
+  lessonSeen?: boolean;
+  onLessonSeen?: () => void;
+}) {
   const s = useViewModel(player);
+  // Auto-open the lesson the first time this topic is entered; the Learn button reopens it.
+  const [showLesson, setShowLesson] = useState(!!lesson && !lessonSeen);
+  const dismissLesson = () => { setShowLesson(false); onLessonSeen?.(); };
+  const learnProps = lesson ? { onLearn: () => setShowLesson(true) } : {};
+
+  if (lesson && showLesson) {
+    return <LessonScreen lesson={lesson} onDismiss={dismissLesson} />;
+  }
 
   if (s.done || !s.puzzle) {
     return (
       <div className="screen player">
-        <PlayerHead mastery={s.mastery} onExit={onExit} />
+        <PlayerHead mastery={s.mastery} onExit={onExit} {...learnProps} />
         <div className="done-note">
           <div className="seal">✓</div>
           <h2>Rung complete</h2>
@@ -42,7 +66,7 @@ export function PlayerScreen({ player, onExit }: { player: PlayerViewModel; onEx
 
   return (
     <div className="screen player">
-      <PlayerHead mastery={s.mastery} onExit={onExit} />
+      <PlayerHead mastery={s.mastery} onExit={onExit} {...learnProps} />
       <div className="prompt">
         <div className="who">{p.toPlay === "b" ? "● Black to play" : "○ White to play"}</div>
         <div className="q">{p.prompt}</div>

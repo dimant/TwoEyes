@@ -5,6 +5,7 @@ import { PlayerViewModel } from "../vm/player-vm";
 import { PuzzleBank } from "../model/bank";
 import { ProgressStore } from "../model/progress";
 import type { Bank } from "../model/types";
+import { lessonFor } from "../content/lessons";
 
 const bank: Bank = { seed: 0, stage: "A", puzzles: [{
   id: "a", topic: 2, rung: 1, mode: "M", size: 5, toPlay: "b", prompt: "Capture.",
@@ -33,5 +34,31 @@ describe("PlayerScreen", () => {
     expect(screen.getByText(/Rung complete/)).toBeDefined();
     fireEvent.click(screen.getByRole("button", { name: /Back to map/ }));
     expect(onExit).toHaveBeenCalledTimes(1);
+  });
+
+  it("auto-shows the lesson on first entry, then drops into the puzzle when dismissed", () => {
+    const pb = new PuzzleBank(bank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 2, 1);
+    const onLessonSeen = vi.fn();
+    render(
+      <PlayerScreen player={vm} onExit={vi.fn()} lesson={lessonFor(2)!} lessonSeen={false} onLessonSeen={onLessonSeen} />,
+    );
+    // lesson is shown, puzzle prompt is not yet
+    expect(screen.getByText(/Capture a stone/)).toBeDefined();
+    expect(screen.queryByText("Capture.")).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Start practicing/ }));
+    expect(onLessonSeen).toHaveBeenCalledTimes(1);
+    expect(screen.getByText("Capture.")).toBeDefined(); // now on the puzzle
+  });
+
+  it("does not auto-show the lesson when already seen, but the Learn button reopens it", () => {
+    const pb = new PuzzleBank(bank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 2, 1);
+    render(
+      <PlayerScreen player={vm} onExit={vi.fn()} lesson={lessonFor(2)!} lessonSeen={true} onLessonSeen={vi.fn()} />,
+    );
+    expect(screen.getByText("Capture.")).toBeDefined(); // straight to the puzzle
+    fireEvent.click(screen.getByRole("button", { name: /Show the lesson/ }));
+    expect(screen.getByText(/Start practicing/)).toBeDefined(); // lesson reopened
   });
 });

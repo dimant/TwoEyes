@@ -8,19 +8,23 @@ export interface KeyValue {
 export const MASTERY = 4;
 const KEY = "two-eyes:progress";
 const UNLOCK_KEY = "two-eyes:unlocked";
+const LESSON_KEY = "two-eyes:lessons-seen";
 
 export class ProgressStore {
   private counts: Record<string, number>;
   // Topics the player has explicitly unlocked via skip-ahead (persisted separately
   // from mastery counts so a jumped-into lesson shows as available, not completed).
   private unlocked: Set<number>;
+  // Topics whose concept lesson has been shown, so it auto-opens only once per topic.
+  private lessonsSeen: Set<number>;
 
   constructor(private readonly storage: KeyValue, private readonly refs: RungRef[]) {
     this.counts = ProgressStore.parse(storage.getItem(KEY));
-    this.unlocked = ProgressStore.parseUnlocked(storage.getItem(UNLOCK_KEY));
+    this.unlocked = ProgressStore.parseTopicSet(storage.getItem(UNLOCK_KEY));
+    this.lessonsSeen = ProgressStore.parseTopicSet(storage.getItem(LESSON_KEY));
   }
 
-  private static parseUnlocked(raw: string | null): Set<number> {
+  private static parseTopicSet(raw: string | null): Set<number> {
     if (!raw) return new Set();
     try {
       const arr = JSON.parse(raw) as unknown;
@@ -29,6 +33,16 @@ export class ProgressStore {
     } catch {
       return new Set();
     }
+  }
+
+  lessonSeen(topic: number): boolean {
+    return this.lessonsSeen.has(topic);
+  }
+
+  markLessonSeen(topic: number): void {
+    if (this.lessonsSeen.has(topic)) return;
+    this.lessonsSeen.add(topic);
+    this.storage.setItem(LESSON_KEY, JSON.stringify([...this.lessonsSeen]));
   }
 
   private topics(): number[] {

@@ -4,6 +4,7 @@ import { MapViewModel } from "./vm/map-vm";
 import { PlayerViewModel } from "./vm/player-vm";
 import { MapScreen } from "./ui/MapScreen";
 import { PlayerScreen } from "./ui/PlayerScreen";
+import { lessonFor } from "./content/lessons";
 
 type Nav = { screen: "map" } | { screen: "play"; topic: number; rung: number };
 
@@ -24,7 +25,14 @@ export function App() {
         <MapScreen map={map} onOpen={(topic, rung) => setNav({ screen: "play", topic, rung })} />
       )}
       {nav.screen === "play" && player && (
-        <PlayerScreen player={player} onExit={() => { map.refresh(); setNav({ screen: "map" }); }} />
+        <PlayerScreen
+          key={`${nav.topic}-${nav.rung}`}
+          player={player}
+          onExit={() => { map.refresh(); setNav({ screen: "map" }); }}
+          lesson={lessonFor(nav.topic)}
+          lessonSeen={store.progress.lessonSeen(nav.topic)}
+          onLessonSeen={() => store.progress.markLessonSeen(nav.topic)}
+        />
       )}
     </div>
   );

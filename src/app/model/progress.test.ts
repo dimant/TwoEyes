@@ -71,6 +71,17 @@ describe("ProgressStore", () => {
     expect(b.rungCleared(1, 1)).toBe(true);
   });
 
+  it("tracks lesson-seen per topic and persists it", () => {
+    const storage = memStore();
+    const a = new ProgressStore(storage, refs);
+    expect(a.lessonSeen(2)).toBe(false);
+    a.markLessonSeen(2);
+    expect(a.lessonSeen(2)).toBe(true);
+    expect(a.lessonSeen(1)).toBe(false); // unrelated topic untouched
+    const b = new ProgressStore(storage, refs);
+    expect(b.lessonSeen(2)).toBe(true); // survived reload
+  });
+
   it("survives corrupted storage without throwing (starts fresh)", () => {
     const bad = { getItem: () => "}{ not json", setItem: () => {} };
     const ps = new ProgressStore(bad, refs);

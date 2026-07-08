@@ -6,9 +6,10 @@ describe("App", () => {
   it("shows the topic map and opens a topic into the player", () => {
     render(<App />);
     expect(screen.getByText(/Capturing basics/i)).toBeDefined();
-    // topic 1 is unlocked; click it
+    // topic 1 is unlocked; click it — its lesson auto-opens on first entry
     fireEvent.click(screen.getByRole("button", { name: /Liberties/i }));
-    // player screen shows a prompt (any puzzle prompt text ends with a period)
+    fireEvent.click(screen.getByRole("button", { name: /Start practicing/ }));
+    // dismissing the lesson drops into the player, which shows a prompt
     expect(screen.getByText("● Black to play")).toBeDefined();
   });
 });
