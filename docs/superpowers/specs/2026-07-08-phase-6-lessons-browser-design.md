@@ -49,24 +49,28 @@ Split the card into a **container** holding two **sibling** controls:
 `.tcard`'s layout responsibilities move to the container element; the main button keeps
 its existing visual styling. CSS changes are small and confined to `styles.css`.
 
-### 2. Overlay on the map — `App.tsx`
+### 2. Lesson takeover on the map — `App.tsx`
 
-`App`'s nav today is `{ screen: "map" } | { screen: "play"; topic; rung }`. The lesson is
-a **modal overlay**, not a third screen: the map stays mounted underneath (matching how
-`LessonScreen` overlays `PlayerScreen`).
+`App`'s nav today is `{ screen: "map" } | { screen: "play"; topic; rung }`.
+`LessonScreen` is a **full-screen takeover**, not a floating overlay: `PlayerScreen`
+renders it with `if (lesson && showLesson) return <LessonScreen/>`, replacing the whole
+screen. The map lesson reuses that exact pattern — while a lesson is showing, it is
+rendered **instead of** `MapScreen`; dismissing returns to the map.
 
 - Add state `lessonTopic: number | null` (default `null`).
 - `MapScreen` gains one prop: `onLearn: (topic: number) => void`, wired to
   `setLessonTopic(topic)`.
-- When `lessonTopic !== null` and the map is showing, render
-  `<LessonScreen lesson={lessonFor(lessonTopic)!} onDismiss={dismissLesson} />` above
-  `MapScreen`.
+- While `nav.screen === "map"`: if `lessonTopic !== null`, render
+  `<LessonScreen lesson={lesson} onDismiss={dismissLesson} />` in place of `MapScreen`;
+  otherwise render `MapScreen`.
 - `dismissLesson`: `store.progress.markLessonSeen(lessonTopic)` then
-  `setLessonTopic(null)`.
+  `setLessonTopic(null)` (returns to the map).
 
 `lessonFor` returns `Lesson | undefined`; all topics 1–11 have lessons, and the map only
-renders cards for existing bank topics, so the topic is always resolvable. The overlay is
-only mounted on the map screen.
+renders cards for existing bank topics, so the topic is always resolvable. Guard by
+rendering the takeover only when `lessonFor(lessonTopic)` is defined. The `MapViewModel`
+persists across the takeover (it is memoized in `App`), so returning to the map is cheap
+and state-preserving.
 
 ### 3. Data flow
 
@@ -74,9 +78,9 @@ only mounted on the map screen.
 MapScreen Learn tap
   -> onLearn(topic)
   -> App: setLessonTopic(topic)
-  -> LessonScreen overlay (map still mounted)
+  -> LessonScreen takeover (rendered in place of MapScreen)
   -> onDismiss
-  -> App: markLessonSeen(topic); setLessonTopic(null)
+  -> App: markLessonSeen(topic); setLessonTopic(null)  (back to the map)
 ```
 
 No view-model or model changes. `markLessonSeen` already exists on `ProgressStore` and is
@@ -85,7 +89,13 @@ needed — map rows do not display lesson-seen state.
 
 ## Testing
 
-**`MapScreen.test.tsx`**
+Learn buttons carry `data-testid={`learn-${topic}`}` and the accessible name
+`"Show the lesson"` (reusing `PlayerScreen`'s copy). The accessible name deliberately
+omits the topic title so existing title-based queries
+(`getByRole("button", { name: /Liberties/ })`) keep matching exactly one element — the
+card's main control. Tests target Learn via `getByTestId`.
+
+**`MapScreen.test.tsx`** (existing renders gain an `onLearn={vi.fn()}` prop)
 - A Learn control renders on every card, including locked ones.
 - Clicking Learn calls `onLearn` with that card's topic.
 - Clicking Learn does **not** call `onOpen` and does **not** unlock the topic (regression
@@ -93,11 +103,12 @@ needed — map rows do not display lesson-seen state.
 - Triple-tapping a locked card still unlocks it and opens play (regression guard that the
   restructure preserves existing behaviour).
 
-**`App.test.tsx`**
-- Clicking Learn on a card opens the lesson overlay while `MapScreen` remains present.
-- Dismissing the overlay closes it and marks that lesson seen.
+**`App.test.tsx`** (add `beforeEach(() => window.localStorage.clear())` for isolation —
+`createStore` uses real `localStorage` and state otherwise bleeds across tests)
+- Clicking Learn on a card shows the lesson (`role="dialog"`) in place of the map.
+- Dismissing the lesson ("Start practicing") returns to the map.
 - After viewing a topic's lesson from the map, first entry into that topic goes straight
-  to practice (its lesson does not auto-open).
+  to practice (its lesson does not auto-open) — verifies the view marked it seen.
 
 ## Out of scope
 
