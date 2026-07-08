@@ -63,3 +63,26 @@ describe("snapbackLine", () => {
     expect(snapbackLine(Board.from(5, stones), { x: 0, y: 0 })).toBeNull();
   });
 });
+
+describe("generateSnapback payoff", () => {
+  it("every generated puzzle carries a payoff whose final move recaptures >= min", () => {
+    const puzzles = generateSnapback(makeRng(42), { rung: 1, size: 7, count: 5, minRecapture: 2 });
+    for (const p of puzzles) {
+      expect(p.payoff && p.payoff.length).toBe(3);
+      // move 0 is a listed solution point
+      if (p.solution.kind !== "move") throw new Error("expected move solution");
+      const m0 = p.payoff![0]!;
+      expect(p.solution.points.some((q) => q.x === m0.x && q.y === m0.y)).toBe(true);
+      // replay to the end; the last move recaptures >= 2
+      let board = Board.from(p.size, p.stones);
+      let lastCap = 0;
+      for (const m of p.payoff!) {
+        const r = play(board, m.x, m.y, m.c);
+        expect(r.ok).toBe(true);
+        lastCap = r.captured.length;
+        board = r.board;
+      }
+      expect(lastCap).toBeGreaterThanOrEqual(2);
+    }
+  });
+});

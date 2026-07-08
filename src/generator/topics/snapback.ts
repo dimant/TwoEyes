@@ -86,10 +86,13 @@ export function generateSnapback(
     );
     if (throwins.length === 0) continue;
 
+    const line = snapbackLine(board, throwins[0]!);
+    if (!line) continue; // defensive — throwins already passed snapbackWorks
     const puzzle: Puzzle = {
       id: "tmp", topic: 11, rung, mode: "M", size, stones: board.stones(), toPlay: "b",
       prompt: "Black to play — set up a snapback.",
       solution: { kind: "move", points: throwins },
+      payoff: annotate(size, board.stones(), line),
     };
     const sig = JSON.stringify({ s: puzzle.stones });
     if (seen.has(sig)) continue;
