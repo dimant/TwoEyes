@@ -19,6 +19,12 @@ export class MapViewModel extends Observable<MapState> {
     this.refresh();
   }
 
+  /** Skip-ahead: unlock this topic and all prior ones, then re-render the map. */
+  unlockThrough(topic: number): void {
+    this.progress.unlockThrough(topic);
+    this.refresh();
+  }
+
   refresh(): void {
     const rows: TopicRow[] = this.bank.topics().map((topic) => {
       const rungs = this.bank.rungs(topic);

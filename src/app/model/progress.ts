@@ -7,12 +7,41 @@ export interface KeyValue {
 
 export const MASTERY = 4;
 const KEY = "two-eyes:progress";
+const UNLOCK_KEY = "two-eyes:unlocked";
 
 export class ProgressStore {
   private counts: Record<string, number>;
+  // Topics the player has explicitly unlocked via skip-ahead (persisted separately
+  // from mastery counts so a jumped-into lesson shows as available, not completed).
+  private unlocked: Set<number>;
 
   constructor(private readonly storage: KeyValue, private readonly refs: RungRef[]) {
     this.counts = ProgressStore.parse(storage.getItem(KEY));
+    this.unlocked = ProgressStore.parseUnlocked(storage.getItem(UNLOCK_KEY));
+  }
+
+  private static parseUnlocked(raw: string | null): Set<number> {
+    if (!raw) return new Set();
+    try {
+      const arr = JSON.parse(raw) as unknown;
+      if (!Array.isArray(arr)) return new Set();
+      return new Set(arr.filter((n): n is number => typeof n === "number" && Number.isFinite(n)));
+    } catch {
+      return new Set();
+    }
+  }
+
+  private topics(): number[] {
+    return [...new Set(this.refs.map((r) => r.topic))].sort((a, b) => a - b);
+  }
+
+  /** Skip-ahead: unlock the given topic and every topic before it in the path. Persisted. */
+  unlockThrough(topic: number): void {
+    const topics = this.topics();
+    const idx = topics.indexOf(topic);
+    if (idx < 0) return;
+    for (let i = 0; i <= idx; i++) this.unlocked.add(topics[i]!);
+    this.storage.setItem(UNLOCK_KEY, JSON.stringify([...this.unlocked]));
   }
 
   // Tolerate corrupted/absent storage: keep only finite-number entries, else start fresh.
@@ -54,7 +83,8 @@ export class ProgressStore {
   }
 
   topicUnlocked(topic: number): boolean {
-    const topics = [...new Set(this.refs.map((r) => r.topic))].sort((a, b) => a - b);
+    if (this.unlocked.has(topic)) return true; // explicitly unlocked via skip-ahead
+    const topics = this.topics();
     if (topic === topics[0]) return true;
     const prev = topics[topics.indexOf(topic) - 1];
     return prev !== undefined && this.topicCleared(prev);

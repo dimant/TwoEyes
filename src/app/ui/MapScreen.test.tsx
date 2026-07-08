@@ -41,8 +41,11 @@ describe("MapScreen skip-ahead", () => {
     const map = new MapViewModel(pb, new ProgressStore(mem(), pb.rungRefs()));
     const onOpen = vi.fn();
     render(<MapScreen map={map} onOpen={onOpen} />);
-    return { locked: screen.getByRole("button", { name: /Capture a stone/ }), onOpen }; // topic 2, locked
+    return { map, locked: screen.getByRole("button", { name: /Capture a stone/ }), onOpen }; // topic 2, locked
   }
+
+  const unlocked = (map: MapViewModel, topic: number) =>
+    map.snapshot.rows.find((r) => r.topic === topic)?.unlocked ?? false;
 
   it("ignores single taps but jumps in on three quick taps (touch-safe, no MouseEvent.detail)", () => {
     const { locked, onOpen } = setup();
@@ -52,6 +55,18 @@ describe("MapScreen skip-ahead", () => {
     expect(onOpen).not.toHaveBeenCalled();
     fireEvent.click(locked); // third tap within the window -> jump in
     expect(onOpen).toHaveBeenCalledWith(2, 1);
+  });
+
+  it("three quick taps persistently unlock the tapped lesson and all prior ones", () => {
+    const { map } = setup();
+    const t3 = screen.getByRole("button", { name: /Capture a group/ }); // topic 3, locked
+    expect(unlocked(map, 3)).toBe(false);
+    fireEvent.click(t3);
+    fireEvent.click(t3);
+    fireEvent.click(t3);
+    expect(unlocked(map, 1)).toBe(true);
+    expect(unlocked(map, 2)).toBe(true); // prior lesson unlocked too
+    expect(unlocked(map, 3)).toBe(true);
   });
 
   it("does not jump in when the third tap lands on a different locked topic", () => {

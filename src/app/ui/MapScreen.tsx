@@ -14,7 +14,7 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
   const s = useViewModel(map);
   // Count taps ourselves rather than relying on MouseEvent.detail, which touch
   // devices don't increment (every tap reports detail:1). Three quick taps on the
-  // same locked topic within the window jumps in (a skip-ahead shortcut).
+  // same locked topic within the window unlock it and every prior topic, then jump in.
   const taps = useRef<{ topic: number; count: number; at: number }>({ topic: -1, count: 0, at: 0 });
 
   const handleTap = (topic: number, rung: number, unlocked: boolean): void => {
@@ -24,7 +24,11 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
     if (t.topic === topic && now - t.at < TAP_WINDOW_MS) t.count += 1;
     else { t.topic = topic; t.count = 1; }
     t.at = now;
-    if (t.count >= 3) { t.count = 0; onOpen(topic, rung); }
+    if (t.count >= 3) {
+      t.count = 0;
+      map.unlockThrough(topic); // persistently unlock this lesson + all prior ones
+      onOpen(topic, rung);
+    }
   };
 
   return (

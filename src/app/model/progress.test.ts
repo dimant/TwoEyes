@@ -40,6 +40,29 @@ describe("ProgressStore", () => {
     expect(ps.topicUnlocked(2)).toBe(true);
   });
 
+  it("unlockThrough unlocks the target and every prior topic, without marking them cleared", () => {
+    const refs4: RungRef[] = [
+      { topic: 1, rung: 1 }, { topic: 2, rung: 1 }, { topic: 3, rung: 1 }, { topic: 4, rung: 1 },
+    ];
+    const ps = new ProgressStore(memStore(), refs4);
+    expect(ps.topicUnlocked(3)).toBe(false);
+    ps.unlockThrough(3);
+    expect(ps.topicUnlocked(1)).toBe(true);
+    expect(ps.topicUnlocked(2)).toBe(true);
+    expect(ps.topicUnlocked(3)).toBe(true);
+    expect(ps.topicUnlocked(4)).toBe(false); // later topics stay locked
+    expect(ps.topicCleared(3)).toBe(false); // unlocked, not completed
+  });
+
+  it("unlockThrough persists across instances sharing storage", () => {
+    const refs3: RungRef[] = [{ topic: 1, rung: 1 }, { topic: 2, rung: 1 }, { topic: 3, rung: 1 }];
+    const storage = memStore();
+    new ProgressStore(storage, refs3).unlockThrough(3);
+    const b = new ProgressStore(storage, refs3);
+    expect(b.topicUnlocked(2)).toBe(true);
+    expect(b.topicUnlocked(3)).toBe(true);
+  });
+
   it("persists across instances sharing storage", () => {
     const storage = memStore();
     const a = new ProgressStore(storage, refs);
