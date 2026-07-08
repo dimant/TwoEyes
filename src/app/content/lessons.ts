@@ -1,4 +1,4 @@
-import type { Stone, Mark, Pt } from "../model/types";
+import type { Stone, Mark, Pt, DemoMove } from "../model/types";
 
 // A short, illustrated concept lesson shown before a topic's puzzles.
 // Pure data — no engine or React imports so it stays out of the shipped path's logic.
@@ -13,6 +13,8 @@ export interface LessonDiagram {
   ataris?: Pt[];
   /** The teaching move(s), drawn as a ghost stone + accent ring (the "answer"). */
   keyMove?: Pt[];
+  /** Pre-computed, engine-verified capture line played on reveal (net/snapback). */
+  payoff?: DemoMove[];
   caption: string;
 }
 
@@ -153,6 +155,13 @@ export const LESSONS: Lesson[] = [
       stones: [b(5, 3), b(4, 4), w(5, 4), b(4, 5)],
       marks: [{ x: 5, y: 4, kind: "mark" }],
       keyMove: [{ x: 6, y: 5 }],
+      payoff: [
+        { x: 6, y: 5, c: "b" },
+        { x: 6, y: 4, c: "w" },
+        { x: 5, y: 5, c: "b" },
+        { x: 6, y: 3, c: "w" },
+        { x: 6, y: 2, c: "b", captures: [{ x: 6, y: 3 }, { x: 6, y: 4 }, { x: 5, y: 4 }] },
+      ],
       caption: "The loose net move — the stone can't run.",
     },
   },
@@ -168,6 +177,11 @@ export const LESSONS: Lesson[] = [
       size: 7,
       stones: [b(5, 3), b(4, 4), w(5, 4), b(6, 4), b(4, 5), w(5, 5), b(4, 6), w(5, 6)],
       keyMove: [{ x: 6, y: 6 }],
+      payoff: [
+        { x: 6, y: 6, c: "b" },
+        { x: 6, y: 5, c: "w", captures: [{ x: 6, y: 6 }] },
+        { x: 6, y: 6, c: "b", captures: [{ x: 5, y: 6 }, { x: 5, y: 5 }, { x: 5, y: 4 }, { x: 6, y: 5 }] },
+      ],
       caption: "The throw-in that sets up the snapback.",
     },
   },

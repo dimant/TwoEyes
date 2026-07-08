@@ -128,4 +128,33 @@ describe("lessons content", () => {
     const bd = boardOf(l.diagram.stones, l.diagram.size);
     expect(snapbackWorks(bd, key(l)).ok).toBe(true);
   });
+
+  it("T10: the lesson payoff replays legally and captures the marked stone", () => {
+    const l = lessonFor(10)!;
+    const t = marked(l, "mark")[0]!;
+    expect(l.diagram.payoff && l.diagram.payoff.length).toBeGreaterThan(0);
+    let bd = boardOf(l.diagram.stones, l.diagram.size);
+    for (const m of l.diagram.payoff!) {
+      const r = play(bd, m.x, m.y, m.c);
+      expect(r.ok).toBe(true);
+      if (!r.ok) return;
+      bd = r.board;
+    }
+    expect(bd.get(t.x, t.y)).toBeNull();
+  });
+
+  it("T11: the lesson payoff replays legally and snaps the group off (>=2)", () => {
+    const l = lessonFor(11)!;
+    expect(l.diagram.payoff).toHaveLength(3);
+    let bd = boardOf(l.diagram.stones, l.diagram.size);
+    let lastCap = 0;
+    for (const m of l.diagram.payoff!) {
+      const r = play(bd, m.x, m.y, m.c);
+      expect(r.ok).toBe(true);
+      if (!r.ok) return;
+      lastCap = r.captured.length;
+      bd = r.board;
+    }
+    expect(lastCap).toBeGreaterThanOrEqual(2);
+  });
 });
