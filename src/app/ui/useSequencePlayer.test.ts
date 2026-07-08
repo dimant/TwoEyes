@@ -34,12 +34,17 @@ describe("useSequencePlayer", () => {
     act(() => { result.current.replay(); });
     expect(result.current.stones).toHaveLength(1);
     expect(result.current.playing).toBe(true);
+    act(() => { vi.advanceTimersByTime(200); });
+    expect(result.current.done).toBe(true);
   });
 
   it("jumps to the final position under reduced motion", () => {
     (window as unknown as { matchMedia: unknown }).matchMedia = vi.fn().mockReturnValue({ matches: true });
     try {
       const { result } = renderHook(() => useSequencePlayer(initial, payoff, 100));
+      expect(result.current.done).toBe(true);
+      expect(result.current.stones.every((s) => s.c === "b")).toBe(true);
+      act(() => { result.current.replay(); });
       expect(result.current.done).toBe(true);
       expect(result.current.stones.every((s) => s.c === "b")).toBe(true);
     } finally {
