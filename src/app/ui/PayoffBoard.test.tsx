@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, act } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { PayoffBoard } from "./PayoffBoard";
 import type { Puzzle, DemoMove } from "../model/types";
 
@@ -13,15 +13,26 @@ const puzzle: Puzzle = {
 const payoff: DemoMove[] = [{ x: 2, y: 3, c: "b", captures: [{ x: 2, y: 2 }] }];
 
 describe("PayoffBoard", () => {
-  beforeEach(() => { vi.useFakeTimers(); });
-  afterEach(() => { vi.useRealTimers(); });
-
-  it("plays the line to the final position and offers Replay", () => {
+  it("opens at the start with a Next-move control, steps to the end, then offers Replay", () => {
     const { container } = render(<PayoffBoard puzzle={puzzle} payoff={payoff} />);
-    expect(container.querySelectorAll("circle.stone").length).toBe(4); // initial
-    act(() => { vi.advanceTimersByTime(450); });
-    const stones = container.querySelectorAll("circle.stone");
-    expect(stones.length).toBe(4); // white captured, black played -> still 4, all black
-    expect(screen.getByRole("button", { name: /Replay/ })).toBeDefined();
+    // opens at the initial position (no move played yet); the white stone is still there
+    expect(container.querySelectorAll("circle.stone").length).toBe(4);
+    expect(container.querySelector("circle.stone[fill='var(--white)']")).not.toBeNull();
+    expect(screen.getByRole("button", { name: /Next move/i })).toBeDefined();
+    expect(screen.queryByRole("button", { name: /^Replay$/i })).toBeNull();
+
+    // one press plays the (only) move: black plays, white is captured
+    fireEvent.click(screen.getByRole("button", { name: /Next move/i }));
+    expect(container.querySelectorAll("circle.stone").length).toBe(4);
+    expect(container.querySelector("circle.stone[fill='var(--white)']")).toBeNull();
+
+    // at the end: Replay appears, Next move is gone
+    expect(screen.getByRole("button", { name: /Replay/i })).toBeDefined();
+    expect(screen.queryByRole("button", { name: /Next move/i })).toBeNull();
+
+    // Replay resets to the start
+    fireEvent.click(screen.getByRole("button", { name: /Replay/i }));
+    expect(screen.getByRole("button", { name: /Next move/i })).toBeDefined();
+    expect(container.querySelector("circle.stone[fill='var(--white)']")).not.toBeNull();
   });
 });

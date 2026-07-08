@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 import { useSequencePlayer } from "./useSequencePlayer";
 import type { Stone, DemoMove } from "../model/types";
@@ -11,44 +11,40 @@ const payoff: DemoMove[] = [
 ];
 
 describe("useSequencePlayer", () => {
-  beforeEach(() => { vi.useFakeTimers(); });
-  afterEach(() => { vi.useRealTimers(); });
+  it("opens at the initial position with no moves played", () => {
+    const { result } = renderHook(() => useSequencePlayer(initial, payoff));
+    expect(result.current.step).toBe(0);
+    expect(result.current.stones).toEqual(initial);
+    expect(result.current.atEnd).toBe(false);
+  });
 
-  it("auto-advances one move per tick and applies captures", () => {
-    const { result } = renderHook(() => useSequencePlayer(initial, payoff, 100));
-    expect(result.current.stones).toHaveLength(1);
-    expect(result.current.playing).toBe(true);
-    act(() => { vi.advanceTimersByTime(100); });
-    expect(result.current.stones).toHaveLength(2);
-    act(() => { vi.advanceTimersByTime(100); });
-    expect(result.current.stones).toHaveLength(2);
+  it("next() plays exactly one move per call and applies captures", () => {
+    const { result } = renderHook(() => useSequencePlayer(initial, payoff));
+    act(() => result.current.next());
+    expect(result.current.step).toBe(1);
+    expect(result.current.stones).toHaveLength(2); // white + placed black
+    expect(result.current.atEnd).toBe(false);
+    act(() => result.current.next());
+    expect(result.current.step).toBe(2);
+    expect(result.current.stones).toHaveLength(2); // white captured, second black placed
     expect(result.current.stones.every((s) => s.c === "b")).toBe(true);
-    expect(result.current.done).toBe(true);
-    expect(result.current.playing).toBe(false);
+    expect(result.current.atEnd).toBe(true);
   });
 
-  it("replay restarts from the initial position", () => {
-    const { result } = renderHook(() => useSequencePlayer(initial, payoff, 100));
-    act(() => { vi.advanceTimersByTime(200); });
-    expect(result.current.done).toBe(true);
-    act(() => { result.current.replay(); });
-    expect(result.current.stones).toHaveLength(1);
-    expect(result.current.playing).toBe(true);
-    act(() => { vi.advanceTimersByTime(200); });
-    expect(result.current.done).toBe(true);
+  it("next() past the end is a no-op", () => {
+    const { result } = renderHook(() => useSequencePlayer(initial, payoff));
+    act(() => { result.current.next(); result.current.next(); result.current.next(); });
+    expect(result.current.step).toBe(2);
+    expect(result.current.atEnd).toBe(true);
   });
 
-  it("jumps to the final position under reduced motion", () => {
-    (window as unknown as { matchMedia: unknown }).matchMedia = vi.fn().mockReturnValue({ matches: true });
-    try {
-      const { result } = renderHook(() => useSequencePlayer(initial, payoff, 100));
-      expect(result.current.done).toBe(true);
-      expect(result.current.stones.every((s) => s.c === "b")).toBe(true);
-      act(() => { result.current.replay(); });
-      expect(result.current.done).toBe(true);
-      expect(result.current.stones.every((s) => s.c === "b")).toBe(true);
-    } finally {
-      delete (window as unknown as { matchMedia?: unknown }).matchMedia;
-    }
+  it("replay() returns to the initial position", () => {
+    const { result } = renderHook(() => useSequencePlayer(initial, payoff));
+    act(() => { result.current.next(); result.current.next(); });
+    expect(result.current.atEnd).toBe(true);
+    act(() => result.current.replay());
+    expect(result.current.step).toBe(0);
+    expect(result.current.stones).toEqual(initial);
+    expect(result.current.atEnd).toBe(false);
   });
 });

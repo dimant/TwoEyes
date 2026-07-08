@@ -1,58 +1,29 @@
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useMemo } from "react";
 import type { Stone, DemoMove } from "../model/types";
 import { positionAt } from "../model/sequence";
 
-function prefersReducedMotion(): boolean {
-  return (
-    typeof window !== "undefined" &&
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
-}
-
 export interface SequencePlayer {
   stones: Stone[];
-  playing: boolean;
-  done: boolean;
+  step: number;
+  atEnd: boolean;
+  next: () => void;
   replay: () => void;
 }
 
-// Auto-plays a payoff line once on mount, one move every `stepMs`. Under
-// prefers-reduced-motion it starts (and replays) at the final position.
-//
-// The timer chain is scheduled imperatively inside a single long-lived effect
-// (self-rescheduling on each tick) rather than via a `step`-dependent effect.
-// Advancing the next tick's timer synchronously inside the current tick's
-// callback keeps the whole chain inside one fake-timer sweep — a dependent
-// effect would instead wait for React's (real, unmocked) scheduler to render
-// and re-run before registering the next timeout.
-export function useSequencePlayer(initial: Stone[], payoff: DemoMove[], stepMs = 450): SequencePlayer {
-  const reduced = useRef(prefersReducedMotion()).current;
+// Steps a payoff line one move at a time under the learner's control (a "Next move"
+// button). There is no auto-advance: the board opens at the initial position and each
+// next() plays exactly one more move; replay() returns to the start. Stepping is a
+// discrete user action, so there's nothing timed to reconcile with reduced-motion —
+// the per-stone CSS fade already respects it.
+export function useSequencePlayer(initial: Stone[], payoff: DemoMove[]): SequencePlayer {
   const end = payoff.length;
-  const [step, setStep] = useState(reduced ? end : 0);
-  const [gen, setGen] = useState(0);
-
-  useEffect(() => {
-    if (reduced) return;
-    let cancelled = false;
-    let current = 0;
-    function scheduleNext() {
-      if (cancelled || current >= end) return;
-      setTimeout(() => {
-        if (cancelled) return;
-        current += 1;
-        setStep(current);
-        scheduleNext();
-      }, stepMs);
-    }
-    scheduleNext();
-    return () => { cancelled = true; };
-  }, [reduced, end, stepMs, gen]);
-
+  const [step, setStep] = useState(0);
   const stones = useMemo(() => positionAt(initial, payoff, step), [initial, payoff, step]);
-  const replay = () => {
-    setStep(reduced ? end : 0);
-    setGen((g) => g + 1);
+  return {
+    stones,
+    step,
+    atEnd: step >= end,
+    next: () => setStep((s) => Math.min(s + 1, end)),
+    replay: () => setStep(0),
   };
-  return { stones, playing: step < end, done: step >= end, replay };
 }
