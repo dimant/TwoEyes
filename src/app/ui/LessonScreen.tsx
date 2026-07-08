@@ -22,7 +22,7 @@ function diagramPuzzle(lesson: Lesson): Puzzle {
   };
 }
 
-export function LessonScreen({ lesson, onDismiss }: { lesson: Lesson; onDismiss: () => void }) {
+export function LessonScreen({ lesson, onDismiss, dismissLabel = "Start practicing" }: { lesson: Lesson; onDismiss: () => void; dismissLabel?: string }) {
   const showMove = (lesson.diagram.keyMove?.length ?? 0) > 0;
   return (
     <div className="lesson-overlay" role="dialog" aria-modal="true" aria-label={`Lesson: ${lesson.title}`}>
@@ -46,7 +46,7 @@ export function LessonScreen({ lesson, onDismiss }: { lesson: Lesson; onDismiss:
             <p key={i}>{line}</p>
           ))}
         </div>
-        <button className="btn" onClick={onDismiss}>Start practicing</button>
+        <button className="btn" onClick={onDismiss}>{dismissLabel}</button>
       </div>
     </div>
   );

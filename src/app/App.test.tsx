@@ -19,15 +19,16 @@ describe("App", () => {
     // lesson takes over: the dialog shows and the map is gone
     expect(screen.getByRole("dialog")).toBeDefined();
     expect(screen.queryByText(/Capturing basics/i)).toBeNull();
-    // dismiss returns to the map
-    fireEvent.click(screen.getByRole("button", { name: /Start practicing/ }));
+    // the map browser's dismiss reads "Back to map" (not "Start practicing") and returns to the map
+    expect(screen.queryByRole("button", { name: /Start practicing/ })).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Back to map/ }));
     expect(screen.getByText(/Capturing basics/i)).toBeDefined();
   });
 
   it("viewing a lesson from the map marks it seen, so entering the topic skips the auto-lesson", () => {
     render(<App />);
     fireEvent.click(screen.getByTestId("learn-1"));           // view topic 1's lesson
-    fireEvent.click(screen.getByRole("button", { name: /Start practicing/ })); // dismiss -> marks seen
+    fireEvent.click(screen.getByRole("button", { name: /Back to map/ })); // dismiss -> marks seen
     fireEvent.click(screen.getByRole("button", { name: /Liberties/i }));       // enter topic 1
     // lesson does NOT auto-open — we land straight in practice
     expect(screen.getByText("● Black to play")).toBeDefined();

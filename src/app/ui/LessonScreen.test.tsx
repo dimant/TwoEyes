@@ -14,4 +14,13 @@ describe("LessonScreen", () => {
     fireEvent.click(screen.getByRole("button", { name: /Start practicing/ }));
     expect(onDismiss).toHaveBeenCalledTimes(1);
   });
+
+  it("uses a custom dismiss label when provided (map browser reads 'Back to map')", () => {
+    const lesson = lessonFor(10)!;
+    const onDismiss = vi.fn();
+    render(<LessonScreen lesson={lesson} onDismiss={onDismiss} dismissLabel="Back to map" />);
+    expect(screen.queryByRole("button", { name: /Start practicing/ })).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Back to map/ }));
+    expect(onDismiss).toHaveBeenCalledTimes(1);
+  });
 });

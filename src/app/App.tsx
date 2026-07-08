@@ -33,7 +33,7 @@ export function App() {
       <header className="topbar"><span className="brand">Two Eyes</span></header>
       {nav.screen === "map" && (
         mapLesson ? (
-          <LessonScreen lesson={mapLesson} onDismiss={dismissMapLesson} />
+          <LessonScreen lesson={mapLesson} onDismiss={dismissMapLesson} dismissLabel="Back to map" />
         ) : (
           <MapScreen
             map={map}
