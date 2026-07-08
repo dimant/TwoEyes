@@ -9,6 +9,8 @@ export type SolutionSpec =
   | { kind: "value"; value: number }
   | { kind: "choice"; id: string };
 
+export interface DemoMove { x: number; y: number; c: Color; captures?: Point[]; }
+
 export interface Puzzle {
   id: string;
   topic: number;
@@ -22,6 +24,7 @@ export interface Puzzle {
   captured?: Point[];
   ataris?: Point[];
   marks?: Mark[];
+  payoff?: DemoMove[];
 }
 
 export interface Bank { seed: number; stage: string; puzzles: Puzzle[]; }
