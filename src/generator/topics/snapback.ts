@@ -3,6 +3,7 @@ import { play } from "../../engine/rules";
 import { group } from "../../engine/liberties";
 import { Rng, randint, shuffle } from "../../engine/rng";
 import { Puzzle } from "../types";
+import { annotate, type PlayedMove } from "../payoff";
 
 // Black throws in at p. Returns how many white stones Black recaptures via the snapback (0 = no snapback).
 export function snapbackWorks(board: Board, p: Point): { ok: boolean; recaptured: number } {
@@ -18,6 +19,21 @@ export function snapbackWorks(board: Board, p: Point): { ok: boolean; recaptured
   const r3 = play(r2.board, p.x, p.y, "b");
   if (!r3.ok || r3.captured.length < 1) return { ok: false, recaptured: 0 };
   return { ok: true, recaptured: r3.captured.length };
+}
+
+// The concrete 3-ply snapback line: Black throws in at p, White captures it by
+// filling the last liberty, Black replays p to snap the now-short White group off.
+export function snapbackLine(board: Board, p: Point): PlayedMove[] | null {
+  const r1 = play(board, p.x, p.y, "b");
+  if (!r1.ok || r1.captured.length > 0) return null;
+  const g = group(r1.board, p.x, p.y);
+  if (g.liberties.length !== 1) return null;
+  const lib = g.liberties[0]!;
+  const r2 = play(r1.board, lib.x, lib.y, "w");
+  if (!r2.ok || r2.captured.length !== g.stones.length) return null;
+  const r3 = play(r2.board, p.x, p.y, "b");
+  if (!r3.ok || r3.captured.length < 1) return null;
+  return [{ x: p.x, y: p.y, c: "b" }, { x: lib.x, y: lib.y, c: "w" }, { x: p.x, y: p.y, c: "b" }];
 }
 
 // A snapback throw-in is always played next to the white group — scan only those points.

@@ -1,7 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { Board } from "../../engine/board";
+import { play } from "../../engine/rules";
 import { makeRng } from "../../engine/rng";
-import { generateSnapback, snapbackWorks } from "./snapback";
+import { generateSnapback, snapbackWorks, snapbackLine } from "./snapback";
 
 describe("snapback", () => {
   it("snapbackWorks confirms a textbook snapback and rejects a plain point", () => {
@@ -38,5 +39,27 @@ describe("snapback", () => {
       if (p.solution.kind !== "move") throw new Error("move");
       expect(snapbackWorks(Board.from(p.size, p.stones), p.solution.points[0]!).recaptured).toBeGreaterThanOrEqual(3);
     }
+  });
+});
+
+describe("snapbackLine", () => {
+  it("returns the 3-ply throw-in / capture / recapture line for a working snapback", () => {
+    // The topic-11 lesson shape.
+    const stones = [
+      { x: 5, y: 3, c: "b" as const }, { x: 4, y: 4, c: "b" as const }, { x: 5, y: 4, c: "w" as const },
+      { x: 6, y: 4, c: "b" as const }, { x: 4, y: 5, c: "b" as const }, { x: 5, y: 5, c: "w" as const },
+      { x: 4, y: 6, c: "b" as const }, { x: 5, y: 6, c: "w" as const },
+    ];
+    const line = snapbackLine(Board.from(7, stones), { x: 6, y: 6 });
+    expect(line).toEqual([
+      { x: 6, y: 6, c: "b" },
+      { x: 6, y: 5, c: "w" },
+      { x: 6, y: 6, c: "b" },
+    ]);
+  });
+
+  it("returns null for a point that does not snap back", () => {
+    const stones = [{ x: 2, y: 2, c: "w" as const }];
+    expect(snapbackLine(Board.from(5, stones), { x: 0, y: 0 })).toBeNull();
   });
 });
