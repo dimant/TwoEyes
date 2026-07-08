@@ -74,7 +74,7 @@ export function PlayerScreen({
       </div>
       <div className="board-hold">
         {resolved && p.payoff ? (
-          <PayoffBoard puzzle={p} payoff={p.payoff} />
+          <PayoffBoard key={p.id} puzzle={p} payoff={p.payoff} />
         ) : (
           <Board
             puzzle={p}
