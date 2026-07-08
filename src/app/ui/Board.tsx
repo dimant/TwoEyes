@@ -1,16 +1,18 @@
-import type { Puzzle, Pt } from "../model/types";
+import type { Puzzle, Pt, Stone } from "../model/types";
 
 export interface BoardProps {
   puzzle: Puzzle;
   reveal?: boolean;
   onTapPoint?: (p: Pt) => void;
+  stones?: Stone[];
 }
 
 const CELL = 40;
 const M = 24;
 
-export function Board({ puzzle, reveal, onTapPoint }: BoardProps) {
-  const { size, stones } = puzzle;
+export function Board({ puzzle, reveal, onTapPoint, stones: override }: BoardProps) {
+  const { size } = puzzle;
+  const stones = override ?? puzzle.stones;
   const W = M * 2 + (size - 1) * CELL;
   const px = (v: number) => M + v * CELL;
   const r = CELL * 0.44;

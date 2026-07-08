@@ -28,4 +28,13 @@ describe("Board", () => {
     const { container } = render(<Board puzzle={capture} />);
     expect(container.querySelectorAll("[data-tap]").length).toBe(0);
   });
+
+  it("renders the override stones instead of the puzzle stones when `stones` is set", () => {
+    const override = [
+      { x: 0, y: 0, c: "b" as const },
+      { x: 1, y: 1, c: "w" as const },
+    ];
+    const { container } = render(<Board puzzle={capture} stones={override} />);
+    expect(container.querySelectorAll("circle.stone").length).toBe(2);
+  });
 });
