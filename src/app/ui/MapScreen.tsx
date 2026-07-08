@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useViewModel } from "../useViewModel";
 import type { MapViewModel } from "../vm/map-vm";
 
@@ -7,8 +8,25 @@ export const TOPIC_TITLES: Record<number, string> = {
   7: "Connect & cut", 10: "Net", 11: "Snapback",
 };
 
+const TAP_WINDOW_MS = 700;
+
 export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: number, rung: number) => void }) {
   const s = useViewModel(map);
+  // Count taps ourselves rather than relying on MouseEvent.detail, which touch
+  // devices don't increment (every tap reports detail:1). Three quick taps on the
+  // same locked topic within the window jumps in (a skip-ahead shortcut).
+  const taps = useRef<{ topic: number; count: number; at: number }>({ topic: -1, count: 0, at: 0 });
+
+  const handleTap = (topic: number, rung: number, unlocked: boolean): void => {
+    if (unlocked) { onOpen(topic, rung); return; }
+    const now = Date.now();
+    const t = taps.current;
+    if (t.topic === topic && now - t.at < TAP_WINDOW_MS) t.count += 1;
+    else { t.topic = topic; t.count = 1; }
+    t.at = now;
+    if (t.count >= 3) { t.count = 0; onOpen(topic, rung); }
+  };
+
   return (
     <div className="screen map">
       <div className="map-head">
@@ -20,12 +38,8 @@ export function MapScreen({ map, onOpen }: { map: MapViewModel; onOpen: (topic: 
           <li key={r.topic}>
             <button
               className={`tcard ${r.cleared ? "done" : r.unlocked ? "cur" : "lock"}`}
-              // Unlocked topics open on a normal tap. Locked ones stay put on a single
-              // tap but jump straight in on a triple-tap (a skip-ahead shortcut).
-              onClick={(e) => {
-                if (r.unlocked || e.detail >= 3) onOpen(r.topic, r.openRung);
-              }}
-              title={r.unlocked ? undefined : "Locked — triple-tap to jump in"}
+              onClick={() => handleTap(r.topic, r.openRung, r.unlocked)}
+              title={r.unlocked ? undefined : "Locked — tap 3× to jump in"}
             >
               <span className="idx">{r.cleared ? "✓" : r.topic}</span>
               <span className="tmeta">

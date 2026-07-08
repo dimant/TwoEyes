@@ -75,6 +75,7 @@ body {
   display: flex; align-items: center; gap: 13px; width: 100%; text-align: left;
   padding: 13px 14px; border-radius: 16px; border: 1px solid var(--hair); background: var(--panel);
   color: var(--ink); font: inherit; cursor: pointer; transition: transform .15s, box-shadow .15s;
+  touch-action: manipulation; /* stop mobile double-tap zoom from swallowing quick taps */
 }
 .tcard:hover:not(:disabled) { transform: translateY(-1px); }
 .tcard:disabled { opacity: .5; cursor: not-allowed; }
