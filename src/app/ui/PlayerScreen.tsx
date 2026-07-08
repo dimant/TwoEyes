@@ -90,6 +90,9 @@ export function PlayerScreen({
         )}
       </div>
       {resolved && p.breaker && <p className="hint">This white stone breaks the ladder — it can't be caught.</p>}
+      {resolved && p.solution.kind === "choice" && p.solution.id === "caught" && (
+        <p className="hint">Caught — the ladder works.</p>
+      )}
       {!resolved && p.mode === "Q-count" && <NumberPad onPick={(n) => submit({ kind: "value", value: n })} />}
       {!resolved && p.mode === "Q-binary" && (
         <YesNo options={Q_CHOICES[p.topic]!} onPick={(id) => submit({ kind: "choice", id })} />
