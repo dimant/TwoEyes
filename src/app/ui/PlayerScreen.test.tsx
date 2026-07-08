@@ -84,4 +84,40 @@ describe("PlayerScreen", () => {
       vi.useRealTimers();
     }
   });
+
+  it("topic 9 caught: answering shows the animated capture (payoff)", () => {
+    vi.useFakeTimers();
+    try {
+      const bank: Bank = { seed: 0, stage: "B", puzzles: [{
+        id: "c", topic: 9, rung: 1, mode: "Q-binary", size: 5, toPlay: "b",
+        prompt: "If Black ladders the marked stone, is it caught?",
+        stones: [{ x: 2, y: 2, c: "w" }, { x: 1, y: 2, c: "b" }, { x: 3, y: 2, c: "b" }, { x: 2, y: 1, c: "b" }],
+        solution: { kind: "choice", id: "caught" },
+        marks: [{ x: 2, y: 2, kind: "mark" }],
+        payoff: [{ x: 2, y: 3, c: "b", captures: [{ x: 2, y: 2 }] }],
+      }]};
+      const pb = new PuzzleBank(bank);
+      const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 9, 1);
+      render(<PlayerScreen player={vm} onExit={vi.fn()} />);
+      fireEvent.click(screen.getByRole("button", { name: /Caught/ }));
+      expect(screen.getByRole("button", { name: /Replay/ })).toBeDefined();
+    } finally { vi.useRealTimers(); }
+  });
+
+  it("topic 9 escapes: answering rings the breaker with a caption", () => {
+    const bank: Bank = { seed: 0, stage: "B", puzzles: [{
+      id: "e", topic: 9, rung: 1, mode: "Q-binary", size: 9, toPlay: "b",
+      prompt: "If Black ladders the marked stone, is it caught?",
+      stones: [{ x: 4, y: 5, c: "b" }, { x: 5, y: 5, c: "w" }, { x: 6, y: 5, c: "b" }, { x: 6, y: 6, c: "b" }, { x: 3, y: 7, c: "w" }],
+      solution: { kind: "choice", id: "escapes" },
+      marks: [{ x: 5, y: 5, kind: "mark" }],
+      breaker: { x: 3, y: 7 },
+    }]};
+    const pb = new PuzzleBank(bank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 9, 1);
+    const { container } = render(<PlayerScreen player={vm} onExit={vi.fn()} />);
+    fireEvent.click(screen.getByRole("button", { name: /Escapes/ }));
+    expect(container.querySelectorAll("circle.breaker").length).toBe(1);
+    expect(screen.getByText(/breaks the ladder/i)).toBeDefined();
+  });
 });

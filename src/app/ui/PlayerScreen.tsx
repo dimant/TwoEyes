@@ -7,8 +7,13 @@ import type { Lesson } from "../content/lessons";
 import { Board } from "./Board";
 import { PayoffBoard } from "./PayoffBoard";
 import { LessonScreen } from "./LessonScreen";
-import { NumberPad, YesNo } from "./inputs";
+import { NumberPad, YesNo, type ChoiceOption } from "./inputs";
 import { Feedback } from "./Feedback";
+
+const Q_CHOICES: Record<number, [ChoiceOption, ChoiceOption]> = {
+  5: [{ id: "self-atari", label: "Self-atari" }, { id: "safe", label: "Safe" }],
+  9: [{ id: "caught", label: "Caught" }, { id: "escapes", label: "Escapes" }],
+};
 
 function PlayerHead({ mastery, onExit, onLearn }: { mastery: number; onExit: () => void; onLearn?: () => void }) {
   return (
@@ -79,12 +84,19 @@ export function PlayerScreen({
           <Board
             puzzle={p}
             reveal={resolved}
+            breaker={resolved ? p.breaker : undefined}
             onTapPoint={p.mode === "M" && !resolved ? (pt) => submit({ kind: "move", point: pt }) : undefined}
           />
         )}
       </div>
+      {resolved && p.breaker && <p className="hint">This white stone breaks the ladder — it can't be caught.</p>}
+      {resolved && p.solution.kind === "choice" && p.solution.id === "caught" && (
+        <p className="hint">Caught — the ladder works.</p>
+      )}
       {!resolved && p.mode === "Q-count" && <NumberPad onPick={(n) => submit({ kind: "value", value: n })} />}
-      {!resolved && p.mode === "Q-binary" && <YesNo onPick={(id) => submit({ kind: "choice", id })} />}
+      {!resolved && p.mode === "Q-binary" && (
+        <YesNo options={Q_CHOICES[p.topic]!} onPick={(id) => submit({ kind: "choice", id })} />
+      )}
       {!resolved && p.mode === "M" && <p className="hint">Tap a point to play.</p>}
       {s.phase !== "idle" && (
         <Feedback

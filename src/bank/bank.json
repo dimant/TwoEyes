@@ -24395,6 +24395,2887 @@
           ]
         }
       ]
+    },
+    {
+      "id": "t9-r1-0",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 2,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "c": "b",
+          "captures": [
+            {
+              "x": 0,
+              "y": 6
+            },
+            {
+              "x": 1,
+              "y": 6
+            },
+            {
+              "x": 1,
+              "y": 5
+            },
+            {
+              "x": 2,
+              "y": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-1",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 5,
+        "y": 1
+      }
+    },
+    {
+      "id": "t9-r1-2",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 2,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "b",
+          "captures": [
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 0
+            },
+            {
+              "x": 3,
+              "y": 1
+            },
+            {
+              "x": 3,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-3",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 1,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "b",
+          "captures": [
+            {
+              "x": 0,
+              "y": 3
+            },
+            {
+              "x": 1,
+              "y": 3
+            },
+            {
+              "x": 1,
+              "y": 4
+            },
+            {
+              "x": 2,
+              "y": 4
+            },
+            {
+              "x": 2,
+              "y": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-4",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 6,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 7,
+        "y": 7
+      }
+    },
+    {
+      "id": "t9-r1-5",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 8,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 7,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 7,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 8,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "c": "b",
+          "captures": [
+            {
+              "x": 8,
+              "y": 2
+            },
+            {
+              "x": 7,
+              "y": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-6",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 6,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 7,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 6,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "c": "b"
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 8,
+              "y": 7
+            },
+            {
+              "x": 7,
+              "y": 7
+            },
+            {
+              "x": 7,
+              "y": 6
+            },
+            {
+              "x": 6,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-7",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 2,
+        "y": 6
+      }
+    },
+    {
+      "id": "t9-r1-8",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 4,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 6,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 8,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 1,
+          "c": "b",
+          "captures": [
+            {
+              "x": 8,
+              "y": 2
+            },
+            {
+              "x": 7,
+              "y": 2
+            },
+            {
+              "x": 7,
+              "y": 3
+            },
+            {
+              "x": 6,
+              "y": 3
+            },
+            {
+              "x": 6,
+              "y": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-9",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 6,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 4,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 2,
+              "y": 8
+            },
+            {
+              "x": 3,
+              "y": 8
+            },
+            {
+              "x": 3,
+              "y": 7
+            },
+            {
+              "x": 3,
+              "y": 6
+            },
+            {
+              "x": 4,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-10",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 4,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 3,
+        "y": 7
+      }
+    },
+    {
+      "id": "t9-r1-11",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 6,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "c": "b",
+          "captures": [
+            {
+              "x": 5,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 0
+            },
+            {
+              "x": 6,
+              "y": 1
+            },
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 2
+            },
+            {
+              "x": 5,
+              "y": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-12",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 7,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 7,
+        "y": 4
+      }
+    },
+    {
+      "id": "t9-r1-13",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 2,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b",
+          "captures": [
+            {
+              "x": 0,
+              "y": 7
+            },
+            {
+              "x": 1,
+              "y": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-14",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 6,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 3,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 7,
+        "y": 2
+      }
+    },
+    {
+      "id": "t9-r1-15",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 0,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 1,
+              "y": 8
+            },
+            {
+              "x": 2,
+              "y": 8
+            },
+            {
+              "x": 2,
+              "y": 7
+            },
+            {
+              "x": 2,
+              "y": 6
+            },
+            {
+              "x": 1,
+              "y": 6
+            },
+            {
+              "x": 1,
+              "y": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r1-16",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 1,
+        "y": 8
+      }
+    },
+    {
+      "id": "t9-r1-17",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 2,
+        "y": 1
+      }
+    },
+    {
+      "id": "t9-r1-18",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 0,
+        "y": 4
+      }
+    },
+    {
+      "id": "t9-r1-19",
+      "topic": 9,
+      "rung": 1,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 5,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 7,
+        "y": 6
+      }
+    },
+    {
+      "id": "t9-r2-0",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 6,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 8,
+        "y": 2
+      }
+    },
+    {
+      "id": "t9-r2-1",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 2,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b",
+          "captures": [
+            {
+              "x": 0,
+              "y": 5
+            },
+            {
+              "x": 1,
+              "y": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-2",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 6,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 1,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 1,
+              "y": 8
+            },
+            {
+              "x": 1,
+              "y": 7
+            },
+            {
+              "x": 1,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-3",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 2,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 6,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 1,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 2,
+              "y": 8
+            },
+            {
+              "x": 3,
+              "y": 8
+            },
+            {
+              "x": 3,
+              "y": 7
+            },
+            {
+              "x": 3,
+              "y": 6
+            },
+            {
+              "x": 2,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-4",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 1,
+        "y": 3
+      }
+    },
+    {
+      "id": "t9-r2-5",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "c": "b",
+          "captures": [
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 0
+            },
+            {
+              "x": 2,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 3,
+              "y": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-6",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 7,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 8,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 7,
+          "y": 6,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 7,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "c": "b",
+          "captures": [
+            {
+              "x": 8,
+              "y": 6
+            },
+            {
+              "x": 7,
+              "y": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-7",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 2,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "c": "b",
+          "captures": [
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-8",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 0,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 1,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 1,
+              "y": 8
+            },
+            {
+              "x": 1,
+              "y": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-9",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "b",
+          "captures": [
+            {
+              "x": 1,
+              "y": 0
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-10",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 6,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 6,
+              "y": 8
+            },
+            {
+              "x": 6,
+              "y": 7
+            },
+            {
+              "x": 5,
+              "y": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-11",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 6,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 7,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 7,
+        "y": 3
+      }
+    },
+    {
+      "id": "t9-r2-12",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 4,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "caught"
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "payoff": [
+        {
+          "x": 3,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "c": "b",
+          "captures": [
+            {
+              "x": 4,
+              "y": 8
+            },
+            {
+              "x": 4,
+              "y": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t9-r2-13",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 5,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 5,
+        "y": 0
+      }
+    },
+    {
+      "id": "t9-r2-14",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    {
+      "id": "t9-r2-15",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 5,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 8,
+        "y": 3
+      }
+    },
+    {
+      "id": "t9-r2-16",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 1,
+        "y": 3
+      }
+    },
+    {
+      "id": "t9-r2-17",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 3,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 2,
+        "y": 7
+      }
+    },
+    {
+      "id": "t9-r2-18",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    {
+      "id": "t9-r2-19",
+      "topic": 9,
+      "rung": 2,
+      "mode": "Q-binary",
+      "size": 9,
+      "stones": [
+        {
+          "x": 1,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "If Black ladders the marked stone, is it caught?",
+      "solution": {
+        "kind": "choice",
+        "id": "escapes"
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 7,
+          "kind": "mark"
+        }
+      ],
+      "breaker": {
+        "x": 0,
+        "y": 8
+      }
     }
   ]
 }

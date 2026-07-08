@@ -20,15 +20,15 @@ const norm = (pts: Point[]): string =>
   pts.map((p) => `${p.x},${p.y}`).sort().join(" ");
 
 describe("bank.json — shape", () => {
-  it("has 400 puzzles, 20 per topic-rung, unique ids", () => {
-    expect(bank.puzzles).toHaveLength(400);
-    expect(new Set(bank.puzzles.map((p) => p.id)).size).toBe(400);
+  it("has 440 puzzles, 20 per topic-rung, unique ids", () => {
+    expect(bank.puzzles).toHaveLength(440);
+    expect(new Set(bank.puzzles.map((p) => p.id)).size).toBe(440);
     const by = new Map<string, number>();
     for (const p of bank.puzzles) {
       const k = `t${p.topic}-r${p.rung}`;
       by.set(k, (by.get(k) ?? 0) + 1);
     }
-    for (const t of [1, 2, 3, 4, 5, 6, 7, 8, 10, 11]) for (const r of [1, 2]) expect(by.get(`t${t}-r${r}`)).toBe(20);
+    for (const t of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) for (const r of [1, 2]) expect(by.get(`t${t}-r${r}`)).toBe(20);
   });
 });
 
@@ -36,7 +36,7 @@ const mPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.mode === "M" &
 const qPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.mode === "Q-count").map((p) => [p.id, p]);
 const escapePuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 4).map((p) => [p.id, p]);
 const dblPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 6).map((p) => [p.id, p]);
-const binPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.mode === "Q-binary").map((p) => [p.id, p]);
+const binPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.mode === "Q-binary" && p.topic === 5).map((p) => [p.id, p]);
 
 describe("bank.json — capture puzzles are solvable (M)", () => {
   it.each(mPuzzles)("%s: legal, captures the recorded stones, and the solution is unique", (_id, p) => {
@@ -334,4 +334,49 @@ describe("bank.json — ladder puzzles catch the stone (topic 8)", () => {
       expect(capturedUnderBestPlay(r.board, t, "w", 8)).toBe(false);
     }
   });
+});
+
+const lbPuzzles: [string, Puzzle][] = bank.puzzles.filter((p) => p.topic === 9).map((p) => [p.id, p]);
+
+describe("bank.json — ladder-breaker verdicts are correct (topic 9)", () => {
+  it.each(lbPuzzles)("%s: verdict matches the engine; caught payoff captures, escapes breaker is real", (_id, p) => {
+    expect(p.mode).toBe("Q-binary");
+    if (p.solution.kind !== "choice") return;
+    expect(p.marks).toHaveLength(1);
+    const t = p.marks![0]!;
+    const board = Board.from(p.size, p.stones);
+    const caught = capturedUnderBestPlay(board, t, "b", 12);
+    if (p.solution.id === "caught") {
+      expect(caught).toBe(true);
+      expect(p.breaker).toBeUndefined();
+      expect(p.payoff && p.payoff.length).toBeGreaterThan(0);
+      let b2 = Board.from(p.size, p.stones);
+      for (const m of p.payoff!) {
+        const r = play(b2, m.x, m.y, m.c);
+        expect(r.ok).toBe(true);
+        expect(norm(r.captured)).toBe(norm(m.captures ?? []));
+        b2 = r.board;
+      }
+      expect(b2.get(t.x, t.y)).toBeNull();
+    } else {
+      expect(p.solution.id).toBe("escapes");
+      expect(caught).toBe(false);
+      expect(p.payoff).toBeUndefined();
+      expect(p.breaker).toBeDefined();
+      expect(board.get(p.breaker!.x, p.breaker!.y)).toBe("w");
+      const without = Board.from(p.size, p.stones.filter((s) => !(s.x === p.breaker!.x && s.y === p.breaker!.y)));
+      expect(capturedUnderBestPlay(without, t, "b", 12)).toBe(true);
+    }
+  });
+});
+
+describe("bank.json — ladder-breaker rungs are balanced (topic 9)", () => {
+  for (const rung of [1, 2]) {
+    it(`t9-r${rung}: 10 caught + 10 escapes`, () => {
+      const g = bank.puzzles.filter((p) => p.topic === 9 && p.rung === rung);
+      const id = (p: Puzzle) => (p.solution.kind === "choice" ? p.solution.id : "");
+      expect(g.filter((p) => id(p) === "caught")).toHaveLength(10);
+      expect(g.filter((p) => id(p) === "escapes")).toHaveLength(10);
+    });
+  }
 });

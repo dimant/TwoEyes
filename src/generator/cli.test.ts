@@ -10,11 +10,11 @@ describe("buildBank", () => {
       byRung.set(k, (byRung.get(k) ?? 0) + 1);
     }
     // topics 1-6 each have rungs 1 and 2
-    for (const t of [1, 2, 3, 4, 5, 6, 7, 8, 10, 11])
+    for (const t of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
       for (const r of [1, 2])
         expect(byRung.get(`t${t}-r${r}`)).toBe(20);
 
-    expect(bank.puzzles).toHaveLength(400);
+    expect(bank.puzzles).toHaveLength(440);
 
     const ids = bank.puzzles.map((p) => p.id);
     expect(new Set(ids).size).toBe(ids.length); // all unique

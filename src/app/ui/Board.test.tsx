@@ -37,4 +37,16 @@ describe("Board", () => {
     const { container } = render(<Board puzzle={capture} stones={override} />);
     expect(container.querySelectorAll("circle.stone").length).toBe(2);
   });
+
+  it("rings the breaker point only when revealed", () => {
+    const esc: Puzzle = {
+      id: "t9", topic: 9, rung: 1, mode: "Q-binary", size: 9, toPlay: "b", prompt: "",
+      stones: [{ x: 5, y: 5, c: "w" }, { x: 3, y: 7, c: "w" }],
+      solution: { kind: "choice", id: "escapes" }, breaker: { x: 3, y: 7 },
+    };
+    const { container: hidden } = render(<Board puzzle={esc} breaker={undefined} />);
+    expect(hidden.querySelectorAll("circle.breaker").length).toBe(0);
+    const { container: shown } = render(<Board puzzle={esc} reveal breaker={esc.breaker} />);
+    expect(shown.querySelectorAll("circle.breaker").length).toBe(1);
+  });
 });
