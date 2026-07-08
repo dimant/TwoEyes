@@ -1,9 +1,10 @@
 import { Board, Point } from "../../engine/board";
 import { play } from "../../engine/rules";
 import { group } from "../../engine/liberties";
-import { capturedUnderBestPlay } from "../reader";
+import { capturedUnderBestPlay, captureLine } from "../reader";
 import { Rng, randint, shuffle } from "../../engine/rng";
 import { Puzzle } from "../types";
+import { annotate, type PlayedMove } from "../payoff";
 
 function nearby(size: number, t: Point): Point[] {
   const out: Point[] = [];
@@ -54,11 +55,19 @@ export function generateNet(
     }
     if (nets.length === 0) continue;
 
+    // Payoff: demonstrate the capture from the canonical (first) net point,
+    // extracted at the bank's verification depth (8).
+    const canonical = nets[0]!;
+    const afterNet = play(board, canonical.x, canonical.y, "b");
+    const tail = afterNet.ok ? captureLine(afterNet.board, t, "w", 8) : null;
+    if (!tail) continue; // defensive — a verified net always yields a line
+    const line: PlayedMove[] = [{ x: canonical.x, y: canonical.y, c: "b" }, ...tail];
     const puzzle: Puzzle = {
       id: "tmp", topic: 10, rung, mode: "M", size, stones: board.stones(), toPlay: "b",
       prompt: "Black to play — net the stone so it can't run.",
       solution: { kind: "move", points: nets },
       marks: [{ x: t.x, y: t.y, kind: "mark" }],
+      payoff: annotate(size, board.stones(), line),
     };
     const sig = JSON.stringify({ s: puzzle.stones, m: [t.x, t.y] });
     if (seen.has(sig)) continue;

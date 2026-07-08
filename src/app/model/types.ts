@@ -10,6 +10,8 @@ export type Solution =
   | { kind: "value"; value: number }
   | { kind: "choice"; id: string };
 
+export interface DemoMove { x: number; y: number; c: Color; captures?: Pt[]; }
+
 export interface Puzzle {
   id: string;
   topic: number;
@@ -23,6 +25,7 @@ export interface Puzzle {
   captured?: Pt[];
   ataris?: Pt[];
   marks?: Mark[];
+  payoff?: DemoMove[];
 }
 
 export interface Bank { seed: number; stage: string; puzzles: Puzzle[]; }

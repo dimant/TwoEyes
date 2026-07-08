@@ -42,3 +42,23 @@ describe("generateNet", () => {
     }
   });
 });
+
+describe("generateNet payoff", () => {
+  it("every generated puzzle carries a payoff that replays to the target's capture", () => {
+    const puzzles = generateNet(makeRng(7), { rung: 1, size: 7, count: 5, depth: 4 });
+    for (const p of puzzles) {
+      expect(p.payoff && p.payoff.length).toBeGreaterThan(0);
+      const target = p.marks![0]!; // the netted stone
+      if (p.solution.kind !== "move") throw new Error("expected move solution");
+      const m0 = p.payoff![0]!;
+      expect(p.solution.points.some((q) => q.x === m0.x && q.y === m0.y)).toBe(true);
+      let board = Board.from(p.size, p.stones);
+      for (const m of p.payoff!) {
+        const r = play(board, m.x, m.y, m.c);
+        expect(r.ok).toBe(true);
+        board = r.board;
+      }
+      expect(board.get(target.x, target.y)).toBeNull(); // netted stone captured
+    }
+  });
+});

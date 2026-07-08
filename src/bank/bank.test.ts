@@ -252,3 +252,41 @@ describe("bank.json — snapback puzzles recapture (topic 11)", () => {
       }
   });
 });
+
+describe("bank.json — net payoff captures the target (topic 10)", () => {
+  it.each(netPuzzles)("%s: payoff replays legally, captures match the engine, target removed", (_id, p) => {
+    expect(p.payoff && p.payoff.length).toBeGreaterThan(0);
+    if (p.solution.kind !== "move") return;
+    const t = p.marks![0]!;
+    const first = p.payoff![0]!;
+    expect(p.solution.points.some((q) => q.x === first.x && q.y === first.y)).toBe(true);
+    let board = Board.from(p.size, p.stones);
+    for (const m of p.payoff!) {
+      const res = play(board, m.x, m.y, m.c);
+      expect(res.ok).toBe(true);
+      expect(norm(res.captured)).toBe(norm(m.captures ?? []));
+      board = res.board;
+    }
+    expect(board.get(t.x, t.y)).toBeNull();
+  });
+});
+
+describe("bank.json — snapback payoff snaps the group off (topic 11)", () => {
+  it.each(snapPuzzles)("%s: payoff replays legally, captures match, final move recaptures >= min", (_id, p) => {
+    if (p.solution.kind !== "move") return;
+    const min = p.rung === 2 ? 3 : 2;
+    expect(p.payoff).toHaveLength(3);
+    const first = p.payoff![0]!;
+    expect(p.solution.points.some((q) => q.x === first.x && q.y === first.y)).toBe(true);
+    let board = Board.from(p.size, p.stones);
+    let lastCap = 0;
+    for (const m of p.payoff!) {
+      const res = play(board, m.x, m.y, m.c);
+      expect(res.ok).toBe(true);
+      expect(norm(res.captured)).toBe(norm(m.captures ?? []));
+      lastCap = res.captured.length;
+      board = res.board;
+    }
+    expect(lastCap).toBeGreaterThanOrEqual(min);
+  });
+});

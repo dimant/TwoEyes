@@ -1,6 +1,7 @@
 import type { Lesson } from "../content/lessons";
 import type { Puzzle } from "../model/types";
 import { Board } from "./Board";
+import { PayoffBoard } from "./PayoffBoard";
 
 // Renders the lesson diagram by reusing the puzzle Board: the diagram is a Puzzle-shaped
 // object shown "revealed" so the teaching move appears as a ghost stone + accent ring.
@@ -29,7 +30,11 @@ export function LessonScreen({ lesson, onDismiss }: { lesson: Lesson; onDismiss:
         <div className="lesson-eyebrow">Lesson</div>
         <h2 className="lesson-title">{lesson.title}</h2>
         <div className="lesson-board">
-          <Board puzzle={diagramPuzzle(lesson)} reveal={showMove} />
+          {lesson.diagram.payoff ? (
+            <PayoffBoard key={lesson.topic} puzzle={diagramPuzzle(lesson)} payoff={lesson.diagram.payoff} />
+          ) : (
+            <Board puzzle={diagramPuzzle(lesson)} reveal={showMove} />
+          )}
         </div>
         <p className="lesson-caption">{lesson.diagram.caption}</p>
         <div className="lesson-body">

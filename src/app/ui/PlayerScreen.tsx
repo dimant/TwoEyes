@@ -5,6 +5,7 @@ import type { Input } from "../model/answer";
 import { MASTERY } from "../model/progress";
 import type { Lesson } from "../content/lessons";
 import { Board } from "./Board";
+import { PayoffBoard } from "./PayoffBoard";
 import { LessonScreen } from "./LessonScreen";
 import { NumberPad, YesNo } from "./inputs";
 import { Feedback } from "./Feedback";
@@ -72,11 +73,15 @@ export function PlayerScreen({
         <div className="q">{p.prompt}</div>
       </div>
       <div className="board-hold">
-        <Board
-          puzzle={p}
-          reveal={resolved}
-          onTapPoint={p.mode === "M" && !resolved ? (pt) => submit({ kind: "move", point: pt }) : undefined}
-        />
+        {resolved && p.payoff ? (
+          <PayoffBoard key={p.id} puzzle={p} payoff={p.payoff} />
+        ) : (
+          <Board
+            puzzle={p}
+            reveal={resolved}
+            onTapPoint={p.mode === "M" && !resolved ? (pt) => submit({ kind: "move", point: pt }) : undefined}
+          />
+        )}
       </div>
       {!resolved && p.mode === "Q-count" && <NumberPad onPick={(n) => submit({ kind: "value", value: n })} />}
       {!resolved && p.mode === "Q-binary" && <YesNo onPick={(id) => submit({ kind: "choice", id })} />}
