@@ -1,15 +1,36 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { App } from "./App";
 
 describe("App", () => {
+  beforeEach(() => window.localStorage.clear());
+
   it("shows the topic map and opens a topic into the player", () => {
     render(<App />);
     expect(screen.getByText(/Capturing basics/i)).toBeDefined();
-    // topic 1 is unlocked; click it — its lesson auto-opens on first entry
     fireEvent.click(screen.getByRole("button", { name: /Liberties/i }));
     fireEvent.click(screen.getByRole("button", { name: /Start practicing/ }));
-    // dismissing the lesson drops into the player, which shows a prompt
     expect(screen.getByText("● Black to play")).toBeDefined();
+  });
+
+  it("opens a lesson from the map and returns to the map on dismiss", () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId("learn-1"));
+    // lesson takes over: the dialog shows and the map is gone
+    expect(screen.getByRole("dialog")).toBeDefined();
+    expect(screen.queryByText(/Capturing basics/i)).toBeNull();
+    // dismiss returns to the map
+    fireEvent.click(screen.getByRole("button", { name: /Start practicing/ }));
+    expect(screen.getByText(/Capturing basics/i)).toBeDefined();
+  });
+
+  it("viewing a lesson from the map marks it seen, so entering the topic skips the auto-lesson", () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId("learn-1"));           // view topic 1's lesson
+    fireEvent.click(screen.getByRole("button", { name: /Start practicing/ })); // dismiss -> marks seen
+    fireEvent.click(screen.getByRole("button", { name: /Liberties/i }));       // enter topic 1
+    // lesson does NOT auto-open — we land straight in practice
+    expect(screen.getByText("● Black to play")).toBeDefined();
+    expect(screen.queryByRole("dialog")).toBeNull();
   });
 });
