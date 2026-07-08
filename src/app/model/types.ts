@@ -26,6 +26,7 @@ export interface Puzzle {
   ataris?: Pt[];
   marks?: Mark[];
   payoff?: DemoMove[];
+  breaker?: Pt;
 }
 
 export interface Bank { seed: number; stage: string; puzzles: Puzzle[]; }
