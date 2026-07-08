@@ -143,6 +143,31 @@ export const LESSONS: Lesson[] = [
     },
   },
   {
+    topic: 8,
+    title: "The ladder (shicho)",
+    body: [
+      "A ladder catches a running stone that can never quite get away.",
+      "You keep it in atari — one liberty — and it flees in a zig-zag. Each time it runs, you atari again, herding it toward the edge.",
+      "The marked white stone can't escape: chased into the corner, it finally runs out of room and is captured.",
+    ],
+    diagram: {
+      size: 7,
+      stones: [b(1, 1), b(1, 2), w(2, 2), b(2, 3)],
+      marks: [{ x: 2, y: 2, kind: "mark" }],
+      keyMove: [{ x: 3, y: 2 }],
+      payoff: [
+        { x: 3, y: 2, c: "b" },
+        { x: 2, y: 1, c: "w" },
+        { x: 3, y: 1, c: "b" },
+        { x: 2, y: 0, c: "w" },
+        { x: 3, y: 0, c: "b" },
+        { x: 1, y: 0, c: "w" },
+        { x: 0, y: 0, c: "b", captures: [{ x: 1, y: 0 }, { x: 2, y: 0 }, { x: 2, y: 1 }, { x: 2, y: 2 }] },
+      ],
+      caption: "Keep it in atari and chase it to the corner.",
+    },
+  },
+  {
     topic: 10,
     title: "The net (geta)",
     body: [
