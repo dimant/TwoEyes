@@ -4,6 +4,7 @@ import type { PlayerViewModel } from "../vm/player-vm";
 import type { Pt } from "../model/types";
 import type { Input } from "../model/answer";
 import { MASTERY } from "../model/progress";
+import { captureRevealPayoff } from "../model/sequence";
 import type { Lesson } from "../content/lessons";
 import { Board } from "./Board";
 import { PayoffBoard } from "./PayoffBoard";
@@ -73,6 +74,10 @@ export function PlayerScreen({
   const submit = (i: Input) => player.submit(i);
   // Show the learner's tapped point as a placed, circled stone so their choice is obvious.
   const playPoint = (point: Pt) => { setPick(point); submit({ kind: "move", point }); };
+  // Ladders/nets/snapbacks carry a stored payoff; capture topics derive a 1-move payoff
+  // so their reveal steps the capture instead of snapping. Non-capturing moves get
+  // undefined here and fall back to the static reveal below.
+  const revealPayoff = p.payoff ?? captureRevealPayoff(p);
 
   return (
     <div className="screen player">
@@ -82,8 +87,8 @@ export function PlayerScreen({
         <div className="q">{p.prompt}</div>
       </div>
       <div className="board-hold">
-        {resolved && p.payoff ? (
-          <PayoffBoard key={p.id} puzzle={p} payoff={p.payoff} pick={pick ?? undefined} />
+        {resolved && revealPayoff ? (
+          <PayoffBoard key={p.id} puzzle={p} payoff={revealPayoff} pick={pick ?? undefined} />
         ) : (
           <Board
             puzzle={p}

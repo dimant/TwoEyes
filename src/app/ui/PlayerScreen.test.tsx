@@ -30,7 +30,7 @@ describe("PlayerScreen", () => {
     expect(screen.getByText(/Correct/)).toBeDefined();
 
     // Next advances the queue; with one puzzle in the rung, that reaches the done state
-    fireEvent.click(screen.getByRole("button", { name: /Next/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Next →/ }));
     expect(screen.getByText(/Rung complete/)).toBeDefined();
     fireEvent.click(screen.getByRole("button", { name: /Back to map/ }));
     expect(onExit).toHaveBeenCalledTimes(1);
@@ -123,5 +123,42 @@ describe("PlayerScreen", () => {
     fireEvent.click(screen.getByRole("button", { name: /Escapes/ }));
     expect(container.querySelectorAll("circle.breaker").length).toBe(1);
     expect(screen.getByText(/breaks the ladder/i)).toBeDefined();
+  });
+
+  it("a solved capture puzzle reveals the stepped capture (Next move ▸) and stepping removes the captured stone", () => {
+    // the module-level `bank` is a topic-2 capture puzzle (captured: [{x:2,y:2}])
+    const pb = new PuzzleBank(bank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 2, 1);
+    const { container } = render(<PlayerScreen player={vm} onExit={vi.fn()} />);
+    const tap = Array.from(container.querySelectorAll("[data-tap]")).find(
+      (t) => t.getAttribute("cx") === "104" && t.getAttribute("cy") === "144",
+    );
+    fireEvent.click(tap!); // solve (2,3)
+    expect(screen.getByText(/Correct/)).toBeDefined();
+    // reveal is the stepped payoff, not the static board
+    const stepBtn = screen.getByRole("button", { name: /Next move/i });
+    // captured white stone (2,2) is present at step 0, gone after stepping
+    const whites = () => Array.from(container.querySelectorAll("circle.stone"))
+      .filter((c) => c.getAttribute("fill") === "var(--white)");
+    expect(whites()).toHaveLength(1);
+    fireEvent.click(stepBtn);
+    expect(whites()).toHaveLength(0);
+  });
+
+  it("a solved non-capturing move reveals statically (no Next move ▸)", () => {
+    const plainBank: Bank = { seed: 0, stage: "A", puzzles: [{
+      id: "nc", topic: 4, rung: 1, mode: "M", size: 5, toPlay: "b", prompt: "Escape.",
+      stones: [{ x: 1, y: 1, c: "b" }, { x: 0, y: 1, c: "w" }, { x: 1, y: 0, c: "w" }],
+      solution: { kind: "move", points: [{ x: 1, y: 2 }] }, // no `captured`
+    }]};
+    const pb = new PuzzleBank(plainBank);
+    const vm = new PlayerViewModel(pb, new ProgressStore(mem(), pb.rungRefs()), 4, 1);
+    const { container } = render(<PlayerScreen player={vm} onExit={vi.fn()} />);
+    const tap = Array.from(container.querySelectorAll("[data-tap]")).find(
+      (t) => t.getAttribute("cx") === "64" && t.getAttribute("cy") === "104", // (1,2)
+    );
+    fireEvent.click(tap!); // solve (1,2)
+    expect(screen.getByText(/Correct/)).toBeDefined();
+    expect(screen.queryByRole("button", { name: /Next move/i })).toBeNull();
   });
 });
