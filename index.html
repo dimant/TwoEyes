@@ -8,6 +8,14 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Two Eyes</title>
+    <script>
+      // Apply a forced theme before first paint (no flash). "system"/absent leaves the
+      // attribute unset so @media prefers-color-scheme applies.
+      try {
+        var t = localStorage.getItem("two-eyes:theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
