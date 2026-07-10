@@ -70,7 +70,7 @@ The spine of the roadmap: turn the app from "solve one move" into "read a sequen
   move-by-move instead of a static hint.
 - *Largest build; on the scale of Stage B.1.*
 
-### Phase 6 — Interaction & UX polish  🔜 in progress
+### Phase 6 — Interaction & UX polish  ✅ *shipped*
 - **Animate the capture on reveal** ✅ *shipped* — capture topics (2, 3, and the
   capturing puzzles of 7) reveal through the stepped `PayoffBoard` (Next move ▸ / Replay)
   instead of snapping; the 1-move payoff is derived at the view (no bank change).
@@ -80,7 +80,8 @@ The spine of the roadmap: turn the app from "solve one move" into "read a sequen
 - **Light/dark theme toggle** ✅ *shipped* — a cycling top-bar button (System → Light →
   Dark), persisted; `data-theme` on the root drives the already-theme-aware CSS, with a
   no-FOUC inline script.
-- Keyboard-accessible board input (separate spec, not yet started).
+- Keyboard-accessible board input — *consciously dropped* from Phase 6 (touch is the
+  primary target). Can return as its own spec if desktop/a11y demand grows.
 
 ### Phase 7 — Content enrichment  📋 planned
 - **Topic 4 (Escape atari)** — enrich the weakest, structurally monotonous generator
@@ -115,7 +116,7 @@ Status: ✅ done · 🔜 next · 📋 planned · 💡 backlog
 | 6 | Animate capture on reveal | ✅ | capture topics step through PayoffBoard; payoff derived at the view |
 | 6 | Lessons browser on the map | ✅ | per-card Learn button opens the lesson as a map takeover; marks seen |
 | 6 | Light/dark theme toggle | ✅ | cycling top-bar button (system/light/dark), persisted, no-FOUC |
-| 6 | Keyboard-accessible board input | 📋 | separate spec; a11y |
+| 6 | Keyboard-accessible board input | ⏭️ | consciously dropped (touch-first); revisitable |
 | 7 | Topic 4 (Escape atari) enrichment | 📋 | weakest generator |
 | 7 | Smith 1908 problem tier | 📋 | ~99 PD problems |
 | 8 | Stages C–D (topics 12–21) | 💡 | needs an L&D solver |
