@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import { makeRng } from "../engine/rng";
 import { generateLiberties } from "./topics/liberties";
 import { generateCapture } from "./topics/atari";
-import { generateEscape } from "./topics/escape";
+import { generateEscape, generateEscapeRun, generateEscapeCapture } from "./topics/escape";
 import { generateSelfAtari } from "./topics/selfatari";
 import { generateDoubleAtari } from "./topics/doubleatari";
 import { generateConnect, generateCaptureCutter } from "./topics/connectcut";
@@ -60,9 +60,14 @@ export function buildBank(seed: number): Bank {
   groups.push(curateRung(generateCapture(rng, { topic: 3, rung: 1, size: 7, count: PER_RUNG, groupSize: { min: 2, max: 2 }, region: "any" })));
   groups.push(curateRung(generateCapture(rng, { topic: 3, rung: 2, size: 7, count: PER_RUNG, groupSize: { min: 3, max: 4 }, region: "any" })));
 
-  // Topic 4 — escape atari: rung 1 interior, rung 2 edge
-  groups.push(curateRung(generateEscape(rng, { rung: 1, size: 7, count: PER_RUNG, region: "interior" })));
-  groups.push(curateRung(generateEscape(rng, { rung: 2, size: 7, count: PER_RUNG, region: "edge" })));
+  // Topic 4 — escape atari. RNG SPACER: the (now frozen) generateEscape is
+  // replayed here purely to consume the shared RNG stream exactly as the
+  // committed bank did, so topics 5/6/7/10/11 below stay byte-for-byte identical.
+  // curateRung() is pure (no RNG), so only generateEscape() needs replaying.
+  // The real, ENRICHED Topic 4 is generated from its own seed at the end of
+  // buildBank (see below), like topics 8/9.
+  generateEscape(rng, { rung: 1, size: 7, count: PER_RUNG, region: "interior" });
+  generateEscape(rng, { rung: 2, size: 7, count: PER_RUNG, region: "edge" });
 
   // Topic 5 — don't self-atari (Q-binary): rung 1 interior, rung 2 any
   groups.push(curateRung(generateSelfAtari(rng, { rung: 1, size: 7, count: PER_RUNG, region: "interior" })));
@@ -93,6 +98,14 @@ export function buildBank(seed: number): Bank {
   // puzzles) are unchanged; only 40 new puzzles are added.
   groups.push(curateRung(generateLadderBreaker(rng, { rung: 1, size: 9, count: PER_RUNG })));
   groups.push(curateRung(generateLadderBreaker(rng, { rung: 2, size: 9, count: PER_RUNG })));
+
+  // Topic 4 (enriched) — drawn from its OWN seed so edits here never disturb
+  // other topics, and appended last so its slot in the shared stream is
+  // irrelevant (mirrors topics 8/9). Rung 1: run to safety (1-3 stone groups).
+  // Rung 2: capture the attacker to escape.
+  const escapeRng = makeRng(seed ^ 0x00457363); // "Esc"
+  groups.push(curateRung(generateEscapeRun(escapeRng, { rung: 1, size: 7, count: PER_RUNG, region: "any", maxGroup: 3 })));
+  groups.push(curateRung(generateEscapeCapture(escapeRng, { rung: 2, size: 7, count: PER_RUNG, region: "any" })));
 
   return assembleBank(seed, groups);
 }

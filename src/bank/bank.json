@@ -5841,1756 +5841,6 @@
       ]
     },
     {
-      "id": "t4-r1-0",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 3,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-1",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 2
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-2",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 2,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 3
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-3",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 0,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 5,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 5,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-4",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 0
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 1,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-5",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 0
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 1,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-6",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 3,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 5,
-          "c": "b"
-        },
-        {
-          "x": 5,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 5,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-7",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 4,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 5,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 5,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 4,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-8",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 5,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 3
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 4,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-9",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-10",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 5,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 5,
-          "y": 5,
-          "c": "b"
-        },
-        {
-          "x": 6,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 5,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 5,
-          "y": 5,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-11",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 5,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 3
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 4,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-12",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 1
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-13",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 4,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 2,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 5,
-            "y": 1
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 1,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-14",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 4,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 5,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 3
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-15",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 5,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 4,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 2
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-16",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 4,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 2
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-17",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 5,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 5,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-18",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 4,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 3
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 1,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r1-19",
-      "topic": 4,
-      "rung": 1,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "b"
-        },
-        {
-          "x": 2,
-          "y": 2,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 1,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-0",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 5,
-          "y": 6,
-          "c": "w"
-        },
-        {
-          "x": 6,
-          "y": 6,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 6,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 6,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-1",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 1,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 0
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-2",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 6,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 6,
-          "y": 1,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 5,
-            "y": 0
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 6,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-3",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 3,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 6,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 6
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-4",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 5,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 6,
-          "y": 0,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 6,
-            "y": 1
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 6,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-5",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 6,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 5,
-          "y": 4,
-          "c": "w"
-        },
-        {
-          "x": 6,
-          "y": 4,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 6,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 6,
-          "y": 4,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-6",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 6,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 0,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-7",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 1,
-          "y": 6,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 6,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 2,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-8",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 0,
-          "y": 6,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 6
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 0,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-9",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 1,
-          "y": 6,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 6,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 6
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-10",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 0,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 1
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 0,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-11",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 4,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 5,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 1,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 0
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-12",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 1,
-          "c": "w"
-        },
-        {
-          "x": 0,
-          "y": 2,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 2,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 3
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 0,
-          "y": 2,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-13",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 5,
-          "c": "w"
-        },
-        {
-          "x": 2,
-          "y": 6,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 1,
-            "y": 6
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 2,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-14",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 0,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 0,
-          "y": 3,
-          "c": "b"
-        },
-        {
-          "x": 1,
-          "y": 3,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 0,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 0,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-15",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 4,
-          "y": 0,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 3,
-            "y": 1
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-16",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 6,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 6,
-          "y": 4,
-          "c": "b"
-        },
-        {
-          "x": 6,
-          "y": 5,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 5,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 6,
-          "y": 4,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-17",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 2,
-          "y": 0,
-          "c": "w"
-        },
-        {
-          "x": 3,
-          "y": 0,
-          "c": "b"
-        },
-        {
-          "x": 3,
-          "y": 1,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 0
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 3,
-          "y": 0,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-18",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 3,
-          "y": 6,
-          "c": "w"
-        },
-        {
-          "x": 4,
-          "y": 6,
-          "c": "b"
-        },
-        {
-          "x": 5,
-          "y": 6,
-          "c": "w"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 4,
-            "y": 5
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 4,
-          "y": 6,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
-      "id": "t4-r2-19",
-      "topic": 4,
-      "rung": 2,
-      "mode": "M",
-      "size": 7,
-      "stones": [
-        {
-          "x": 6,
-          "y": 2,
-          "c": "w"
-        },
-        {
-          "x": 5,
-          "y": 3,
-          "c": "w"
-        },
-        {
-          "x": 6,
-          "y": 3,
-          "c": "b"
-        }
-      ],
-      "toPlay": "b",
-      "prompt": "Black to play — save the stone in atari.",
-      "solution": {
-        "kind": "move",
-        "points": [
-          {
-            "x": 6,
-            "y": 4
-          }
-        ]
-      },
-      "marks": [
-        {
-          "x": 6,
-          "y": 3,
-          "kind": "mark"
-        }
-      ]
-    },
-    {
       "id": "t5-r1-0",
       "topic": 5,
       "rung": 1,
@@ -27276,6 +25526,2364 @@
         "x": 0,
         "y": 8
       }
+    },
+    {
+      "id": "t4-r1-0",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 6,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 5,
+            "y": 0
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-1",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 5
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 6,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-2",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-3",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 6,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 5,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 4,
+          "kind": "mark"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-4",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 4,
+          "kind": "mark"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-5",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "mark"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "mark"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-6",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-7",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-8",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 5
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 4,
+          "kind": "mark"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-9",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 5
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-10",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 1
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-11",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 5,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 5,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "mark"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-12",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-13",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 3,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-14",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "mark"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-15",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-16",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "mark"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-17",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-18",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 5,
+            "y": 1
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 0,
+          "kind": "mark"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r1-19",
+      "topic": 4,
+      "rung": 1,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 5,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-0",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-1",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 6,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 5,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-2",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "mark"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-3",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 5,
+            "y": 1
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "mark"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-4",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "mark"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-5",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-6",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-7",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 5
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 6,
+          "kind": "mark"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-8",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-9",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 4,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 6,
+            "y": 6
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 4,
+          "y": 5,
+          "kind": "mark"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-10",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 6
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-11",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "mark"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-12",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-13",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 6,
+          "kind": "mark"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-14",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 5,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-15",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 0,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "mark"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-16",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "c": "b"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "mark"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-17",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 1,
+          "y": 3,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "c": "b"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "mark"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-18",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 5,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 4
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 6,
+          "y": 5,
+          "kind": "mark"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
+    },
+    {
+      "id": "t4-r2-19",
+      "topic": 4,
+      "rung": 2,
+      "mode": "M",
+      "size": 7,
+      "stones": [
+        {
+          "x": 2,
+          "y": 4,
+          "c": "w"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "c": "b"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "c": "w"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "c": "b"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "c": "b"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "c": "w"
+        }
+      ],
+      "toPlay": "b",
+      "prompt": "Black to play — save your group.",
+      "solution": {
+        "kind": "move",
+        "points": [
+          {
+            "x": 4,
+            "y": 6
+          }
+        ]
+      },
+      "marks": [
+        {
+          "x": 2,
+          "y": 6,
+          "kind": "mark"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "mark"
+        }
+      ]
     }
   ]
 }
