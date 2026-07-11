@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { buildBank } from "./cli";
+import { Board } from "../engine/board";
+import { play } from "../engine/rules";
+import { group } from "../engine/liberties";
 
 describe("buildBank", () => {
   it("covers topics 1-3 with 20 puzzles per rung and unique ids", () => {
@@ -48,6 +51,44 @@ describe("buildBank", () => {
         .slice(0, 3)
         .map((p) => (p.solution.kind === "value" ? p.solution.value : -1));
       expect(new Set(firstThree).size, `t1-r${rung} opening variety`).toBe(3);
+    }
+  });
+
+  it("topic 4 rung 1 escapes by extension; rung 2 escapes by capture", () => {
+    const bank = buildBank(20260706);
+    const byRung = (rung: number) => bank.puzzles.filter((p) => p.topic === 4 && p.rung === rung);
+
+    for (const p of byRung(1)) {
+      const board = Board.from(p.size, p.stones);
+      const rep = p.marks![0]!;
+      expect(group(board, rep.x, rep.y).liberties.length).toBe(1);
+      if (p.solution.kind === "move")
+        for (const mv of p.solution.points) {
+          const r = play(board, mv.x, mv.y, "b");
+          expect(r.ok).toBe(true);
+          expect(r.captured.length).toBe(0);
+          expect(group(r.board, rep.x, rep.y).liberties.length).toBeGreaterThanOrEqual(2);
+        }
+    }
+
+    for (const p of byRung(2)) {
+      const board = Board.from(p.size, p.stones);
+      const rep = p.marks![0]!;
+      const libs = group(board, rep.x, rep.y).liberties;
+      expect(libs.length).toBe(1);
+      const L = libs[0]!;
+      const ext = play(board, L.x, L.y, "b");
+      const extEscaped =
+        ext.ok && ext.board.get(rep.x, rep.y) === "b" &&
+        group(ext.board, rep.x, rep.y).liberties.length >= 2;
+      expect(extEscaped).toBe(false);
+      if (p.solution.kind === "move")
+        for (const mv of p.solution.points) {
+          const r = play(board, mv.x, mv.y, "b");
+          expect(r.ok).toBe(true);
+          expect(r.captured.length).toBeGreaterThan(0);
+          expect(group(r.board, rep.x, rep.y).liberties.length).toBeGreaterThanOrEqual(2);
+        }
     }
   });
 });

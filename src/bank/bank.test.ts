@@ -83,24 +83,61 @@ describe("bank.json — liberty puzzles are correct (Q)", () => {
 });
 
 describe("bank.json — escape puzzles are solvable (topic 4)", () => {
-  it.each(escapePuzzles)("%s: target starts in atari and every listed move rescues it", (_id, p) => {
-    expect(p.mode).toBe("M");
-    expect(p.marks).toHaveLength(1);
-    const target = p.marks![0]!;
-    const before = Board.from(p.size, p.stones);
-    expect(group(before, target.x, target.y).liberties.length).toBe(1);
-    expect(p.solution.kind).toBe("move");
-    if (p.solution.kind !== "move") return;
-    expect(p.solution.points.length).toBeGreaterThanOrEqual(1);
-    for (const mv of p.solution.points) {
-      const r = play(Board.from(p.size, p.stones), mv.x, mv.y, "b");
-      expect(r.ok).toBe(true);
-      expect(group(r.board, target.x, target.y).liberties.length).toBeGreaterThanOrEqual(2);
-    }
-    for (const s of p.stones)
-      if (s.c === "w")
-        expect(group(before, s.x, s.y).liberties.length).toBeGreaterThanOrEqual(2);
-  });
+  // Rung 1: run to safety by extension. Target group (1-3 stones, marks[0] is
+  // a representative point) starts in atari; every attacker is settled, and
+  // every solution move rescues the group without a capture.
+  it.each(escapePuzzles.filter(([, p]) => p.rung === 1))(
+    "%s: rung 1 group starts in atari and every listed move rescues it by extension",
+    (_id, p) => {
+      expect(p.mode).toBe("M");
+      expect(p.marks!.length).toBeGreaterThanOrEqual(1);
+      const rep = p.marks![0]!;
+      const before = Board.from(p.size, p.stones);
+      expect(group(before, rep.x, rep.y).liberties.length).toBe(1);
+      expect(p.solution.kind).toBe("move");
+      if (p.solution.kind !== "move") return;
+      expect(p.solution.points.length).toBeGreaterThanOrEqual(1);
+      for (const mv of p.solution.points) {
+        const r = play(Board.from(p.size, p.stones), mv.x, mv.y, "b");
+        expect(r.ok).toBe(true);
+        expect(r.captured.length).toBe(0);
+        expect(group(r.board, rep.x, rep.y).liberties.length).toBeGreaterThanOrEqual(2);
+      }
+      for (const s of p.stones)
+        if (s.c === "w")
+          expect(group(before, s.x, s.y).liberties.length).toBeGreaterThanOrEqual(2);
+    },
+  );
+
+  // Rung 2: escape only by capturing the attacker. Target group starts in
+  // atari; extending at its lone liberty must NOT rescue it, but every listed
+  // solution move must capture an attacker and rescue the group.
+  it.each(escapePuzzles.filter(([, p]) => p.rung === 2))(
+    "%s: rung 2 group starts in atari and escapes only by capturing the attacker",
+    (_id, p) => {
+      expect(p.mode).toBe("M");
+      expect(p.marks!.length).toBeGreaterThanOrEqual(1);
+      const rep = p.marks![0]!;
+      const before = Board.from(p.size, p.stones);
+      const libs = group(before, rep.x, rep.y).liberties;
+      expect(libs.length).toBe(1);
+      const L = libs[0]!;
+      const ext = play(before, L.x, L.y, "b");
+      const extEscaped =
+        ext.ok && ext.board.get(rep.x, rep.y) === "b" &&
+        group(ext.board, rep.x, rep.y).liberties.length >= 2;
+      expect(extEscaped).toBe(false);
+      expect(p.solution.kind).toBe("move");
+      if (p.solution.kind !== "move") return;
+      expect(p.solution.points.length).toBeGreaterThanOrEqual(1);
+      for (const mv of p.solution.points) {
+        const r = play(Board.from(p.size, p.stones), mv.x, mv.y, "b");
+        expect(r.ok).toBe(true);
+        expect(r.captured.length).toBeGreaterThan(0);
+        expect(group(r.board, rep.x, rep.y).liberties.length).toBeGreaterThanOrEqual(2);
+      }
+    },
+  );
 });
 
 describe("bank.json — double-atari puzzles are solvable (topic 6)", () => {
